@@ -1,0 +1,17 @@
+E:\LUUDULIEUSINHVIEN\LuuHoangPhuc\LuuHoangPhuc_B9_ADO_dataset\MyLibrary\bin\Debug\MyLibrary.dll
+E:\LUUDULIEUSINHVIEN\LuuHoangPhuc\LuuHoangPhuc_B9_ADO_dataset\MyLibrary\bin\Debug\MyLibrary.pdb
+E:\LUUDULIEUSINHVIEN\LuuHoangPhuc\LuuHoangPhuc_B9_ADO_dataset\MyLibrary\obj\Debug\MyLibrary.csprojResolveAssemblyReference.cache
+E:\LUUDULIEUSINHVIEN\LuuHoangPhuc\LuuHoangPhuc_B9_ADO_dataset\MyLibrary\obj\Debug\MyLibrary.dll
+E:\LUUDULIEUSINHVIEN\LuuHoangPhuc\LuuHoangPhuc_B9_ADO_dataset\MyLibrary\obj\Debug\MyLibrary.pdb
+D:\HK5\dotNET\LuuHoangPhuc_B9_ADO_dataset\MyLibrary\bin\Debug\MyLibrary.dll
+D:\HK5\dotNET\LuuHoangPhuc_B9_ADO_dataset\MyLibrary\bin\Debug\MyLibrary.pdb
+D:\HK5\dotNET\LuuHoangPhuc_B9_ADO_dataset\MyLibrary\obj\Debug\MyLibrary.csproj.AssemblyReference.cache
+D:\HK5\dotNET\LuuHoangPhuc_B9_ADO_dataset\MyLibrary\obj\Debug\MyLibrary.csproj.CoreCompileInputs.cache
+D:\HK5\dotNET\LuuHoangPhuc_B9_ADO_dataset\MyLibrary\obj\Debug\MyLibrary.dll
+D:\HK5\dotNET\LuuHoangPhuc_B9_ADO_dataset\MyLibrary\obj\Debug\MyLibrary.pdb
+D:\HK5\dotNET\MyLibrary\bin\Debug\MyLibrary.dll
+D:\HK5\dotNET\MyLibrary\bin\Debug\MyLibrary.pdb
+D:\HK5\dotNET\MyLibrary\obj\Debug\MyLibrary.csproj.AssemblyReference.cache
+D:\HK5\dotNET\MyLibrary\obj\Debug\MyLibrary.csproj.CoreCompileInputs.cache
+D:\HK5\dotNET\MyLibrary\obj\Debug\MyLibrary.dll
+D:\HK5\dotNET\MyLibrary\obj\Debug\MyLibrary.pdb
