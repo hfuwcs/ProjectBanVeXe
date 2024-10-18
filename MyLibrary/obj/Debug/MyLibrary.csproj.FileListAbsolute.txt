@@ -15,3 +15,9 @@ D:\HK5\dotNET\MyLibrary\obj\Debug\MyLibrary.csproj.AssemblyReference.cache
 D:\HK5\dotNET\MyLibrary\obj\Debug\MyLibrary.csproj.CoreCompileInputs.cache
 D:\HK5\dotNET\MyLibrary\obj\Debug\MyLibrary.dll
 D:\HK5\dotNET\MyLibrary\obj\Debug\MyLibrary.pdb
+D:\HK5\dotNET\Test\ProjectBanVeXe\MyLibrary\bin\Debug\MyLibrary.dll
+D:\HK5\dotNET\Test\ProjectBanVeXe\MyLibrary\bin\Debug\MyLibrary.pdb
+D:\HK5\dotNET\Test\ProjectBanVeXe\MyLibrary\obj\Debug\MyLibrary.csproj.AssemblyReference.cache
+D:\HK5\dotNET\Test\ProjectBanVeXe\MyLibrary\obj\Debug\MyLibrary.csproj.CoreCompileInputs.cache
+D:\HK5\dotNET\Test\ProjectBanVeXe\MyLibrary\obj\Debug\MyLibrary.dll
+D:\HK5\dotNET\Test\ProjectBanVeXe\MyLibrary\obj\Debug\MyLibrary.pdb

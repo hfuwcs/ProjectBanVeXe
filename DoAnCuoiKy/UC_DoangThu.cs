@@ -52,7 +52,7 @@ namespace DoAnCuoiKy
             string depLoc = comboBox_Start.Text.ToString();
             string arrLoc = comboBox_End.Text.ToString();
             
-            txtTongDoanhThu.Text += obj.GetIncomeTest(startDay, endDay, depLoc, arrLoc).ToString();
+            txtTongDoanhThu.Text += obj.GetIncome(startDay, endDay, depLoc, arrLoc).ToString();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

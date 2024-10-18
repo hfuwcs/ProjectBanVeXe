@@ -38,12 +38,12 @@
             this.btn_BanVe = new System.Windows.Forms.Button();
             this.btn_QuanLyChuyen = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.label_Name = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.label_Name = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -70,7 +70,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panelContainer);
             this.splitContainer1.Size = new System.Drawing.Size(1549, 742);
-            this.splitContainer1.SplitterDistance = 220;
+            this.splitContainer1.SplitterDistance = 210;
             this.splitContainer1.TabIndex = 0;
             // 
             // panel_Sidebar
@@ -85,7 +85,7 @@
             this.panel_Sidebar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Sidebar.Location = new System.Drawing.Point(0, 0);
             this.panel_Sidebar.Name = "panel_Sidebar";
-            this.panel_Sidebar.Size = new System.Drawing.Size(220, 742);
+            this.panel_Sidebar.Size = new System.Drawing.Size(210, 742);
             this.panel_Sidebar.TabIndex = 0;
             // 
             // btn_DangXuat
@@ -167,10 +167,21 @@
             this.panelContainer.Controls.Add(this.label_Name);
             this.panelContainer.Controls.Add(this.button1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelContainer.Location = new System.Drawing.Point(0, 0);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1325, 742);
+            this.panelContainer.Size = new System.Drawing.Size(1335, 742);
             this.panelContainer.TabIndex = 0;
+            // 
+            // label_Name
+            // 
+            this.label_Name.AutoSize = true;
+            this.label_Name.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name.Location = new System.Drawing.Point(13, 16);
+            this.label_Name.Name = "label_Name";
+            this.label_Name.Size = new System.Drawing.Size(93, 23);
+            this.label_Name.TabIndex = 1;
+            this.label_Name.Text = "Xin chào: ";
             // 
             // button1
             // 
@@ -206,7 +217,7 @@
             // Exit_ToolStripMenuItem
             // 
             this.Exit_ToolStripMenuItem.Name = "Exit_ToolStripMenuItem";
-            this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
             this.Exit_ToolStripMenuItem.Text = "Thoát";
             this.Exit_ToolStripMenuItem.Click += new System.EventHandler(this.Exit_ToolStripMenuItem_Click);
             // 
@@ -229,16 +240,6 @@
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
             // 
-            // label_Name
-            // 
-            this.label_Name.AutoSize = true;
-            this.label_Name.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Name.Location = new System.Drawing.Point(13, 16);
-            this.label_Name.Name = "label_Name";
-            this.label_Name.Size = new System.Drawing.Size(93, 23);
-            this.label_Name.TabIndex = 1;
-            this.label_Name.Text = "Xin chào: ";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -253,8 +254,9 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Quản lý bán vé";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

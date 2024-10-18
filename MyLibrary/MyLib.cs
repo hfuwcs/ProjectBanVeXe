@@ -83,9 +83,10 @@ namespace MyLibrary
             conn.Dispose();
         }
         //START: Xử lý logic
+        //Kiểm tra acc đăng nhập đúng tài khoản mật khẩu trong Database không
         public bool CheckUser(Account account)
         {
-            //Kiểm tra xem có tồn tại account trong database chưa
+            //Lấy ra danh sách các tài khoản có trong database
             List<Account> accounts = ListAccount.Instance.LstAccount;
             foreach(var acc in accounts)
             {
@@ -99,7 +100,7 @@ namespace MyLibrary
         //START: Xử lý Database
 
 
-        //START: Xử lý account/tài khoản
+            //START: Xử lý account/tài khoản
 
         public Account GetAccount(string userName)
         {
@@ -116,7 +117,8 @@ namespace MyLibrary
                 account.UserName = rdr.GetString(2);
                 account.Password = rdr.GetString(3);
             }
-            return account;
+            CloseConnect();
+            return account;  
         }
 
         public List<Account> GetListAccount()
@@ -134,30 +136,15 @@ namespace MyLibrary
                 temp.Password = rdr.GetString(1);
                 list.Add(temp);
             }
+            CloseConnect();
             return list;
         }
 
-        //END: Xử lý account/tài khoản
+            //END: Xử lý account/tài khoản
 
-        //START:Xử lý Doanh thu
-        public int GetIncome(string IncomeDay)
-        {
-            int TotalIncome = 0;
-            string sqls = "Select sum(Total) from OrderTicket where OrderDate =@DayIncome";
-            SqlCommand cmd = new SqlCommand(sqls,conn);
-            cmd.Parameters.AddWithValue("@DayIncome", IncomeDay);
-            cmd.CommandType = CommandType.Text;
-            OpenConnect();
-            object res= cmd.ExecuteScalar();
-            if (res != null)
-            {
-                TotalIncome = Convert.ToInt32(res);
-            }
-            CloseConnect();
-            return TotalIncome;
-        }
+            //START:Xử lý Doanh thu
 
-        public int GetIncomeTest(string startDay, string endDay, string depLoc, string arrLoc)
+        public int GetIncome(string startDay, string endDay, string depLoc, string arrLoc)
         {
             int TotalIncome = 0;
             SqlCommand cmd = new SqlCommand();
@@ -171,7 +158,7 @@ namespace MyLibrary
             cmd.Parameters.AddWithValue("@DEPLOC", depLoc);
             cmd.Parameters.AddWithValue("@ARRLOC", arrLoc);
 
-            // Thêm tham số OUTPUT cho @TOTALINCOME
+            // Thêm tham số OUTPUT @TOTALINCOME
             SqlParameter outputParam = new SqlParameter("@TOTALINCOME", SqlDbType.Decimal);
             outputParam.Direction = ParameterDirection.Output;
             outputParam.Precision = 18;
@@ -191,18 +178,89 @@ namespace MyLibrary
             return TotalIncome;
         }
 
-        //END: Xử lý Doanh thu
+            //END: Xử lý Doanh thu
+
+            //START: Xử lý hành khách/Passenger
+
+        //Lấy thông tin 1 khách hàng bằng SĐT và Email
+        public Passenger GetOnePassenger(string phonenumber, string email)
+        {
+            Passenger passenger = new Passenger();
+            string sqls = "SELECT * FROM Passenger where PhoneNumber = @PhoneNumber and Email = @Email";
+            SqlCommand cmd = new SqlCommand(sqls,conn);
+            cmd.CommandType = CommandType.Text;
+            //Truyền giá trị cho tham số
+            cmd.Parameters.AddWithValue("@PhoneNumber", phonenumber);
+            cmd.Parameters.AddWithValue("@Email", email);
+
+            OpenConnect();
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                passenger.PassengerID = rdr.GetInt32(0);
+                passenger.PassengerName = rdr.GetString(1);
+                passenger.PhoneNumber = rdr.GetString(2);
+                passenger.Email = rdr.GetString(3);
+            }
+            CloseConnect();
+            return passenger;            
+        }
+
+            //Insert khách hàng vào Database
+        public int InsertPassenger(string hoten, string sdt, string email)
+        {
+            string sqls = "Insert into Passenger VALUES (@FullName, @PhoneNumber ,@Email)";
+            SqlCommand cmd =new SqlCommand(sqls,conn);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@FullName", hoten);
+            cmd.Parameters.AddWithValue("@PhoneNumber", sdt);
+            cmd.Parameters.AddWithValue ("@Email", email);
+            OpenConnect();
+            int kt = cmd.ExecuteNonQuery();
+            CloseConnect();
+            return kt; 
+        }
+
+
+        //END: Xử lý hành khách/Passenger
+
+        //START: Xử lý Vé/Ticket
+        public int InsertOrderTicket(int pID, string today)
+        {
+            string sqls = "Insert into OrderTicket([PassengerID], [Total], [OrderDate], [UserID]) VALUES (@pID, @Total ,@today, @UserID)";
+            SqlCommand cmd = new SqlCommand(sqls, conn);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@pID", pID);
+            cmd.Parameters.AddWithValue("@PhoneNumber", 0);
+            cmd.Parameters.AddWithValue("@Total", 0);
+            cmd.Parameters.AddWithValue("@today", today);
+            cmd.Parameters.AddWithValue("@UserID", 2);
+            OpenConnect();
+            int kt = cmd.ExecuteNonQuery();
+            CloseConnect();
+            return kt;
+        }
+
+        public int InsertDetailsTicket(int OrderTicketID, int TripID, int SeatID, int Price)
+        {
+            string sqls = "INSERT INTO DetailsTicket(OrderTicketID, TripID , SeatID, IsBooked, Price) " +
+                            "VALUES(@OrderTicketID,  @TripID, @SeatID, @IsBooked, @Price)";
+            SqlCommand cmd = new SqlCommand(sqls, conn);
+            cmd.CommandType= CommandType.Text;
+            cmd.Parameters.AddWithValue("@OrderTicketID", OrderTicketID);
+            cmd.Parameters.AddWithValue("@TripID", TripID);
+            cmd.Parameters.AddWithValue("@SeatID", SeatID);
+            cmd.Parameters.AddWithValue("@IsBooked", 1);
+            cmd.Parameters.AddWithValue("@Price", Price);
+            OpenConnect();
+            int kt = cmd .ExecuteNonQuery();
+            CloseConnect();
+            return kt;
+        }
+        //END: Xử lý Vé/Ticket
 
         public List<string> GetListOneColumn(string sqls)
         {
-             //Select sum(Total)
-             //from OrderTicket OT
-             //JOIN DetailsTicket DT ON OT.OrderTicketID = DT.OrderTicketID
-             //   JOIN Trip T ON DT.TripID = T.TripID
-             //where
-             //   OrderDate >= '09/10/2024' and OrderDate<= '10/10/2024'
-             //   AND
-             //   T.DepartureLocation = 'TP HCM' AND T.ArrivalLocation = 'Da Nang'
             List<string> list = new List<string>();
             SqlCommand cmd = new SqlCommand(sqls, conn);
             cmd.CommandType = CommandType.Text;
@@ -216,7 +274,21 @@ namespace MyLibrary
             return list;
 
         }
-        
+        //Lấy propety ID thuộc bảng nào đó theo ý muốn
+        public int GetOneID(string sqls)
+        {
+            int ID = -1;
+            SqlCommand cmd =new SqlCommand(sqls, conn);
+            cmd.CommandType = CommandType.Text;
+            OpenConnect();
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                ID = rdr.GetInt32(0);
+            }
+            CloseConnect() ;
+            return ID;
+        }
 
         public SqlDataAdapter GetDataAdapter(string sqls, string tableName){
             OpenConnect();
@@ -242,6 +314,7 @@ namespace MyLibrary
             CloseConnect();
             return dataTable;
         }
+
         //END: Xử lý Database
     }
 }

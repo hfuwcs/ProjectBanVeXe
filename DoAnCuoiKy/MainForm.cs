@@ -1,5 +1,6 @@
 ﻿using DoAnCuoiKy.BusinessClass;
 using MyLibrary;
+using MyLibrary.BusinessClass;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,10 +24,25 @@ namespace DoAnCuoiKy
         public MainForm()
         {
             InitializeComponent();
+            //Init Form chạy toàn màn hình   
+            //this.FormBorderStyle = FormBorderStyle.Sizable;
+            //this.WindowState = FormWindowState.Maximized;
+            //this.TopMost = true;
+
+
             //instance = this;
             button_Thoat = btn_DoanhThu;
             button_QuanLyChuyen = btn_QuanLyChuyen;
             lbl_Name = label_Name;
+        }
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if (e.KeyCode == Keys.Escape)
+            //{
+            //    this.FormBorderStyle = FormBorderStyle.Sizable;
+            //    this.WindowState = FormWindowState.Normal;
+            //    this.TopMost = false;
+            //}
         }
         private void AddUserControl(UserControl userControl)
         {
@@ -83,7 +99,9 @@ namespace DoAnCuoiKy
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int total = obj.GetIncomeTest("09/10/2024" , "10/10/2024", "TP HCM", "Da Nang");
+            Passenger passenger = obj.GetOnePassenger("1", "1@example.com");
+            string sqls = "select B.BusID from  Bus B Inner join Trip T on b.BusID=t.BusID WHERE DepartureLocation = 'TP HCM'  AND ArrivalLocation= 'Da Nang'";
+            int BusID = obj.GetOneID(sqls); 
         }
 
         private void btn_DoanhThu_Click(object sender, EventArgs e)
@@ -91,5 +109,7 @@ namespace DoAnCuoiKy
             UC_DoangThu uC_DoangThu = new UC_DoangThu();
             AddUserControl(uC_DoangThu);
         }
+
+        
     }
 }

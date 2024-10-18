@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BusinessClass\Account.cs" />
     <Compile Include="BusinessClass\ListAccount.cs" />
+    <Compile Include="BusinessClass\Passenger.cs" />
     <Compile Include="MyLib.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
