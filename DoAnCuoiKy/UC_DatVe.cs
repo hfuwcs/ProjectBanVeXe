@@ -16,10 +16,12 @@ namespace DoAnCuoiKy
     public partial class UC_DatVe : UserControl
     {
         BanVeXe obj = new BanVeXe();
+        int totalPrice;
         public UC_DatVe()
         {
             InitializeComponent();
             RegisterButtonClickEvent(this.Controls);
+            totalPrice  = 0;
         }
         // Hàm đệ quy để duyệt qua tất cả các control và vô hiệu hóa các button có Text nằm trong valuesToDisable.
         // valuesToDisable là list các ghế đã được đặt của chuyến xe đó
@@ -79,11 +81,15 @@ namespace DoAnCuoiKy
             if (clickedButton.BackColor == Color.Orange)
             {
                 txtGheDaChon.Text += result;
+                if (totalPrice > 0) totalPrice -= 20000;
+                txtTamTinh.Text = totalPrice.ToString();
                 // Nếu button đã có màu cam (đã chọn), đổi lại thành màu mặc định
                 clickedButton.BackColor = Color.LightCyan;
             }
             else
             {
+                totalPrice += 20000;
+                txtTamTinh.Text = totalPrice.ToString();
                 txtGheDaChon.Text += result;
                 // Nếu button chưa có màu cam, đổi sang màu cam
                 clickedButton.BackColor = Color.Orange;
@@ -221,7 +227,8 @@ namespace DoAnCuoiKy
                 //Lấy ID của Xe đang chứa ghế được chọn
                 int BusID = Convert.ToInt32(dataGridView_TimXe.CurrentRow.Cells[0].Value);
 
-                //Lấy ID ghế
+
+                int totalPrice = 0;
 
 
                 //Lấy danh sách những ghế được chọn
@@ -231,10 +238,14 @@ namespace DoAnCuoiKy
                     //Lấy ID ghế
                     string sqlSeatID = "SELECT SEATID FROM SEAT WHERE SeatNumber='"+ghe+"' AND BusID = '"+BusID+"'";
                     int SeatID = obj.GetOneID(sqlSeatID);
+
                     obj.InsertDetailsTicket(OrderTicketID,TripID, SeatID, 20000);
+                    totalPrice += 20000;
+
                 }
                 List<string> list = disableButtonList();
                 DisableButtons(this.Controls, list);
+                totalPrice = 0;
             }
 
         }
