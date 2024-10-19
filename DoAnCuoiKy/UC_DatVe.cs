@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace DoAnCuoiKy
 {
@@ -22,6 +23,7 @@ namespace DoAnCuoiKy
             InitializeComponent();
             RegisterButtonClickEvent(this.Controls);
             totalPrice  = 0;
+            obj.nfi.CurrencyDecimalDigits = 2;//Lấy 2 chữ số thập phân
         }
         // Hàm đệ quy để duyệt qua tất cả các control và vô hiệu hóa các button có Text nằm trong valuesToDisable.
         // valuesToDisable là list các ghế đã được đặt của chuyến xe đó
@@ -89,7 +91,7 @@ namespace DoAnCuoiKy
             else
             {
                 totalPrice += 20000;
-                txtTamTinh.Text = totalPrice.ToString();
+                txtTamTinh.Text = totalPrice.ToString("C",obj.nfi);
                 txtGheDaChon.Text += result;
                 // Nếu button chưa có màu cam, đổi sang màu cam
                 clickedButton.BackColor = Color.Orange;

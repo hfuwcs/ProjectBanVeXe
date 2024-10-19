@@ -17,6 +17,7 @@ namespace DoAnCuoiKy
         public UC_DoangThu()
         {
             InitializeComponent();
+            obj.nfi.CurrencyDecimalDigits = 2;//Lấy 2 chữ số thập phân
         }
 
         private void UC_DoangThu_Load(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace DoAnCuoiKy
             string depLoc = comboBox_Start.Text.ToString();
             string arrLoc = comboBox_End.Text.ToString();
             
-            txtTongDoanhThu.Text += obj.GetIncome(startDay, endDay, depLoc, arrLoc).ToString();
+            txtTongDoanhThu.Text += obj.GetIncome(startDay, endDay, depLoc, arrLoc).ToString("C",obj.nfi);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

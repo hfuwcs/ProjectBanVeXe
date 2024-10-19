@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using DoAnCuoiKy.BusinessClass;
 using MyLibrary.BusinessClass;
+using System.Globalization;
 
 
 namespace MyLibrary
@@ -19,6 +20,9 @@ namespace MyLibrary
         private string _strConnect, _strServerName, _strDBName, _strUserID, _strPassword;
         DataSet _dataSet = new DataSet();
 
+        //Khai báo format currency cho tiền VN
+        public NumberFormatInfo nfi = new CultureInfo("vi-VN", false).NumberFormat;
+        
         public DataSet DataSet
         {
             get { return _dataSet; }
