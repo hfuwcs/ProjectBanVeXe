@@ -56,26 +56,28 @@
             // dateTimePicker_Endday
             // 
             this.dateTimePicker_Endday.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePicker_Endday.Location = new System.Drawing.Point(573, 268);
+            this.dateTimePicker_Endday.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_Endday.Location = new System.Drawing.Point(646, 259);
             this.dateTimePicker_Endday.Name = "dateTimePicker_Endday";
-            this.dateTimePicker_Endday.Size = new System.Drawing.Size(162, 22);
+            this.dateTimePicker_Endday.Size = new System.Drawing.Size(259, 28);
             this.dateTimePicker_Endday.TabIndex = 19;
             // 
             // dateTimePicker_StartDate
             // 
             this.dateTimePicker_StartDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePicker_StartDate.Location = new System.Drawing.Point(317, 268);
+            this.dateTimePicker_StartDate.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_StartDate.Location = new System.Drawing.Point(237, 259);
             this.dateTimePicker_StartDate.Name = "dateTimePicker_StartDate";
-            this.dateTimePicker_StartDate.Size = new System.Drawing.Size(162, 22);
+            this.dateTimePicker_StartDate.Size = new System.Drawing.Size(273, 28);
             this.dateTimePicker_StartDate.TabIndex = 18;
             // 
             // lblDenNgay
             // 
             this.lblDenNgay.AutoSize = true;
-            this.lblDenNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDenNgay.Location = new System.Drawing.Point(494, 268);
+            this.lblDenNgay.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDenNgay.Location = new System.Drawing.Point(525, 259);
             this.lblDenNgay.Name = "lblDenNgay";
-            this.lblDenNgay.Size = new System.Drawing.Size(84, 20);
+            this.lblDenNgay.Size = new System.Drawing.Size(100, 23);
             this.lblDenNgay.TabIndex = 17;
             this.lblDenNgay.Text = "Đến ngày:";
             // 
@@ -91,41 +93,41 @@
             // lblTongDoanhThu
             // 
             this.lblTongDoanhThu.AutoSize = true;
-            this.lblTongDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTongDoanhThu.Location = new System.Drawing.Point(163, 442);
+            this.lblTongDoanhThu.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongDoanhThu.Location = new System.Drawing.Point(98, 433);
             this.lblTongDoanhThu.Name = "lblTongDoanhThu";
-            this.lblTongDoanhThu.Size = new System.Drawing.Size(129, 20);
+            this.lblTongDoanhThu.Size = new System.Drawing.Size(213, 32);
             this.lblTongDoanhThu.TabIndex = 14;
             this.lblTongDoanhThu.Text = "Tổng doanh thu:";
             // 
             // lblTuyen
             // 
             this.lblTuyen.AutoSize = true;
-            this.lblTuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTuyen.Location = new System.Drawing.Point(163, 355);
+            this.lblTuyen.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTuyen.Location = new System.Drawing.Point(98, 346);
             this.lblTuyen.Name = "lblTuyen";
-            this.lblTuyen.Size = new System.Drawing.Size(59, 20);
+            this.lblTuyen.Size = new System.Drawing.Size(95, 32);
             this.lblTuyen.TabIndex = 13;
             this.lblTuyen.Text = "Tuyến:";
             // 
             // lblTuNgay
             // 
             this.lblTuNgay.AutoSize = true;
-            this.lblTuNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTuNgay.Location = new System.Drawing.Point(163, 268);
+            this.lblTuNgay.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTuNgay.Location = new System.Drawing.Point(98, 259);
             this.lblTuNgay.Name = "lblTuNgay";
-            this.lblTuNgay.Size = new System.Drawing.Size(73, 20);
+            this.lblTuNgay.Size = new System.Drawing.Size(117, 32);
             this.lblTuNgay.TabIndex = 12;
             this.lblTuNgay.Text = "Từ ngày:";
             // 
             // lblDoanhThu
             // 
             this.lblDoanhThu.AutoSize = true;
-            this.lblDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDoanhThu.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDoanhThu.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblDoanhThu.Location = new System.Drawing.Point(139, 199);
+            this.lblDoanhThu.Location = new System.Drawing.Point(91, 187);
             this.lblDoanhThu.Name = "lblDoanhThu";
-            this.lblDoanhThu.Size = new System.Drawing.Size(146, 29);
+            this.lblDoanhThu.Size = new System.Drawing.Size(210, 46);
             this.lblDoanhThu.TabIndex = 11;
             this.lblDoanhThu.Text = "Doanh Thu";
             // 
@@ -159,8 +161,9 @@
             // 
             // UC_DoangThu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox_End);
             this.Controls.Add(this.comboBox_Start);
@@ -176,7 +179,7 @@
             this.Font = new System.Drawing.Font("Montserrat", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UC_DoangThu";
-            this.Size = new System.Drawing.Size(853, 772);
+            this.Size = new System.Drawing.Size(908, 772);
             this.Load += new System.EventHandler(this.UC_DoangThu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

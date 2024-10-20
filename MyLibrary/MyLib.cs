@@ -106,6 +106,31 @@ namespace MyLibrary
 
             //START: Xử lý account/tài khoản
 
+        //Lấy Tài khoản bằng ID
+        public Account GetAccount(int id)
+        {
+            Account account = new Account();
+            string sqsl = "Select * from UserAccount where UserID = @userid";
+            SqlCommand cmd = new SqlCommand(sqsl,conn);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.AddWithValue("@userid", id);
+
+            OpenConnect();
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                account.UserID = rdr.GetInt32(0);
+                account.Name = rdr.GetString(1);
+                account.UserName = rdr.GetString(2);
+                account.Password = rdr.GetString(3);
+            }
+            CloseConnect();
+            return account;
+        }
+           
+        //Lấy Tài khoản bằng tên đăng nhập
+
         public Account GetAccount(string userName)
         {
             Account account = new Account();
@@ -125,6 +150,7 @@ namespace MyLibrary
             return account;  
         }
 
+        //Lấy danh sách Tài khoản
         public List<Account> GetListAccount()
         {
             string sqls = "Select email, password from UserAccount";
@@ -143,7 +169,42 @@ namespace MyLibrary
             CloseConnect();
             return list;
         }
+        
+        //Lấy RoleName
+        public string GetRoleName(int userid)
+        {
+            string sqls = "SELECT RoleName from Roles R INNER JOIN UserRoles UR ON R.RolesID = UR.RoleID INNER JOIN UserAccount UA ON UR.UserID = UA.UserID WHERE UA.UserID = @userid";
+            string str = string.Empty;
+            SqlCommand cmd = new SqlCommand(sqls, conn);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@userid",userid);
+            OpenConnect();
+            str = cmd.ExecuteScalar().ToString();
+            CloseConnect();
+            return str;
+        }
+        
 
+        //Đổi mật khẩu
+        public int ChangePassword(int userid, string newPassword)
+        {          
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "dbo.DOIMATKHAU";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conn;
+
+            // Thêm các tham số cho stored procedure
+            cmd.Parameters.AddWithValue("@NEWPASS", newPassword);
+            cmd.Parameters.AddWithValue("@USERID", userid);
+
+            OpenConnect();
+            int kt = cmd.ExecuteNonQuery();
+            CloseConnect();
+            
+            //Nếu kt = 1 có nghĩa là có 1 dòng bị ảnh hưởng (row affected) => đã cập nhật thành công mật khẩu
+            //Nếu kt = 0 là ngược lại
+            return kt;
+        }
             //END: Xử lý account/tài khoản
 
 
@@ -305,6 +366,7 @@ namespace MyLibrary
             return list;
 
         }
+
         //Lấy propety ID thuộc bảng nào đó theo ý muốn
         public int GetOneID(string sqls)
         {
@@ -312,13 +374,20 @@ namespace MyLibrary
             SqlCommand cmd =new SqlCommand(sqls, conn);
             cmd.CommandType = CommandType.Text;
             OpenConnect();
-            SqlDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                ID = rdr.GetInt32(0);
-            }
+            ID = Convert.ToInt32(cmd.ExecuteScalar().ToString());
             CloseConnect() ;
             return ID;
+        }
+
+        public string GetOndPropChar(string sqls)
+        {
+            string str = string.Empty;
+            SqlCommand cmd = new SqlCommand(sqls,conn);
+            cmd.CommandType = CommandType.Text;
+            OpenConnect();
+            str = cmd.ExecuteScalar().ToString();
+            CloseConnect();
+            return str;
         }
 
         public SqlDataAdapter GetDataAdapter(string sqls, string tableName){

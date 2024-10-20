@@ -21,6 +21,7 @@ namespace DoAnCuoiKy
         public TextBox tb1;
         public TextBox tb2;
         public string Name;
+        public Account account;
         
         public DangNhap()
         {
@@ -56,7 +57,7 @@ namespace DoAnCuoiKy
 
         private void btn_DangNhap_Click(object sender, EventArgs e)
         {
-            Account account = new Account() { UserName=txtBox_Email.Text, Password=txtBox_Pass.Text};
+            account = new Account() { UserName=txtBox_Email.Text, Password=txtBox_Pass.Text};
             
             //Check xem User có tồn tại không
             if (obj.CheckUser(account))
@@ -96,7 +97,7 @@ namespace DoAnCuoiKy
         {
             if (isLogin)
             {
-                DoiMatKhau doiMatKhau = new DoiMatKhau();
+                DoiMatKhau doiMatKhau = new DoiMatKhau(account.UserID);
                 doiMatKhau.ShowDialog();
             }
             else

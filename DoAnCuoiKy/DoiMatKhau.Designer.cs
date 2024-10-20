@@ -34,7 +34,7 @@
             this.lbl_MKMoi = new System.Windows.Forms.Label();
             this.txt_RetypePass = new System.Windows.Forms.TextBox();
             this.lbl_MKMoi_Again = new System.Windows.Forms.Label();
-            this.label_Account = new System.Windows.Forms.Label();
+            this.lbl_Account = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_ThoatDangNhap
@@ -57,6 +57,7 @@
             this.btn_DoiMatKhau.TabIndex = 11;
             this.btn_DoiMatKhau.Text = "Đổi mật khẩu";
             this.btn_DoiMatKhau.UseVisualStyleBackColor = true;
+            this.btn_DoiMatKhau.Click += new System.EventHandler(this.btn_DoiMatKhau_Click);
             // 
             // txt_TypePass
             // 
@@ -64,7 +65,7 @@
             this.txt_TypePass.Location = new System.Drawing.Point(220, 104);
             this.txt_TypePass.Name = "txt_TypePass";
             this.txt_TypePass.Size = new System.Drawing.Size(310, 30);
-            this.txt_TypePass.TabIndex = 8;
+            this.txt_TypePass.TabIndex = 0;
             // 
             // lbl_MKMoi
             // 
@@ -82,7 +83,7 @@
             this.txt_RetypePass.Location = new System.Drawing.Point(220, 158);
             this.txt_RetypePass.Name = "txt_RetypePass";
             this.txt_RetypePass.Size = new System.Drawing.Size(310, 30);
-            this.txt_RetypePass.TabIndex = 15;
+            this.txt_RetypePass.TabIndex = 1;
             // 
             // lbl_MKMoi_Again
             // 
@@ -94,22 +95,22 @@
             this.lbl_MKMoi_Again.TabIndex = 14;
             this.lbl_MKMoi_Again.Text = "Nhập lại mật khẩu:";
             // 
-            // label_Account
+            // lbl_Account
             // 
-            this.label_Account.AutoSize = true;
-            this.label_Account.Font = new System.Drawing.Font("Montserrat", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Account.Location = new System.Drawing.Point(26, 31);
-            this.label_Account.Name = "label_Account";
-            this.label_Account.Size = new System.Drawing.Size(287, 25);
-            this.label_Account.TabIndex = 16;
-            this.label_Account.Text = "Tài khoản đang đăng nhập là:";
+            this.lbl_Account.AutoSize = true;
+            this.lbl_Account.Font = new System.Drawing.Font("Montserrat", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Account.Location = new System.Drawing.Point(26, 31);
+            this.lbl_Account.Name = "lbl_Account";
+            this.lbl_Account.Size = new System.Drawing.Size(292, 25);
+            this.lbl_Account.TabIndex = 16;
+            this.lbl_Account.Text = "Tài khoản đang đăng nhập là: ";
             // 
             // DoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 347);
-            this.Controls.Add(this.label_Account);
+            this.Controls.Add(this.lbl_Account);
             this.Controls.Add(this.txt_RetypePass);
             this.Controls.Add(this.lbl_MKMoi_Again);
             this.Controls.Add(this.btn_ThoatDangNhap);
@@ -132,6 +133,6 @@
         private System.Windows.Forms.Label lbl_MKMoi;
         private System.Windows.Forms.TextBox txt_RetypePass;
         private System.Windows.Forms.Label lbl_MKMoi_Again;
-        private System.Windows.Forms.Label label_Account;
+        private System.Windows.Forms.Label lbl_Account;
     }
 }

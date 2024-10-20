@@ -21,6 +21,7 @@ namespace DoAnCuoiKy
         int totalPrice;
         public DangNhap dangNhap;
         private int _userID;
+        private int TripID;
         public int UserID
         {
             get { return _userID; }
@@ -34,7 +35,7 @@ namespace DoAnCuoiKy
             InitializeComponent();
             RegisterButtonClickEvent(this.Controls);
 
-
+            TripID = 0;
             totalPrice  = 0;
             //Lấy 2 chữ số thập phân
             obj.nfi.CurrencyDecimalDigits = 2;
@@ -62,7 +63,24 @@ namespace DoAnCuoiKy
                 }
             }
         }
+        // Hàm kích hoạt lại tất cả các ghế
+        private void EnableAllSeats(Control.ControlCollection controls)
+        {
+            foreach (Control control in controls)
+            {
+                if (control is Button button && (button.Text.StartsWith("A") || button.Text.StartsWith("B")))
+                {
+                    button.Enabled = true; 
+                    button.BackColor = Color.LightCyan;
+                }
 
+                // Duyệt đệ quy nếu có các control con
+                if (control.HasChildren)
+                {
+                    EnableAllSeats(control.Controls);
+                }
+            }
+        }
         // Gán sự kiện Click cho tất cả các button trong form.
         private void RegisterButtonClickEvent(Control.ControlCollection controls)
         {
@@ -138,7 +156,7 @@ namespace DoAnCuoiKy
             
         }
         
-        //Hàm update cho các textbox sẽ hiển thị nhưng ghế đã chọn
+        //Hàm update cho các textbox sẽ hiển thị nhung ghế đã chọn
         private void UpdateSelectedSeatsTextBox(TextBox textBox, Control.ControlCollection controls)
         {
             List<string> selectedSeats = new List<string>();
@@ -187,9 +205,9 @@ namespace DoAnCuoiKy
 
 
         }
-        private List<string> disableButtonList()
+        private List<string> disableButtonList(int tripID)
         {
-            string sqls = "select SeatNumber from Seat S, DetailsTicket DT Where S.SeatID=DT.SeatID and TRIPID=1";
+            string sqls = "select SeatNumber from Seat S, DetailsTicket DT Where S.SeatID=DT.SeatID and TRIPID="+tripID.ToString();
             List<string> list = obj.GetListOneColumn(sqls);
             return list;
         }
@@ -203,9 +221,11 @@ namespace DoAnCuoiKy
         }
         private void dataGridView_TimXe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            List<string> list = disableButtonList();
+            EnableAllSeats(this.Controls);
+            string sqlTripID = "  SELECT TripID FROM Trip WHERE DepartureLocation='" + comboBox_Start.Text + "'  AND ArrivalLocation= '" + comboBox_End.Text.ToString() + "'";
+            TripID = obj.GetOneID(sqlTripID);
+            List<string> list = disableButtonList(TripID);
             DisableButtons(this.Controls, list);
-
         }
 
         private void btnDatVe_Click(object sender, EventArgs e)
@@ -252,12 +272,15 @@ namespace DoAnCuoiKy
                     obj.InsertDetailsTicket(OrderTicketID,TripID, SeatID, 210000);
 
                 }
-                List<string> list = disableButtonList();
+                List<string> list = disableButtonList(TripID);
                 DisableButtons(this.Controls, list);
                 txtTamTinh.Text = string.Empty;
                 MessageBox.Show("Đặt vé thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
         }
     }
 }

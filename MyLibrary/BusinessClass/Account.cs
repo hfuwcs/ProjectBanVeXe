@@ -13,10 +13,10 @@ namespace DoAnCuoiKy.BusinessClass
         private string userName;
         private string password;
 
-        public string UserName { get => userName; set => userName = value; }
-        public string Password { get => password; set => password = value; }
         public int UserID { get => _userID; set => _userID = value; }
         public string Name { get => _name; set => _name = value; }
+        public string UserName { get => userName; set => userName = value; }
+        public string Password { get => password; set => password = value; }
 
         public Account() { }
 
