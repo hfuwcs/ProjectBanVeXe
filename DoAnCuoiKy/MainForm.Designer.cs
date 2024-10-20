@@ -140,6 +140,7 @@
             this.btn_TraCuuVe.TabIndex = 31;
             this.btn_TraCuuVe.Text = "Tra cứu vé";
             this.btn_TraCuuVe.UseVisualStyleBackColor = true;
+            this.btn_TraCuuVe.Click += new System.EventHandler(this.btn_TraCuuVe_Click);
             // 
             // btn_BanVe
             // 
@@ -256,7 +257,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý bán vé";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

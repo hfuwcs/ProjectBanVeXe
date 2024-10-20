@@ -21,28 +21,17 @@ namespace DoAnCuoiKy
         public Button button_QuanLyChuyen;
         public Label lbl_Name;
         public bool isExit = true;
-        public MainForm()
+        private int userID;
+        public MainForm(int userid)
         {
             InitializeComponent();
-            //Init Form chạy toàn màn hình   
-            //this.FormBorderStyle = FormBorderStyle.Sizable;
-            //this.WindowState = FormWindowState.Maximized;
-            //this.TopMost = true;
 
-
+            //Lấy ID người dùng đã được đăng nhập, khai báo và truyền qua UserControl UC_DatVe
+            this.userID = userid;
             //instance = this;
             button_Thoat = btn_DoanhThu;
             button_QuanLyChuyen = btn_QuanLyChuyen;
             lbl_Name = label_Name;
-        }
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            //if (e.KeyCode == Keys.Escape)
-            //{
-            //    this.FormBorderStyle = FormBorderStyle.Sizable;
-            //    this.WindowState = FormWindowState.Normal;
-            //    this.TopMost = false;
-            //}
         }
         private void AddUserControl(UserControl userControl)
         {
@@ -59,12 +48,12 @@ namespace DoAnCuoiKy
                 {
                     e.Cancel = true;
                 }
+                else
+                {
+                    isExit = false;
+                    Application.Exit();
+                }
             }
-        }
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if(isExit)
-                Application.Exit();
         }
 
         private void btn_DangNhap_Click(object sender, EventArgs e)
@@ -76,6 +65,7 @@ namespace DoAnCuoiKy
         private void btn_BanVe_Click(object sender, EventArgs e)
         {
             UC_DatVe ucDatVe = new UC_DatVe();
+            ucDatVe.UserID = this.userID;
             AddUserControl(ucDatVe);
         }
 
@@ -110,6 +100,10 @@ namespace DoAnCuoiKy
             AddUserControl(uC_DoangThu);
         }
 
-        
+        private void btn_TraCuuVe_Click(object sender, EventArgs e)
+        {
+            UC_TraCuuVe uC_TraCuuVe = new UC_TraCuuVe();
+            AddUserControl(uC_TraCuuVe);
+        }
     }
 }

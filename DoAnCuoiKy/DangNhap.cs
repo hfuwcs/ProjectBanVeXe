@@ -21,6 +21,7 @@ namespace DoAnCuoiKy
         public TextBox tb1;
         public TextBox tb2;
         public string Name;
+        
         public DangNhap()
         {
             InitializeComponent();
@@ -55,12 +56,18 @@ namespace DoAnCuoiKy
 
         private void btn_DangNhap_Click(object sender, EventArgs e)
         {
-            //Account account = new Account() { UserName=txtBox_Email.Text.ToString(), Password=txtBox_Pass.Text.ToString()};
-            Account account = obj.GetAccount(txtBox_Email.Text.ToString());
+            Account account = new Account() { UserName=txtBox_Email.Text, Password=txtBox_Pass.Text};
+            
+            //Check xem User có tồn tại không
             if (obj.CheckUser(account))
             {
+                //Nếu tồn tại thì lấy tất cả thông tin của user
+                account = obj.GetAccount(txtBox_Email.Text);
+
+
+                //Đặt biến isLogin để biết người dùng đã đăng nhập thành công
                 isLogin = true;
-                MainForm mainForm = new MainForm();
+                MainForm mainForm = new MainForm(account.UserID);
                 mainForm.Show();//Mở form chính
                 this.Hide();//Đóng form đăng nhập
                 mainForm.lbl_Name.Text += account.Name.ToString();
@@ -68,7 +75,7 @@ namespace DoAnCuoiKy
             }
             else
             {
-                MessageBox.Show("u suck");
+                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu","Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 txtBox_Email.Focus();
             }
         }

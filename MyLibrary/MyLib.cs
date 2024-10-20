@@ -94,7 +94,7 @@ namespace MyLibrary
             List<Account> accounts = ListAccount.Instance.LstAccount;
             foreach(var acc in accounts)
             {
-                if(acc.UserName.Equals(account.UserName) && acc.Password==account.Password)
+                if(acc.UserName.Equals(account.UserName.ToLower()) && acc.Password==account.Password)
                     return true;
             }
             return false;
@@ -146,6 +146,7 @@ namespace MyLibrary
 
             //END: Xử lý account/tài khoản
 
+
             //START:Xử lý Doanh thu
 
         public int GetIncome(string startDay, string endDay, string depLoc, string arrLoc)
@@ -183,6 +184,7 @@ namespace MyLibrary
         }
 
             //END: Xử lý Doanh thu
+
 
             //START: Xử lý hành khách/Passenger
 
@@ -229,22 +231,24 @@ namespace MyLibrary
         //END: Xử lý hành khách/Passenger
 
         //START: Xử lý Vé/Ticket
-        public int InsertOrderTicket(int pID, string today)
+
+        //Insert Hóa đơn vào OrderTicket
+        public int InsertOrderTicket(int pID, string today,int userID)
         {
             string sqls = "Insert into OrderTicket([PassengerID], [Total], [OrderDate], [UserID]) VALUES (@pID, @Total ,@today, @UserID)";
             SqlCommand cmd = new SqlCommand(sqls, conn);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@pID", pID);
-            cmd.Parameters.AddWithValue("@PhoneNumber", 0);
             cmd.Parameters.AddWithValue("@Total", 0);
             cmd.Parameters.AddWithValue("@today", today);
-            cmd.Parameters.AddWithValue("@UserID", 2);
+            cmd.Parameters.AddWithValue("@UserID", userID);
             OpenConnect();
             int kt = cmd.ExecuteNonQuery();
             CloseConnect();
             return kt;
         }
 
+        //Insert Vé  vào Bảng DetailsTicket
         public int InsertDetailsTicket(int OrderTicketID, int TripID, int SeatID, int Price)
         {
             string sqls = "INSERT INTO DetailsTicket(OrderTicketID, TripID , SeatID, IsBooked, Price) " +
@@ -261,6 +265,29 @@ namespace MyLibrary
             CloseConnect();
             return kt;
         }
+
+        //Get Databale Tra cứu vé
+        public DataTable GetDataTable(string sdt, string dpt, string tableName)
+        {
+            // Xây dựng câu truy vấn gọi hàm TRACUUVE trong Database
+            string sqls = "SELECT * FROM dbo.TRACUUVE(@SDT, @DPT)";
+
+            // Tạo SqlCommand để thêm tham số
+            SqlCommand cmd = new SqlCommand(sqls, conn);
+            cmd.Parameters.AddWithValue("@SDT", sdt);
+            cmd.Parameters.AddWithValue("@DPT", dpt);
+
+            OpenConnect();
+
+            // Tạo SqlDataAdapter từ SqlCommand
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+            ada.Fill(DataSet, tableName);
+
+            CloseConnect();
+
+            return DataSet.Tables[tableName];
+        }
+
         //END: Xử lý Vé/Ticket
 
         public List<string> GetListOneColumn(string sqls)

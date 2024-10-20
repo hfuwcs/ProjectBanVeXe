@@ -17,7 +17,8 @@ namespace DoAnCuoiKy
         public UC_DoangThu()
         {
             InitializeComponent();
-            obj.nfi.CurrencyDecimalDigits = 2;//Lấy 2 chữ số thập phân
+            //Lấy 2 chữ số thập phân
+            obj.nfi.CurrencyDecimalDigits = 2;
         }
 
         private void UC_DoangThu_Load(object sender, EventArgs e)

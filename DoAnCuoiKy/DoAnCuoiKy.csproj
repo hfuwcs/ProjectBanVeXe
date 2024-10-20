@@ -103,6 +103,12 @@
     <Compile Include="UC_DoangThu.Designer.cs">
       <DependentUpon>UC_DoangThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_TraCuuVe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TraCuuVe.Designer.cs">
+      <DependentUpon>UC_TraCuuVe.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_DoangThu.resx">
       <DependentUpon>UC_DoangThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TraCuuVe.resx">
+      <DependentUpon>UC_TraCuuVe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
