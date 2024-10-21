@@ -41,6 +41,29 @@ namespace DoAnCuoiKy
             obj.nfi.CurrencyDecimalDigits = 2;
         }
 
+        //Autosize datagridview
+        private void autosizedgv(object sender)
+        {
+            DataGridView dataGridView = sender as DataGridView;
+            // Set your desired AutoSize Mode:
+            dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            // Now that DataGridView has calculated it's Widths; we can now store each column Width values.
+            for (int i = 0; i <= dataGridView.Columns.Count - 1; i++)
+            {
+                // Store Auto Sized Widths:
+                int colw = dataGridView.Columns[i].Width;
+
+                // Remove AutoSizing:
+                dataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                // Set Width to calculated AutoSize value:
+                dataGridView.Columns[i].Width = colw;
+            }
+        }
+
         // Hàm đệ quy để duyệt qua tất cả các control và vô hiệu hóa các button có Text nằm trong valuesToDisable.
         // valuesToDisable là list các ghế đã được đặt của chuyến xe được chọn
         private void DisableButtons(Control.ControlCollection controls, List<string> valuesToDisable)
@@ -183,26 +206,13 @@ namespace DoAnCuoiKy
 
         private void UC_DatVe_Load(object sender, EventArgs e)
         {
-            //START: LOAD database cho các Tuyến
-            BanVeXe db1 = new BanVeXe();
-            string sqls1 = "select StartLocation from Route group by StartLocation";
-            string tableName1 = "Route";
-            db1.GetDataAdapter(sqls1, tableName1);
+            //LOAD database cho các Tuyến
+            string sqlstart = "select StartLocation from Route group by StartLocation";
+            comboBox_Start.DataSource = obj.GetListOneColumn(sqlstart);
 
-            comboBox_Start.DataSource = db1.DataSet.Tables[0];
-            comboBox_Start.ValueMember = "StartLocation";
-            comboBox_Start.DisplayMember = "StartLocation";
-
-            BanVeXe db2 = new BanVeXe();
-            string sqls2 = "select EndLocation from Route group by EndLocation";
-            string tableName2 = "Route";
-            db2.GetDataAdapter(sqls2, tableName2);
-
-            comboBox_End.DataSource = db2.DataSet.Tables[0];
-            comboBox_End.ValueMember = "EndLocation";
-            comboBox_End.DisplayMember = "EndLocation";
-            //END: LOAD database cho các Tuyến
-
+            string sqlend = "select EndLocation from Route group by EndLocation";
+            comboBox_End.DataSource = obj.GetListOneColumn(sqlend);
+            autosizedgv(dataGridView_TimXe);
 
         }
         private List<string> disableButtonList(int tripID)
@@ -218,6 +228,7 @@ namespace DoAnCuoiKy
             string datepicker = dateTimePicker_StarDate.Value.ToString("yyyy/MM/dd HH:mm");
             string sqls = "select B.BusID, BusNumber, TotalSeat, BusType,  DepartureTime, ArrivalTime from  Bus B Inner join Trip T on b.BusID=t.BusID WHERE DepartureLocation='" + comboBox_Start.Text.ToString() + "'  AND ArrivalLocation= '" + comboBox_End.Text.ToString() + "' AND DATEDIFF(DAY,T.DepartureTime,'"+ datepicker + "')=0";
             dataGridView_TimXe.DataSource = obj.GetDataTable(sqls);
+
         }
         private void dataGridView_TimXe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

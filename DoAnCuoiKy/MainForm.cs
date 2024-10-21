@@ -17,16 +17,21 @@ namespace DoAnCuoiKy
     {
         MainForm ths;
         BanVeXe obj = new BanVeXe();//Khai báo obj để xử dụng các method trong MyLibrary
+
         public Button button_Thoat;
         public Button button_QuanLyChuyen;
         public Label lbl_Name;
+
+        //Biến trạng thái cho phép thoát khỏi form
         public bool isExit = true;
+
+        //UserID đã đăng nhập vào Form này (MainForm)
         private int userID;
         public MainForm(int userid)
         {
             InitializeComponent();
 
-            //Lấy ID người dùng đã được đăng nhập, khai báo và truyền qua UserControl UC_DatVe
+            //Lấy ID người dùng đã được đăng nhập
             this.userID = userid;
             //instance = this;
             button_Thoat = btn_DoanhThu;
@@ -72,6 +77,7 @@ namespace DoAnCuoiKy
         private void btn_TrangChu_Click(object sender, EventArgs e)
         {
             panelContainer.Controls.Clear();
+            
         }
 
         private void Exit_ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -111,6 +117,28 @@ namespace DoAnCuoiKy
             UC_QLTK uC_QLTK = new UC_QLTK();
             uC_QLTK.UserID = this.userID;
             AddUserControl(uC_QLTK);
+        }
+
+        private void btn_QuanLyChuyen_Click(object sender, EventArgs e)
+        {
+            Account account = obj.GetAccount(this.userID);
+            int RoleID = obj.GetIDRole(account.UserID);
+            if (account != null) {
+                if(RoleID == 1)
+                {
+                    UC_QuanLyChuyen uC_QuanLyChuyen = new UC_QuanLyChuyen();
+                    AddUserControl(uC_QuanLyChuyen);
+                }
+                else
+                {
+                    MessageBox.Show("Bạn không đủ quyền hạn để thực hiện việc này.","Cảnh báo",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chưa đăng nhập hoặc người dùng không tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

@@ -11,13 +11,17 @@ using System.Windows.Forms;
 
 namespace DoAnCuoiKy
 {
-    public partial class UC_TraCuuVe : UserControl
+    public partial class UC_QuanLyChuyen : UserControl
     {
         BanVeXe obj = new BanVeXe();
-        public UC_TraCuuVe()
+        QLC_Sua QLC_Sua = new QLC_Sua();
+        QLC_Them QLC_Them = new QLC_Them();
+        public UC_QuanLyChuyen()
         {
             InitializeComponent();
         }
+
+        //Autosize datagridview thôi ;)
         private void autosizedgv(object sender)
         {
             DataGridView dataGridView = sender as DataGridView;
@@ -39,30 +43,17 @@ namespace DoAnCuoiKy
                 dataGridView.Columns[i].Width = colw;
             }
         }
-        private void UC_TraCuuVe_Load(object sender, EventArgs e)
+
+        private void UC_QuanLyChuyen_Load(object sender, EventArgs e)
         {
-            autosizedgv(dataGridView_TraCuuVe);
-            //LOAD database cho các Tuyến
-            string sqlstart = "select StartLocation from Route group by StartLocation";
-            comboBox_Start.DataSource = obj.GetListOneColumn(sqlstart);
-            string sqlend = "select EndLocation from Route group by EndLocation";
-            comboBox_End.DataSource = obj.GetListOneColumn(sqlend);
+            string sqls = "select B.BusID, BusNumber, TotalSeat, BusType,  DepartureTime, ArrivalTime \r\nfrom  Bus B \r\nInner join Trip T on b.BusID=t.BusID \r\n";
+            dataGridView_TatCaChuyenXe.DataSource = obj.GetDataTable(sqls);
+            autosizedgv(dataGridView_TatCaChuyenXe);
         }
 
-        private void btnTraCuu_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtSDT.Text == string.Empty)
-            {
-                MessageBox.Show("Bạn phải nhập Số điện thoại!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSDT.Focus();
-            }
-            else
-            {
-                string dpt = dateTimePicker_StartDay.Value.ToString("yyyy/MM/dd");
-                dataGridView_TraCuuVe.DataSource = obj.GetDataTable(txtSDT.Text, dpt, "TraCuuVe");
-
-                autosizedgv(dataGridView_TraCuuVe);
-            }
+            QLC_Them.ShowDialog();
         }
     }
 }

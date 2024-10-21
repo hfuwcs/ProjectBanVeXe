@@ -68,6 +68,8 @@ namespace DoAnCuoiKy
 
                 //Đặt biến isLogin để biết người dùng đã đăng nhập thành công
                 isLogin = true;
+
+                //Truyền UserID cho MainForm để cho biết người dùng nào đã đăng nhập
                 MainForm mainForm = new MainForm(account.UserID);
                 mainForm.Show();//Mở form chính
                 this.Hide();//Đóng form đăng nhập

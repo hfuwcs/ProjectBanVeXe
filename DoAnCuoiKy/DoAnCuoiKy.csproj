@@ -65,12 +65,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyChuyen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyChuyen.Designer.cs">
-      <DependentUpon>QuanLyChuyen.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +79,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLC_Sua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLC_Sua.Designer.cs">
+      <DependentUpon>QLC_Sua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLC_Them.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLC_Them.Designer.cs">
+      <DependentUpon>QLC_Them.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_DatVe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,6 +109,12 @@
     <Compile Include="UC_QLTK.Designer.cs">
       <DependentUpon>UC_QLTK.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_QuanLyChuyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanLyChuyen.Designer.cs">
+      <DependentUpon>UC_QuanLyChuyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_TraCuuVe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,8 +130,8 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyChuyen.resx">
-      <DependentUpon>QuanLyChuyen.cs</DependentUpon>
+    <EmbeddedResource Include="QLC_Them.resx">
+      <DependentUpon>QLC_Them.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
@@ -137,6 +149,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QLC_Sua.resx">
+      <DependentUpon>QLC_Sua.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_DatVe.resx">
       <DependentUpon>UC_DatVe.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_QLTK.resx">
       <DependentUpon>UC_QLTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanLyChuyen.resx">
+      <DependentUpon>UC_QuanLyChuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_TraCuuVe.resx">
       <DependentUpon>UC_TraCuuVe.cs</DependentUpon>

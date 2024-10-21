@@ -11,13 +11,14 @@ using System.Windows.Forms;
 
 namespace DoAnCuoiKy
 {
-    public partial class UC_TraCuuVe : UserControl
+    public partial class QLC_Sua : Form
     {
         BanVeXe obj = new BanVeXe();
-        public UC_TraCuuVe()
+        public QLC_Sua()
         {
             InitializeComponent();
         }
+        //autosize datagridview
         private void autosizedgv(object sender)
         {
             DataGridView dataGridView = sender as DataGridView;
@@ -39,30 +40,18 @@ namespace DoAnCuoiKy
                 dataGridView.Columns[i].Width = colw;
             }
         }
-        private void UC_TraCuuVe_Load(object sender, EventArgs e)
+        private void ThemXoa_QLChuyen_Load(object sender, EventArgs e)
         {
-            autosizedgv(dataGridView_TraCuuVe);
-            //LOAD database cho các Tuyến
             string sqlstart = "select StartLocation from Route group by StartLocation";
             comboBox_Start.DataSource = obj.GetListOneColumn(sqlstart);
             string sqlend = "select EndLocation from Route group by EndLocation";
             comboBox_End.DataSource = obj.GetListOneColumn(sqlend);
+
+            string sqlBus = "Select * from Bus";
+            //obj.GetDataTable(sqlBus,"Bus");
+            dataGridView_Bus.DataSource = obj.GetDataTable(sqlBus);
+            autosizedgv(dataGridView_Bus);
         }
 
-        private void btnTraCuu_Click(object sender, EventArgs e)
-        {
-            if (txtSDT.Text == string.Empty)
-            {
-                MessageBox.Show("Bạn phải nhập Số điện thoại!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSDT.Focus();
-            }
-            else
-            {
-                string dpt = dateTimePicker_StartDay.Value.ToString("yyyy/MM/dd");
-                dataGridView_TraCuuVe.DataSource = obj.GetDataTable(txtSDT.Text, dpt, "TraCuuVe");
-
-                autosizedgv(dataGridView_TraCuuVe);
-            }
-        }
     }
 }

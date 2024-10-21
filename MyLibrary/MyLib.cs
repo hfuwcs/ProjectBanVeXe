@@ -15,7 +15,7 @@ namespace MyLibrary
 {
     public class BanVeXe
     {
-        public string constr = "Data Source=FUC;Initial Catalog=DB_DoAnBanVeXe;Integrated Security=True";
+        public string constr = "Data Source=FUC;Initial Catalog=DB_DoAnBanVeXe2;Integrated Security=True";
         private SqlConnection _conn;
         private string _strConnect, _strServerName, _strDBName, _strUserID, _strPassword;
         DataSet _dataSet = new DataSet();
@@ -86,6 +86,7 @@ namespace MyLibrary
             }
             conn.Dispose();
         }
+        
         //START: Xử lý logic
         //Kiểm tra acc đăng nhập đúng tài khoản mật khẩu trong Database không
         public bool CheckUser(Account account)
@@ -102,8 +103,6 @@ namespace MyLibrary
         //END: Xử lý logic
 
         //START: Xử lý Database
-
-
             //START: Xử lý account/tài khoản
 
         //Lấy Tài khoản bằng ID
@@ -184,6 +183,21 @@ namespace MyLibrary
             return str;
         }
         
+        public int GetIDRole(int userid)
+        {
+            int roleid = 0;
+            string sqlGetIDRole = "SELECT RoleID from UserRoles where userid = @userid";
+            SqlCommand cmd = new SqlCommand(sqlGetIDRole, conn);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@userid", userid);
+
+            OpenConnect();
+            roleid = Convert.ToInt32(cmd.ExecuteScalar());
+            CloseConnect() ;
+
+            return roleid;
+        }
+
 
         //Đổi mật khẩu
         public int ChangePassword(int userid, string newPassword)
@@ -247,6 +261,7 @@ namespace MyLibrary
             //END: Xử lý Doanh thu
 
 
+
             //START: Xử lý hành khách/Passenger
 
         //Lấy thông tin 1 khách hàng bằng SĐT và Email
@@ -279,6 +294,8 @@ namespace MyLibrary
             string sqls = "Insert into Passenger VALUES (@FullName, @PhoneNumber ,@Email)";
             SqlCommand cmd =new SqlCommand(sqls,conn);
             cmd.CommandType = CommandType.Text;
+
+            //Truyền tham số
             cmd.Parameters.AddWithValue("@FullName", hoten);
             cmd.Parameters.AddWithValue("@PhoneNumber", sdt);
             cmd.Parameters.AddWithValue ("@Email", email);
@@ -290,6 +307,9 @@ namespace MyLibrary
 
 
         //END: Xử lý hành khách/Passenger
+        
+
+
 
         //START: Xử lý Vé/Ticket
 
@@ -299,6 +319,8 @@ namespace MyLibrary
             string sqls = "Insert into OrderTicket([PassengerID], [Total], [OrderDate], [UserID]) VALUES (@pID, @Total ,@today, @UserID)";
             SqlCommand cmd = new SqlCommand(sqls, conn);
             cmd.CommandType = CommandType.Text;
+
+            //Truyền tham số
             cmd.Parameters.AddWithValue("@pID", pID);
             cmd.Parameters.AddWithValue("@Total", 0);
             cmd.Parameters.AddWithValue("@today", today);
@@ -316,6 +338,8 @@ namespace MyLibrary
                             "VALUES(@OrderTicketID,  @TripID, @SeatID, @IsBooked, @Price)";
             SqlCommand cmd = new SqlCommand(sqls, conn);
             cmd.CommandType= CommandType.Text;
+
+            //Truyền tham số
             cmd.Parameters.AddWithValue("@OrderTicketID", OrderTicketID);
             cmd.Parameters.AddWithValue("@TripID", TripID);
             cmd.Parameters.AddWithValue("@SeatID", SeatID);
@@ -351,16 +375,73 @@ namespace MyLibrary
 
         //END: Xử lý Vé/Ticket
 
-        public List<string> GetListOneColumn(string sqls)
+        //Xử lý Bus
+        public DataTable GetBus(List<int> readyBuses, string tableName)
+        {
+            // Trả về null hoặc DataTable rỗng nếu không có Bus ID
+            if (readyBuses == null || readyBuses.Count == 0)
+            {
+                return null; 
+            }
+
+            // Tạo danh sách các tham số để sử dụng trong câu truy vấn
+            List<string> parameters = new List<string>();
+            for (int i = 0; i < readyBuses.Count; i++)
+            {
+                parameters.Add($"@busid{i}"); // Tạo tham số như @busid0, @busid1,...
+            }
+
+            //Phải đặt dấu $ thì nó mới cho điền hàm vào
+            //Kiểu như Ajax
+            string sqls = $"SELECT * FROM TRIP WHERE BusID IN ({string.Join(", ", parameters)}) AND DATEDIFF(HOUR, GETDATE(), ArrivalTime) > 0";
+
+            SqlCommand cmd = new SqlCommand(sqls, conn);
+
+            // Thêm các tham số với giá trị tương ứng
+            for (int i = 0; i < readyBuses.Count; i++)
+            {
+                cmd.Parameters.AddWithValue($"@busid{i}", readyBuses[i]);
+            }
+
+            OpenConnect();
+
+            // Tạo SqlDataAdapter để thực thi câu lệnh SQL
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            DataSet dataSet = new DataSet();
+
+            ada.Fill(dataSet, tableName);
+
+            return dataSet.Tables[tableName];
+        }
+
+
+        public List<string> GetListOneColumn(string sqlstring)
         {
             List<string> list = new List<string>();
-            SqlCommand cmd = new SqlCommand(sqls, conn);
+            SqlCommand cmd = new SqlCommand(sqlstring, conn);
             cmd.CommandType = CommandType.Text;
             OpenConnect();
             SqlDataReader rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
                 list.Add(rdr.GetString(0));
+            }
+            CloseConnect();
+            return list;
+
+        }
+
+        public List<int> GetListIntOneColumn(string slqint)
+        {
+            List<int> list = new List<int>();
+            SqlCommand cmd = new SqlCommand(slqint, conn);
+            cmd.CommandType = CommandType.Text;
+            OpenConnect();
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                list.Add(rdr.GetInt32(0));
             }
             CloseConnect();
             return list;
