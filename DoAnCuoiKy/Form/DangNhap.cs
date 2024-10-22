@@ -87,6 +87,7 @@ namespace DoAnCuoiKy
         {
             (sender as MainForm).isExit = false;
             (sender as MainForm).Close();
+            obj.OpenConnect();
             this.Show(); 
         }
 

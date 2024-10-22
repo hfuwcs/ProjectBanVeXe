@@ -3,36 +3,27 @@
   "WorkspaceRootPath": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\test\\projectbanvexe\\doancuoiky\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5E53A555-935D-4702-A14F-AD9E55F10A10}|..\\MyLibrary\\MyLibrary.csproj|d:\\hk5\\dotnet\\test\\projectbanvexe\\mylibrary\\mylib.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\test\\projectbanvexe\\doancuoiky\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\form\\qlc_them.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\qlc_them.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\form\\qlc_them.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\qlc_them.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\qlc_them.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:qlc_them.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\form\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\uc_doangthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:uc_doangthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\form\\uc_doangthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\uc_doangthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +33,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,65 +41,61 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\MainForm.cs",
-              "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\MainForm.cs",
-              "RelativeToolTip": "MainForm.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAiwEUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T03:37:17.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\MainForm.cs",
-              "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\MainForm.cs [Design]",
-              "RelativeToolTip": "MainForm.cs [Design]",
+              "Title": "MyLib.cs",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\MyLibrary\\MyLib.cs",
+              "RelativeDocumentMoniker": "..\\MyLibrary\\MyLib.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\MyLibrary\\MyLib.cs",
+              "RelativeToolTip": "..\\MyLibrary\\MyLib.cs",
+              "ViewState": "AQIAAM0BAAAAAAAAAAAgwPoBAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T03:33:13.748Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "QLC_Them.cs [Design]",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\QLC_Them.cs",
-              "RelativeDocumentMoniker": "QLC_Them.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\QLC_Them.cs [Design]",
-              "RelativeToolTip": "QLC_Them.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T15:59:01.068Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UC_DatVe.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\UC_DatVe.cs",
-              "RelativeDocumentMoniker": "UC_DatVe.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\UC_DatVe.cs",
-              "RelativeToolTip": "UC_DatVe.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T15:41:14.179Z",
+              "WhenOpened": "2024-10-22T08:08:56.003Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "QLC_Them.cs",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\QLC_Them.cs",
+              "RelativeDocumentMoniker": "Form\\QLC_Them.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\QLC_Them.cs",
+              "RelativeToolTip": "Form\\QLC_Them.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAuwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T07:26:23.684Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UC_DatVe.cs [Design]",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\UC_DatVe.cs",
-              "RelativeDocumentMoniker": "UC_DatVe.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\UC_DatVe.cs [Design]",
-              "RelativeToolTip": "UC_DatVe.cs [Design]",
+              "Title": "QLC_Them.cs [Design]",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\QLC_Them.cs",
+              "RelativeDocumentMoniker": "Form\\QLC_Them.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\QLC_Them.cs [Design]",
+              "RelativeToolTip": "Form\\QLC_Them.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T15:41:12.612Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-22T07:26:21.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UC_DoangThu.cs [Design]",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_DoangThu.cs",
+              "RelativeDocumentMoniker": "Form\\UC_DoangThu.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_DoangThu.cs [Design]",
+              "RelativeToolTip": "Form\\UC_DoangThu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T06:00:20.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\MainForm.cs",
+              "RelativeDocumentMoniker": "Form\\MainForm.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\MainForm.cs [Design]",
+              "RelativeToolTip": "Form\\MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T05:49:33.164Z"
             },
             {
               "$type": "Document",
@@ -118,34 +105,9 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAOAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T15:41:03.598Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UC_DoangThu.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\UC_DoangThu.cs",
-              "RelativeDocumentMoniker": "UC_DoangThu.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\UC_DoangThu.cs",
-              "RelativeToolTip": "UC_DoangThu.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T15:40:14.788Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Test.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Test.cs",
-              "RelativeDocumentMoniker": "Test.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Test.cs",
-              "RelativeToolTip": "Test.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAYwBgAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T15:26:57.219Z"
+              "WhenOpened": "2024-10-22T04:43:40.473Z"
             }
           ]
         }

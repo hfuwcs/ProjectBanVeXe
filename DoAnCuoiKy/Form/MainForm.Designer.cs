@@ -43,6 +43,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel_logo = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.panel_logo);
             this.splitContainer1.Panel1.Controls.Add(this.panel_Sidebar);
             // 
             // splitContainer1.Panel2
@@ -81,16 +83,15 @@
             this.panel_Sidebar.Controls.Add(this.btn_TraCuuVe);
             this.panel_Sidebar.Controls.Add(this.btn_BanVe);
             this.panel_Sidebar.Controls.Add(this.btn_QuanLyChuyen);
-            this.panel_Sidebar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Sidebar.Location = new System.Drawing.Point(0, 0);
+            this.panel_Sidebar.Location = new System.Drawing.Point(0, 91);
             this.panel_Sidebar.Name = "panel_Sidebar";
-            this.panel_Sidebar.Size = new System.Drawing.Size(210, 742);
+            this.panel_Sidebar.Size = new System.Drawing.Size(210, 649);
             this.panel_Sidebar.TabIndex = 0;
             // 
             // btn_DangXuat
             // 
             this.btn_DangXuat.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DangXuat.Location = new System.Drawing.Point(12, 568);
+            this.btn_DangXuat.Location = new System.Drawing.Point(3, 522);
             this.btn_DangXuat.Name = "btn_DangXuat";
             this.btn_DangXuat.Size = new System.Drawing.Size(195, 57);
             this.btn_DangXuat.TabIndex = 33;
@@ -101,7 +102,7 @@
             // btn_DoanhThu
             // 
             this.btn_DoanhThu.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DoanhThu.Location = new System.Drawing.Point(12, 488);
+            this.btn_DoanhThu.Location = new System.Drawing.Point(3, 442);
             this.btn_DoanhThu.Name = "btn_DoanhThu";
             this.btn_DoanhThu.Size = new System.Drawing.Size(195, 74);
             this.btn_DoanhThu.TabIndex = 29;
@@ -112,7 +113,7 @@
             // btn_QuanLyTaiKhoan
             // 
             this.btn_QuanLyTaiKhoan.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_QuanLyTaiKhoan.Location = new System.Drawing.Point(12, 386);
+            this.btn_QuanLyTaiKhoan.Location = new System.Drawing.Point(3, 340);
             this.btn_QuanLyTaiKhoan.Name = "btn_QuanLyTaiKhoan";
             this.btn_QuanLyTaiKhoan.Size = new System.Drawing.Size(195, 96);
             this.btn_QuanLyTaiKhoan.TabIndex = 32;
@@ -123,7 +124,7 @@
             // btn_TrangChu
             // 
             this.btn_TrangChu.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TrangChu.Location = new System.Drawing.Point(12, 49);
+            this.btn_TrangChu.Location = new System.Drawing.Point(3, 3);
             this.btn_TrangChu.Name = "btn_TrangChu";
             this.btn_TrangChu.Size = new System.Drawing.Size(195, 65);
             this.btn_TrangChu.TabIndex = 26;
@@ -134,7 +135,7 @@
             // btn_TraCuuVe
             // 
             this.btn_TraCuuVe.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TraCuuVe.Location = new System.Drawing.Point(12, 203);
+            this.btn_TraCuuVe.Location = new System.Drawing.Point(3, 157);
             this.btn_TraCuuVe.Name = "btn_TraCuuVe";
             this.btn_TraCuuVe.Size = new System.Drawing.Size(195, 65);
             this.btn_TraCuuVe.TabIndex = 31;
@@ -145,7 +146,7 @@
             // btn_BanVe
             // 
             this.btn_BanVe.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BanVe.Location = new System.Drawing.Point(12, 120);
+            this.btn_BanVe.Location = new System.Drawing.Point(3, 74);
             this.btn_BanVe.Name = "btn_BanVe";
             this.btn_BanVe.Size = new System.Drawing.Size(195, 65);
             this.btn_BanVe.TabIndex = 27;
@@ -156,7 +157,7 @@
             // btn_QuanLyChuyen
             // 
             this.btn_QuanLyChuyen.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_QuanLyChuyen.Location = new System.Drawing.Point(12, 274);
+            this.btn_QuanLyChuyen.Location = new System.Drawing.Point(3, 228);
             this.btn_QuanLyChuyen.Name = "btn_QuanLyChuyen";
             this.btn_QuanLyChuyen.Size = new System.Drawing.Size(195, 96);
             this.btn_QuanLyChuyen.TabIndex = 28;
@@ -230,6 +231,14 @@
             this.Exit_ToolStripMenuItem.Text = "Thoát";
             this.Exit_ToolStripMenuItem.Click += new System.EventHandler(this.Exit_ToolStripMenuItem_Click);
             // 
+            // panel_logo
+            // 
+            this.panel_logo.BackColor = System.Drawing.Color.IndianRed;
+            this.panel_logo.Location = new System.Drawing.Point(3, 4);
+            this.panel_logo.Name = "panel_logo";
+            this.panel_logo.Size = new System.Drawing.Size(204, 81);
+            this.panel_logo.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -281,6 +290,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Exit_ToolStripMenuItem;
+        private System.Windows.Forms.Panel panel_logo;
     }
 }
 

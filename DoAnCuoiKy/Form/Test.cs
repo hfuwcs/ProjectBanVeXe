@@ -36,6 +36,7 @@ namespace DoAnCuoiKy
         {
             string sqlinsert = "Insert into UserAccount([FullName],[Email] ,[Password]) VALUES(@name,@email,@pass)";
             obj.OpenConnect();
+            userada.TableMappings.Add("UserAccount", tableName);
             userada = obj.GetDataAdapter(sqls, tableName);
             userada.InsertCommand = new SqlCommand(sqlinsert,obj.conn);
             userada.InsertCommand.Parameters.AddWithValue("@name", "TEST");

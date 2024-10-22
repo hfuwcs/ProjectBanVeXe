@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Configuration;
+using System.Reflection;
 
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
 using DoAnCuoiKy.BusinessClass;
 using MyLibrary.BusinessClass;
 using System.Globalization;
@@ -495,7 +496,22 @@ namespace MyLibrary
             CloseConnect();
             return dataTable;
         }
-
+        public object getExecuteScalar(string sql)
+        {
+            OpenConnect();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            object kq = cmd.ExecuteScalar();
+            CloseConnect();
+            return kq;
+        }
+        public int getExecuteNonQuery(string sql)
+        {
+            OpenConnect();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int kq = cmd.ExecuteNonQuery();
+            CloseConnect();
+            return kq;
+        }
         //END: Xử lý Database
     }
 }

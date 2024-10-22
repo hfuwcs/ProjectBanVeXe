@@ -47,102 +47,102 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DangNhap.cs">
+    <Compile Include="Form\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhap.Designer.cs">
+    <Compile Include="Form\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoiMatKhau.cs">
+    <Compile Include="Form\DoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoiMatKhau.Designer.cs">
+    <Compile Include="Form\DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Form\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Form\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHoaDon.cs">
+    <Compile Include="Form\frmHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHoaDon.Designer.cs">
+    <Compile Include="Form\frmHoaDon.Designer.cs">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongTin.cs">
+    <Compile Include="Form\frmThongTin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongTin.Designer.cs">
+    <Compile Include="Form\frmThongTin.Designer.cs">
       <DependentUpon>frmThongTin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLC_Sua.cs">
+    <Compile Include="Form\QLC_Sua.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLC_Sua.Designer.cs">
+    <Compile Include="Form\QLC_Sua.Designer.cs">
       <DependentUpon>QLC_Sua.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLC_Them.cs">
+    <Compile Include="Form\QLC_Them.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLC_Them.Designer.cs">
+    <Compile Include="Form\QLC_Them.Designer.cs">
       <DependentUpon>QLC_Them.cs</DependentUpon>
     </Compile>
-    <Compile Include="Test.cs">
+    <Compile Include="Form\Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Test.Designer.cs">
+    <Compile Include="Form\Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_DatVe.cs">
+    <Compile Include="Form\UC_DatVe.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_DatVe.Designer.cs">
+    <Compile Include="Form\UC_DatVe.Designer.cs">
       <DependentUpon>UC_DatVe.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_DoangThu.cs">
+    <Compile Include="Form\UC_DoangThu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_DoangThu.Designer.cs">
+    <Compile Include="Form\UC_DoangThu.Designer.cs">
       <DependentUpon>UC_DoangThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_QLTK.cs">
+    <Compile Include="Form\UC_QLTK.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_QLTK.Designer.cs">
+    <Compile Include="Form\UC_QLTK.Designer.cs">
       <DependentUpon>UC_QLTK.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_QuanLyChuyen.cs">
+    <Compile Include="Form\UC_QuanLyChuyen.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_QuanLyChuyen.Designer.cs">
+    <Compile Include="Form\UC_QuanLyChuyen.Designer.cs">
       <DependentUpon>UC_QuanLyChuyen.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_TraCuuVe.cs">
+    <Compile Include="Form\UC_TraCuuVe.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_TraCuuVe.Designer.cs">
+    <Compile Include="Form\UC_TraCuuVe.Designer.cs">
       <DependentUpon>UC_TraCuuVe.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DangNhap.resx">
+    <EmbeddedResource Include="Form\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoiMatKhau.resx">
+    <EmbeddedResource Include="Form\DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Form\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLC_Them.resx">
+    <EmbeddedResource Include="Form\QLC_Them.resx">
       <DependentUpon>QLC_Them.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHoaDon.resx">
+    <EmbeddedResource Include="Form\frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongTin.resx">
+    <EmbeddedResource Include="Form\frmThongTin.resx">
       <DependentUpon>frmThongTin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -155,25 +155,25 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QLC_Sua.resx">
+    <EmbeddedResource Include="Form\QLC_Sua.resx">
       <DependentUpon>QLC_Sua.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Test.resx">
+    <EmbeddedResource Include="Form\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_DatVe.resx">
+    <EmbeddedResource Include="Form\UC_DatVe.resx">
       <DependentUpon>UC_DatVe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_DoangThu.resx">
+    <EmbeddedResource Include="Form\UC_DoangThu.resx">
       <DependentUpon>UC_DoangThu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_QLTK.resx">
+    <EmbeddedResource Include="Form\UC_QLTK.resx">
       <DependentUpon>UC_QLTK.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_QuanLyChuyen.resx">
+    <EmbeddedResource Include="Form\UC_QuanLyChuyen.resx">
       <DependentUpon>UC_QuanLyChuyen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_TraCuuVe.resx">
+    <EmbeddedResource Include="Form\UC_TraCuuVe.resx">
       <DependentUpon>UC_TraCuuVe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
