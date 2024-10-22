@@ -249,6 +249,7 @@ namespace DoAnCuoiKy
             else
             {
                 string today = DateTime.Now.Date.ToString("yyyy/MM/dd");
+
                 Passenger passenger = obj.GetOnePassenger(txtSDT.Text,txtEmail.Text);
                 if (passenger.PassengerID == 0)
                 {

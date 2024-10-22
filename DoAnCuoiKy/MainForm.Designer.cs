@@ -39,7 +39,6 @@
             this.btn_QuanLyChuyen = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.label_Name = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -168,7 +167,6 @@
             // panelContainer
             // 
             this.panelContainer.Controls.Add(this.label_Name);
-            this.panelContainer.Controls.Add(this.button1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelContainer.Location = new System.Drawing.Point(0, 0);
@@ -180,22 +178,11 @@
             // 
             this.label_Name.AutoSize = true;
             this.label_Name.Font = new System.Drawing.Font("Montserrat", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Name.Location = new System.Drawing.Point(169, 324);
+            this.label_Name.Location = new System.Drawing.Point(24, 39);
             this.label_Name.Name = "label_Name";
             this.label_Name.Size = new System.Drawing.Size(192, 46);
             this.label_Name.TabIndex = 1;
             this.label_Name.Text = "Xin chào: ";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Montserrat SemiBold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(359, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(259, 185);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Test";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // toolStripContainer1
             // 
@@ -290,7 +277,6 @@
         public System.Windows.Forms.Button btn_QuanLyChuyen;
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label_Name;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;

@@ -26,7 +26,7 @@ namespace DoAnCuoiKy
             //START: LOAD database cho Tuyen
             BanVeXe db1 = new BanVeXe();
             string sqls1 = "select StartLocation from Route group by StartLocation";
-            string tableName1 = "Route";
+            string tableName1 = "StartLocation";
             db1.GetDataAdapter(sqls1, tableName1);
 
             comboBox_Start.DataSource = db1.DataSet.Tables[0];
@@ -35,7 +35,7 @@ namespace DoAnCuoiKy
 
             BanVeXe db2 = new BanVeXe();
             string sqls2 = "select EndLocation from Route group by EndLocation";
-            string tableName2 = "Route";
+            string tableName2 = "EndLocation";
             db2.GetDataAdapter(sqls2, tableName2);
 
             comboBox_End.DataSource = db2.DataSet.Tables[0];

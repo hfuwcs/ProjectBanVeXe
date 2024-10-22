@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -32,6 +34,7 @@ namespace DoAnCuoiKy
         private void QLC_Them_Load(object sender, EventArgs e)
         {
             //Load các tuyến
+
             string sqlstart = "select StartLocation from Route group by StartLocation";
             comboBox_Start.DataSource = obj.GetListOneColumn(sqlstart);
             string sqlend = "select EndLocation from Route group by EndLocation";
@@ -60,6 +63,11 @@ namespace DoAnCuoiKy
         private void btn_Them_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Vẫn chưa thực hiện xong ;0");
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

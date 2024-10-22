@@ -37,6 +37,7 @@ namespace DoAnCuoiKy
             button_Thoat = btn_DoanhThu;
             button_QuanLyChuyen = btn_QuanLyChuyen;
             lbl_Name = label_Name;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
         private void AddUserControl(UserControl userControl)
         {
