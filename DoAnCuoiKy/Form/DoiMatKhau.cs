@@ -1,4 +1,4 @@
-﻿using DoAnCuoiKy.BusinessClass;
+﻿using MyLibrary.DTO;
 using MyLibrary;
 using System;
 using System.Collections.Generic;
@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyLibrary.BLL;
 
 namespace DoAnCuoiKy
 {
@@ -17,7 +18,7 @@ namespace DoAnCuoiKy
         public DoiMatKhau instance;
         private int _userID;
         private Account account;
-        BanVeXe obj = new BanVeXe();
+        DbContext obj = new DbContext();
         public int UserID
         {
             get { return _userID; }
@@ -32,9 +33,14 @@ namespace DoAnCuoiKy
             instance = this;
             InitializeComponent();
             this.UserID = userid;
-            account = obj.GetAccount(UserID);
+            account = AccountBLL.Instance.GetAccount(UserID);
 
             //Gán sự kiện EnterPassword và Leave cho 2 ô nhập password mới
+            RegisterControl();
+        }
+
+        void RegisterControl()
+        {
             txt_TypePass.Enter += EnterPassword;
             txt_RetypePass.Enter += EnterPassword;
             txt_TypePass.Leave += PasswordLeave;
@@ -60,6 +66,7 @@ namespace DoAnCuoiKy
             if (textBox.Text.Length == 0)
             {
                 textBox.ForeColor = Color.Gray;
+                textBox.Text = "Enter Password";
 
                 textBox.UseSystemPasswordChar = false;
 
@@ -76,21 +83,46 @@ namespace DoAnCuoiKy
         {
             this.Close();
         }
+        //string ErrorMesssage()
+        //{
+        //    string default_Text = "Enter Password";
+        //    if (!String.IsNullOrEmpty(txt_TypePass.Text) && !String.IsNullOrEmpty(txt_RetypePass.Text))
+        //    {
+        //        if (txt_TypePass.Text != txt_RetypePass.Text)
+        //        {
+        //            return "Mật khẩu không trùng khớp!";
+        //        }
+        //        else if 
+        //            ((String.IsNullOrEmpty(txt_RetypePass.Text) && txt_RetypePass.Text!=default_Text)
+        //                && (String.IsNullOrEmpty(txt_TypePass.Text) && txt_TypePass.Text != default_Text)
+        //            )
+        //        {
+        //            return "Nhập lại mật khẩu!";
+        //        }
+        //    }
+        //    return null;
+        //}
 
         private void btn_DoiMatKhau_Click(object sender, EventArgs e)
         {
+            string default_Text = "Enter Password";
             if (txt_RetypePass.Text != string.Empty && txt_TypePass.Text != string.Empty)
             {
-                if (txt_TypePass.Text != txt_RetypePass.Text)
+                if ((txt_TypePass.Text != txt_RetypePass.Text))
                 {
                     MessageBox.Show("Mật khẩu không trùng khớp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txt_TypePass.Focus();
                 }
-                else
+                else if (txt_RetypePass.Text != default_Text || txt_TypePass.Text != default_Text)
                 {
-                    obj.ChangePassword(UserID, txt_RetypePass.Text);
+                    AccountBLL.Instance.ChangePassword(txt_RetypePass.Text, UserID);
                     MessageBox.Show("Đổi mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Không được để trống mật khẩu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_TypePass.Focus();
                 }
             }
             else

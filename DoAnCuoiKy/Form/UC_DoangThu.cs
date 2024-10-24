@@ -13,7 +13,7 @@ namespace DoAnCuoiKy
 {
     public partial class UC_DoangThu : UserControl
     {
-        BanVeXe obj = new BanVeXe();
+        DbContext obj = new DbContext();
         public UC_DoangThu()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace DoAnCuoiKy
         private void UC_DoangThu_Load(object sender, EventArgs e)
         {
             //START: LOAD database cho Tuyen
-            BanVeXe db1 = new BanVeXe();
+            DbContext db1 = new DbContext();
             string sqls1 = "select StartLocation from Route group by StartLocation";
             string tableName1 = "StartLocation";
             db1.GetDataAdapter(sqls1, tableName1);
@@ -33,7 +33,7 @@ namespace DoAnCuoiKy
             comboBox_Start.ValueMember = "StartLocation";
             comboBox_Start.DisplayMember = "StartLocation";
 
-            BanVeXe db2 = new BanVeXe();
+            DbContext db2 = new DbContext();
             string sqls2 = "select EndLocation from Route group by EndLocation";
             string tableName2 = "EndLocation";
             db2.GetDataAdapter(sqls2, tableName2);

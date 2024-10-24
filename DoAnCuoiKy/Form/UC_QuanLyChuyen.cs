@@ -13,7 +13,7 @@ namespace DoAnCuoiKy
 {
     public partial class UC_QuanLyChuyen : UserControl
     {
-        BanVeXe obj = new BanVeXe();
+        DbContext obj = new DbContext();
         QLC_Sua QLC_Sua = new QLC_Sua();
         QLC_Them QLC_Them = new QLC_Them();
         public UC_QuanLyChuyen()

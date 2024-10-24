@@ -13,7 +13,7 @@ namespace DoAnCuoiKy
 {
     public partial class UC_TraCuuVe : UserControl
     {
-        BanVeXe obj = new BanVeXe();
+        DbContext obj = new DbContext();
         public UC_TraCuuVe()
         {
             InitializeComponent();

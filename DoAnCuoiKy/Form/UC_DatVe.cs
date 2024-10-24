@@ -17,7 +17,7 @@ namespace DoAnCuoiKy
 {
     public partial class UC_DatVe : UserControl
     {
-        BanVeXe obj = new BanVeXe();
+        DbContext obj = new DbContext();
         int totalPrice;
         public DangNhap dangNhap;
         private int _userID;
@@ -208,10 +208,12 @@ namespace DoAnCuoiKy
         {
             //LOAD database cho các Tuyến
             string sqlstart = "select StartLocation from Route group by StartLocation";
-            comboBox_Start.DataSource = obj.GetListOneColumn(sqlstart);
-
+            comboBox_Start.DataSource = obj.GetDataTable(sqlstart);//obj.GetListOneColumn(sqlstart);
+            comboBox_Start.DisplayMember = "StartLocation";
+            comboBox_Start.ValueMember = "StartLocation";
             string sqlend = "select EndLocation from Route group by EndLocation";
-            comboBox_End.DataSource = obj.GetListOneColumn(sqlend);
+            comboBox_End.DataSource = obj.GetDataTable(sqlend);//obj.GetListOneColumn(sqlend);
+            comboBox_End.DisplayMember = "EndLocation";
             autosizedgv(dataGridView_TimXe);
 
         }

@@ -15,7 +15,7 @@ namespace DoAnCuoiKy
 {
     public partial class QLC_Them : Form
     {
-        BanVeXe obj = new BanVeXe();
+        DbContext obj = new DbContext();
         public QLC_Them()
         {
             InitializeComponent();
