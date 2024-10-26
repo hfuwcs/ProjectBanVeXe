@@ -86,13 +86,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\AccountBLL.cs" />
+    <Compile Include="BLL\BusBLL.cs" />
+    <Compile Include="BLL\DetailsTicketBLL.cs" />
+    <Compile Include="BLL\DriverBLL.cs" />
+    <Compile Include="BLL\OrderTicketBLL.cs" />
     <Compile Include="BLL\PassengerBLL.cs" />
+    <Compile Include="BLL\RouteBLL.cs" />
+    <Compile Include="BLL\SeatBLL.cs" />
+    <Compile Include="BLL\TripBLL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
+    <Compile Include="DAL\BusDAL.cs" />
+    <Compile Include="DAL\DetailsTicketDAL.cs" />
+    <Compile Include="DAL\DriverDAL.cs" />
+    <Compile Include="DAL\OrderTicketDAL.cs" />
     <Compile Include="DAL\PassengerDAL.cs" />
-    <Compile Include="DataProvider.cs" />
+    <Compile Include="DAL\RouteDAL.cs" />
+    <Compile Include="DAL\SeatDAL.cs" />
+    <Compile Include="DAL\TripDAL.cs" />
     <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Bus.cs" />
+    <Compile Include="DTO\DetailsTicket.cs" />
+    <Compile Include="DTO\Driver.cs" />
+    <Compile Include="DTO\OrderTicket.cs" />
     <Compile Include="DTO\Passenger.cs" />
     <Compile Include="DbContext.cs" />
+    <Compile Include="DTO\Route.cs" />
+    <Compile Include="DTO\Seat.cs" />
+    <Compile Include="DTO\Trip.cs" />
+    <Compile Include="Helpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

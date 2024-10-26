@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyLibrary.BLL;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
+using System.Security.Cryptography;
 
 namespace DoAnCuoiKy
 {
@@ -136,8 +138,7 @@ namespace DoAnCuoiKy
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string str = AccountBLL.Instance.GetRoleName(4);
-            lbl_Name.Text += str;
+            BusBLL.Instance.GetListBookedSeat(1);
         }
     }
 }

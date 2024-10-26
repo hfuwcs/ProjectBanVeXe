@@ -30,21 +30,20 @@
         {
             this.lblTuyen = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox_End = new System.Windows.Forms.ComboBox();
-            this.comboBox_Start = new System.Windows.Forms.ComboBox();
+            this.cbc_End = new System.Windows.Forms.ComboBox();
+            this.cbc_Start = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker_Endday = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker_StartDate = new System.Windows.Forms.DateTimePicker();
+            this.dtp_Endday = new System.Windows.Forms.DateTimePicker();
+            this.dtp_StartDate = new System.Windows.Forms.DateTimePicker();
             this.lblDenNgay = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dtp_Hours_End = new System.Windows.Forms.DateTimePicker();
-            this.dtp_Hours_Start = new System.Windows.Forms.DateTimePicker();
+            this.cbc_hStart = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgr_ReadyBus = new System.Windows.Forms.DataGridView();
             this.btn_Them = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbc_hEnd = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -66,65 +65,66 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.comboBox_End);
+            this.panel1.Controls.Add(this.cbc_End);
             this.panel1.Controls.Add(this.lblTuyen);
-            this.panel1.Controls.Add(this.comboBox_Start);
+            this.panel1.Controls.Add(this.cbc_Start);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(785, 100);
             this.panel1.TabIndex = 80;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // comboBox_End
+            // cbc_End
             // 
-            this.comboBox_End.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_End.FormattingEnabled = true;
-            this.comboBox_End.Location = new System.Drawing.Point(460, 36);
-            this.comboBox_End.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox_End.Name = "comboBox_End";
-            this.comboBox_End.Size = new System.Drawing.Size(168, 36);
-            this.comboBox_End.TabIndex = 83;
+            this.cbc_End.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbc_End.FormattingEnabled = true;
+            this.cbc_End.Location = new System.Drawing.Point(617, 36);
+            this.cbc_End.Margin = new System.Windows.Forms.Padding(4);
+            this.cbc_End.Name = "cbc_End";
+            this.cbc_End.Size = new System.Drawing.Size(168, 36);
+            this.cbc_End.TabIndex = 83;
+            this.cbc_End.Visible = false;
             // 
-            // comboBox_Start
+            // cbc_Start
             // 
-            this.comboBox_Start.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Start.FormattingEnabled = true;
-            this.comboBox_Start.Location = new System.Drawing.Point(219, 36);
-            this.comboBox_Start.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox_Start.Name = "comboBox_Start";
-            this.comboBox_Start.Size = new System.Drawing.Size(160, 36);
-            this.comboBox_Start.TabIndex = 82;
+            this.cbc_Start.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbc_Start.FormattingEnabled = true;
+            this.cbc_Start.Location = new System.Drawing.Point(219, 36);
+            this.cbc_Start.Margin = new System.Windows.Forms.Padding(4);
+            this.cbc_Start.Name = "cbc_Start";
+            this.cbc_Start.Size = new System.Drawing.Size(302, 36);
+            this.cbc_Start.TabIndex = 82;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(388, 36);
+            this.label2.Location = new System.Drawing.Point(545, 36);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 32);
             this.label2.TabIndex = 81;
             this.label2.Text = "=>";
+            this.label2.Visible = false;
             // 
-            // dateTimePicker_Endday
+            // dtp_Endday
             // 
-            this.dateTimePicker_Endday.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePicker_Endday.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_Endday.Location = new System.Drawing.Point(375, 115);
-            this.dateTimePicker_Endday.Name = "dateTimePicker_Endday";
-            this.dateTimePicker_Endday.Size = new System.Drawing.Size(273, 28);
-            this.dateTimePicker_Endday.TabIndex = 84;
+            this.dtp_Endday.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dtp_Endday.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_Endday.Location = new System.Drawing.Point(163, 105);
+            this.dtp_Endday.Name = "dtp_Endday";
+            this.dtp_Endday.Size = new System.Drawing.Size(273, 28);
+            this.dtp_Endday.TabIndex = 84;
             // 
-            // dateTimePicker_StartDate
+            // dtp_StartDate
             // 
-            this.dateTimePicker_StartDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePicker_StartDate.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_StartDate.Location = new System.Drawing.Point(375, 29);
-            this.dateTimePicker_StartDate.Name = "dateTimePicker_StartDate";
-            this.dateTimePicker_StartDate.Size = new System.Drawing.Size(273, 28);
-            this.dateTimePicker_StartDate.TabIndex = 83;
+            this.dtp_StartDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dtp_StartDate.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_StartDate.Location = new System.Drawing.Point(163, 29);
+            this.dtp_StartDate.Name = "dtp_StartDate";
+            this.dtp_StartDate.Size = new System.Drawing.Size(273, 28);
+            this.dtp_StartDate.TabIndex = 83;
             // 
             // lblDenNgay
             // 
@@ -139,41 +139,25 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dtp_Hours_End);
-            this.panel2.Controls.Add(this.dtp_Hours_Start);
-            this.panel2.Controls.Add(this.dateTimePicker_Endday);
+            this.panel2.Controls.Add(this.cbc_hEnd);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.cbc_hStart);
+            this.panel2.Controls.Add(this.dtp_Endday);
             this.panel2.Controls.Add(this.lblDenNgay);
-            this.panel2.Controls.Add(this.dateTimePicker_StartDate);
+            this.panel2.Controls.Add(this.dtp_StartDate);
             this.panel2.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 144);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(785, 176);
             this.panel2.TabIndex = 85;
             // 
-            // dtp_Hours_End
+            // cbc_hStart
             // 
-            this.dtp_Hours_End.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtp_Hours_End.CustomFormat = "HH:mm";
-            this.dtp_Hours_End.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_Hours_End.Location = new System.Drawing.Point(140, 115);
-            this.dtp_Hours_End.Name = "dtp_Hours_End";
-            this.dtp_Hours_End.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dtp_Hours_End.RightToLeftLayout = true;
-            this.dtp_Hours_End.Size = new System.Drawing.Size(195, 28);
-            this.dtp_Hours_End.TabIndex = 86;
-            // 
-            // dtp_Hours_Start
-            // 
-            this.dtp_Hours_Start.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtp_Hours_Start.CustomFormat = "HH:mm";
-            this.dtp_Hours_Start.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_Hours_Start.Location = new System.Drawing.Point(140, 29);
-            this.dtp_Hours_Start.Name = "dtp_Hours_Start";
-            this.dtp_Hours_Start.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dtp_Hours_Start.RightToLeftLayout = true;
-            this.dtp_Hours_Start.Size = new System.Drawing.Size(195, 28);
-            this.dtp_Hours_Start.TabIndex = 85;
-            this.dtp_Hours_Start.ValueChanged += new System.EventHandler(this.dtp_Hours_Start_ValueChanged);
+            this.cbc_hStart.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbc_hStart.Location = new System.Drawing.Point(608, 16);
+            this.cbc_hStart.Name = "cbc_hStart";
+            this.cbc_hStart.Size = new System.Drawing.Size(165, 31);
+            this.cbc_hStart.TabIndex = 87;
             // 
             // label1
             // 
@@ -217,35 +201,29 @@
             this.btn_Them.UseVisualStyleBackColor = true;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
-            // radioButton1
+            // label3
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(56, 502);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(100, 20);
-            this.radioButton1.TabIndex = 89;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(445, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 23);
+            this.label3.TabIndex = 88;
+            this.label3.Text = "Giờ khởi hành";
             // 
-            // radioButton2
+            // cbc_hEnd
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(184, 502);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(100, 20);
-            this.radioButton2.TabIndex = 90;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.cbc_hEnd.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbc_hEnd.Location = new System.Drawing.Point(608, 102);
+            this.cbc_hEnd.Name = "cbc_hEnd";
+            this.cbc_hEnd.Size = new System.Drawing.Size(165, 31);
+            this.cbc_hEnd.TabIndex = 89;
             // 
             // QLC_Them
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(786, 773);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.btn_Them);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
@@ -253,7 +231,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "QLC_Them";
             this.Text = "Them";
-            this.Load += new System.EventHandler(this.QLC_Them_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -269,20 +246,19 @@
 
         private System.Windows.Forms.Label lblTuyen;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox_End;
-        public System.Windows.Forms.ComboBox comboBox_Start;
+        private System.Windows.Forms.ComboBox cbc_End;
+        public System.Windows.Forms.ComboBox cbc_Start;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_Endday;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_StartDate;
+        private System.Windows.Forms.DateTimePicker dtp_Endday;
+        private System.Windows.Forms.DateTimePicker dtp_StartDate;
         private System.Windows.Forms.Label lblDenNgay;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DateTimePicker dtp_Hours_Start;
-        private System.Windows.Forms.DateTimePicker dtp_Hours_End;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgr_ReadyBus;
         private System.Windows.Forms.Button btn_Them;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.ComboBox cbc_hStart;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbc_hEnd;
     }
 }

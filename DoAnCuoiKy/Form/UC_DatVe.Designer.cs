@@ -41,6 +41,12 @@
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView_TimXe = new System.Windows.Forms.DataGridView();
+            this.BusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BusNumBer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalSeat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BusType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepartureTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ArrivalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTimChuyenXe = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -103,12 +109,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox_Start = new System.Windows.Forms.ComboBox();
             this.comboBox_End = new System.Windows.Forms.ComboBox();
-            this.BusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BusNumBer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalSeat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BusType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DepartureTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ArrivalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbc_hours = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TimXe)).BeginInit();
             this.panel2.SuspendLayout();
@@ -225,7 +226,7 @@
             this.dateTimePicker_StarDate.Location = new System.Drawing.Point(897, 164);
             this.dateTimePicker_StarDate.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker_StarDate.Name = "dateTimePicker_StarDate";
-            this.dateTimePicker_StarDate.Size = new System.Drawing.Size(440, 34);
+            this.dateTimePicker_StarDate.Size = new System.Drawing.Size(189, 34);
             this.dateTimePicker_StarDate.TabIndex = 70;
             // 
             // Thoat
@@ -279,6 +280,61 @@
             this.dataGridView_TimXe.Size = new System.Drawing.Size(725, 280);
             this.dataGridView_TimXe.TabIndex = 0;
             this.dataGridView_TimXe.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_TimXe_CellDoubleClick);
+            // 
+            // BusID
+            // 
+            this.BusID.DataPropertyName = "BusID";
+            this.BusID.HeaderText = "BusID";
+            this.BusID.MinimumWidth = 6;
+            this.BusID.Name = "BusID";
+            this.BusID.ReadOnly = true;
+            this.BusID.Visible = false;
+            this.BusID.Width = 125;
+            // 
+            // BusNumBer
+            // 
+            this.BusNumBer.DataPropertyName = "BusNumber";
+            this.BusNumBer.HeaderText = "Biển số xe";
+            this.BusNumBer.MinimumWidth = 6;
+            this.BusNumBer.Name = "BusNumBer";
+            this.BusNumBer.ReadOnly = true;
+            this.BusNumBer.Width = 125;
+            // 
+            // TotalSeat
+            // 
+            this.TotalSeat.DataPropertyName = "TotalSeat";
+            this.TotalSeat.HeaderText = "Tổng số ghế";
+            this.TotalSeat.MinimumWidth = 6;
+            this.TotalSeat.Name = "TotalSeat";
+            this.TotalSeat.ReadOnly = true;
+            this.TotalSeat.Width = 125;
+            // 
+            // BusType
+            // 
+            this.BusType.DataPropertyName = "BusType";
+            this.BusType.HeaderText = "Loại Xe";
+            this.BusType.MinimumWidth = 6;
+            this.BusType.Name = "BusType";
+            this.BusType.ReadOnly = true;
+            this.BusType.Width = 125;
+            // 
+            // DepartureTime
+            // 
+            this.DepartureTime.DataPropertyName = "DepartureTime";
+            this.DepartureTime.HeaderText = "Giờ khởi hành";
+            this.DepartureTime.MinimumWidth = 6;
+            this.DepartureTime.Name = "DepartureTime";
+            this.DepartureTime.ReadOnly = true;
+            this.DepartureTime.Width = 125;
+            // 
+            // ArrivalTime
+            // 
+            this.ArrivalTime.DataPropertyName = "ArrivalTime";
+            this.ArrivalTime.HeaderText = "Giờ cập bến";
+            this.ArrivalTime.MinimumWidth = 6;
+            this.ArrivalTime.Name = "ArrivalTime";
+            this.ArrivalTime.ReadOnly = true;
+            this.ArrivalTime.Width = 125;
             // 
             // btnTimChuyenXe
             // 
@@ -1099,65 +1155,20 @@
             this.comboBox_End.Size = new System.Drawing.Size(168, 36);
             this.comboBox_End.TabIndex = 74;
             // 
-            // BusID
+            // cbc_hours
             // 
-            this.BusID.DataPropertyName = "BusID";
-            this.BusID.HeaderText = "BusID";
-            this.BusID.MinimumWidth = 6;
-            this.BusID.Name = "BusID";
-            this.BusID.ReadOnly = true;
-            this.BusID.Visible = false;
-            this.BusID.Width = 125;
-            // 
-            // BusNumBer
-            // 
-            this.BusNumBer.DataPropertyName = "BusNumber";
-            this.BusNumBer.HeaderText = "Biển số xe";
-            this.BusNumBer.MinimumWidth = 6;
-            this.BusNumBer.Name = "BusNumBer";
-            this.BusNumBer.ReadOnly = true;
-            this.BusNumBer.Width = 125;
-            // 
-            // TotalSeat
-            // 
-            this.TotalSeat.DataPropertyName = "TotalSeat";
-            this.TotalSeat.HeaderText = "Tổng số ghế";
-            this.TotalSeat.MinimumWidth = 6;
-            this.TotalSeat.Name = "TotalSeat";
-            this.TotalSeat.ReadOnly = true;
-            this.TotalSeat.Width = 125;
-            // 
-            // BusType
-            // 
-            this.BusType.DataPropertyName = "BusType";
-            this.BusType.HeaderText = "Loại Xe";
-            this.BusType.MinimumWidth = 6;
-            this.BusType.Name = "BusType";
-            this.BusType.ReadOnly = true;
-            this.BusType.Width = 125;
-            // 
-            // DepartureTime
-            // 
-            this.DepartureTime.DataPropertyName = "DepartureTime";
-            this.DepartureTime.HeaderText = "Giờ khởi hành";
-            this.DepartureTime.MinimumWidth = 6;
-            this.DepartureTime.Name = "DepartureTime";
-            this.DepartureTime.ReadOnly = true;
-            this.DepartureTime.Width = 125;
-            // 
-            // ArrivalTime
-            // 
-            this.ArrivalTime.DataPropertyName = "ArrivalTime";
-            this.ArrivalTime.HeaderText = "Giờ cập bến";
-            this.ArrivalTime.MinimumWidth = 6;
-            this.ArrivalTime.Name = "ArrivalTime";
-            this.ArrivalTime.ReadOnly = true;
-            this.ArrivalTime.Width = 125;
+            this.cbc_hours.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbc_hours.FormattingEnabled = true;
+            this.cbc_hours.Location = new System.Drawing.Point(1117, 163);
+            this.cbc_hours.Name = "cbc_hours";
+            this.cbc_hours.Size = new System.Drawing.Size(203, 36);
+            this.cbc_hours.TabIndex = 76;
             // 
             // UC_DatVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbc_hours);
             this.Controls.Add(this.btnDatVe);
             this.Controls.Add(this.comboBox_End);
             this.Controls.Add(this.comboBox_Start);
@@ -1279,5 +1290,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BusType;
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartureTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ArrivalTime;
+        private System.Windows.Forms.ComboBox cbc_hours;
     }
 }

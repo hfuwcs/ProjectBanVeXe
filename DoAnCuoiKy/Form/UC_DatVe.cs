@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Security.Cryptography.X509Certificates;
+using MyLibrary.BLL;
 
 namespace DoAnCuoiKy
 {
@@ -40,6 +41,7 @@ namespace DoAnCuoiKy
             //Lấy 2 chữ số thập phân
             obj.nfi.CurrencyDecimalDigits = 2;
         }
+
 
         //Autosize datagridview
         private void autosizedgv(object sender)
@@ -206,37 +208,48 @@ namespace DoAnCuoiKy
 
         private void UC_DatVe_Load(object sender, EventArgs e)
         {
+            //Load giờ
+            cbc_hours.DataSource = MyLibrary.Helpers.Hours;
+
             //LOAD database cho các Tuyến
             string sqlstart = "select StartLocation from Route group by StartLocation";
-            comboBox_Start.DataSource = obj.GetDataTable(sqlstart);//obj.GetListOneColumn(sqlstart);
+            comboBox_Start.DataSource = obj.GetDataTable(sqlstart);
             comboBox_Start.DisplayMember = "StartLocation";
-            comboBox_Start.ValueMember = "StartLocation";
+
             string sqlend = "select EndLocation from Route group by EndLocation";
-            comboBox_End.DataSource = obj.GetDataTable(sqlend);//obj.GetListOneColumn(sqlend);
+            comboBox_End.DataSource = obj.GetDataTable(sqlend);
             comboBox_End.DisplayMember = "EndLocation";
             autosizedgv(dataGridView_TimXe);
 
         }
         private List<string> disableButtonList(int tripID)
         {
-            string sqls = "select SeatNumber from Seat S, DetailsTicket DT Where S.SeatID=DT.SeatID and TRIPID="+tripID.ToString();
-            List<string> list = obj.GetListOneColumn(sqls);
+            List<string> list = BusBLL.Instance.GetListBookedSeat(tripID);
             return list;
         }
 
+        private string deppDate()
+        {
+            string start_hours = cbc_hours.Text;
+            string selectedday = dateTimePicker_StarDate.Value.ToString("yyyy/MM/dd ");
+            selectedday += start_hours;
+            return selectedday;
+        }
 
         private void btnTimChuyenXe_Click(object sender, EventArgs e)
         {
-            string datepicker = dateTimePicker_StarDate.Value.ToString("yyyy/MM/dd HH:mm");
-            string sqls = "select B.BusID, BusNumber, TotalSeat, BusType,  DepartureTime, ArrivalTime from  Bus B Inner join Trip T on b.BusID=t.BusID WHERE DepartureLocation='" + comboBox_Start.Text.ToString() + "'  AND ArrivalLocation= '" + comboBox_End.Text.ToString() + "' AND DATEDIFF(DAY,T.DepartureTime,'"+ datepicker + "')=0";
-            dataGridView_TimXe.DataSource = obj.GetDataTable(sqls);
-
+            EnableAllSeats(this.Controls);
+            txtTamTinh.Text=string.Empty;
+            string selectedday = deppDate();
+            string deploc = comboBox_Start.Text;
+            string arrloc = comboBox_End.Text;
+            dataGridView_TimXe.DataSource = TripBLL.Instance.SearchTrip(deploc, arrloc, selectedday);
         }
         private void dataGridView_TimXe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             EnableAllSeats(this.Controls);
-            string sqlTripID = "  SELECT TripID FROM Trip WHERE DepartureLocation='" + comboBox_Start.Text + "'  AND ArrivalLocation= '" + comboBox_End.Text.ToString() + "'";
-            TripID = obj.GetOneID(sqlTripID);
+            string selectedday = deppDate();
+            TripID = TripBLL.Instance.GetTripID(comboBox_Start.Text, comboBox_End.Text,selectedday);
             List<string> list = disableButtonList(TripID);
             DisableButtons(this.Controls, list);
         }
@@ -250,7 +263,8 @@ namespace DoAnCuoiKy
             }
             else
             {
-                string today = DateTime.Now.Date.ToString("yyyy/MM/dd");
+                string OrderDate = DateTime.Now.Date.ToString("yyyy/MM/dd HH:mm");
+                string selectedDate = deppDate();
 
                 Passenger passenger = obj.GetOnePassenger(txtSDT.Text,txtEmail.Text);
                 if (passenger.PassengerID == 0)
@@ -259,18 +273,16 @@ namespace DoAnCuoiKy
                     passenger = obj.GetOnePassenger(txtSDT.Text, txtEmail.Text);
                 }
 
-                DangNhap dangNhap = new DangNhap();
+                //DangNhap dangNhap = new DangNhap();
 
-                //Tạo 1 record mới trong bảng OrderTicket (Tạo và lưu 1 giao dịch mới khi bấm đặt vé)
-                obj.InsertOrderTicket(passenger.PassengerID, today, UserID);
+                //Tạo 1 record mới trong bảng OrderTicket (Tạo và lưu giao dịch khi bấm đặt vé)
+                OrderTicketBLL.Instance.InsertOrderTicket(passenger.PassengerID, OrderDate, UserID);
 
                 //Lấy ID của giao dịch vừa tạo
-                string sqlOrderTicketID = "SELECT MAX(OrderTicketID) from OrderTicket where PassengerID = "+passenger.PassengerID+"";
-                int OrderTicketID = obj.GetOneID(sqlOrderTicketID);
+                int OrderTicketID = OrderTicketBLL.Instance.GetLatestOrderID(OrderDate, passenger.PassengerID);
 
                 //Lấy TripID
-                string sqlTripID = "  SELECT TripID FROM Trip WHERE DepartureLocation='" + comboBox_Start.Text + "'  AND ArrivalLocation= '" + comboBox_End.Text.ToString()+"'";
-                int TripID = obj.GetOneID(sqlTripID);
+                int TripID = TripBLL.Instance.GetTripID(comboBox_Start.Text, comboBox_End.Text, selectedDate);
 
                 //Lấy ID của Xe đang chứa ghế được chọn
                 int BusID = Convert.ToInt32(dataGridView_TimXe.CurrentRow.Cells[0].Value);
@@ -283,7 +295,7 @@ namespace DoAnCuoiKy
                     string sqlSeatID = "SELECT SEATID FROM SEAT WHERE SeatNumber='"+ghe+"' AND BusID = '"+BusID+"'";
                     int SeatID = obj.GetOneID(sqlSeatID);
 
-                    obj.InsertDetailsTicket(OrderTicketID,TripID, SeatID, 210000);
+                    DetailsTicketBLL.Instance.InsertDetailsTicket(OrderTicketID,TripID, SeatID, 1, 210000);
 
                 }
                 List<string> list = disableButtonList(TripID);

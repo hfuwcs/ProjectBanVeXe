@@ -10,64 +10,113 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyLibrary.BLL;
+using MyLibrary.DTO;
 
 namespace DoAnCuoiKy
 {
     public partial class QLC_Them : Form
     {
         DbContext obj = new DbContext();
+        private string today = DateTime.Now.ToString("yyyy/MM/dd HH:mm");
         public QLC_Them()
         {
             InitializeComponent();
+            LoadQLC();
         }
-
-        private void formatTimePicker(object sender)
-        {
-            DateTimePicker timerPicker = sender as DateTimePicker;
-            timerPicker.Format = DateTimePickerFormat.Time;
-            timerPicker.CustomFormat = "HH:mm";
-            timerPicker.ShowUpDown = true;
-            timerPicker.Value = DateTime.Today.AddHours(6);
-
-        }
-
-        private void QLC_Them_Load(object sender, EventArgs e)
+        private void LoadQLC()
         {
             //Load các tuyến
 
-            string sqlstart = "select StartLocation from Route group by StartLocation";
-            comboBox_Start.DataSource = obj.GetListOneColumn(sqlstart);
+            string sqlstart = "select RouteName from Route";
+            cbc_Start.DataSource = obj.GetDataTable(sqlstart);
+            cbc_Start.DisplayMember = "RouteName";
+
             string sqlend = "select EndLocation from Route group by EndLocation";
-            comboBox_End.DataSource = obj.GetListOneColumn(sqlend);
+            cbc_End.DataSource = obj.GetDataTable(sqlend);
+            cbc_End.DisplayMember = "EndLocation";
+
 
             //Lấy ID các Bus sẵn sàng:
-            string sqlReaduBuses = "SELECT BusID FROM TRIP WHERE DATEDIFF(HOUR,GETDATE(),ArrivalTime)>0";
-            List<int> readyBuses = obj.GetListIntOneColumn(sqlReaduBuses);
-            //Load Các xe còn sẵn sàng (còn có thể nhận chuyến mới, không trong chuyến cũ)
-            //string sqlAvlBus = "SELECT * FROM TRIP WHERE BusID=3 AND DATEDIFF(HOUR,GETDATE(),ArrivalTime)>0"
-            dgr_ReadyBus.DataSource = obj.GetBus(readyBuses, "Bus");
-            formatTimePicker(dtp_Hours_Start);
-            formatTimePicker(dtp_Hours_End);
+            dgr_ReadyBus.DataSource = BusBLL.Instance.GetBusReady(today);
+            cbc_hStart.DataSource = new BindingSource(MyLibrary.Helpers.Hours, null);
+            cbc_hEnd.DataSource = new BindingSource(MyLibrary.Helpers.Hours, null);
+            autosizedgv(dgr_ReadyBus);
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void autosizedgv(object sender)
         {
+            DataGridView dataGridView = sender as DataGridView;
+            // Set your desired AutoSize Mode:
+            dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-        }
+            // Now that DataGridView has calculated it's Widths; we can now store each column Width values.
+            for (int i = 0; i <= dataGridView.Columns.Count - 1; i++)
+            {
+                // Store Auto Sized Widths:
+                int colw = dataGridView.Columns[i].Width;
 
-        private void dtp_Hours_Start_ValueChanged(object sender, EventArgs e)
-        {
-            dtp_Hours_End.Value = DateTime.Today.AddHours(8);
+                // Remove AutoSizing:
+                dataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                // Set Width to calculated AutoSize value:
+                dataGridView.Columns[i].Width = colw;
+            }
         }
+        //private void QLC_Them_Load(object sender, EventArgs e)
+        //{
+        //    //Load các tuyến
+
+        //    string sqlstart = "select RouteName from Route";
+        //    cbc_Start.DataSource = obj.GetDataTable(sqlstart);
+        //    cbc_Start.DisplayMember = "RouteName";
+
+        //    string sqlend = "select EndLocation from Route group by EndLocation";
+        //    cbc_End.DataSource = obj.GetDataTable(sqlend);
+        //    cbc_End.DisplayMember = "EndLocation";
+
+
+        //    //Lấy ID các Bus sẵn sàng:
+        //    dgr_ReadyBus.DataSource = BusBLL.Instance.GetBusReady(today);
+        //    //cbc_hStart.DataSource = MyLibrary.Helpers.Hours;
+        //    //cbc_hend.DataSource = MyLibrary.Helpers.Hours;
+        //    autosizedgv(dgr_ReadyBus);
+        //}
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Vẫn chưa thực hiện xong ;0");
-        }
+            Random random = new Random();
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
+            //Lấy RouteID
+            Route route = RouteBLL.Instance.GetRouteByName(cbc_Start.Text);
+
+            List<int> readyBus = BusBLL.Instance.GetBusIDReady(today);
+            int readyBusID = Convert.ToInt32(dgr_ReadyBus.CurrentRow.Cells[0].Value);
+
+            //Lấy Random tài xế đang sẵn sàng
+            List<int> readyDriver = DriverBLL.Instance.GetReadyDriverID(today);
+            int randomIndex = random.Next(0, readyDriver.Count-1);
+            int readyDriverID = readyDriver[randomIndex];
+
+            //Lấy điểm đi và điểm đến
+            string depploc = cbc_Start.Text;
+            string arrloc = cbc_End.Text;
+
+            string depptime = dtp_StartDate.Value.ToString("yyyy/MM/dd ") + cbc_hStart.SelectedValue;
+            string arrtime = dtp_StartDate.Value.ToString("yyyy/MM/dd ") + cbc_hEnd.SelectedValue;
+
+            int res = TripBLL.Instance.InsertTrip(route.RouteID, readyBusID, readyDriverID, depploc, arrloc, depptime, arrtime);
+            if (res == 0)
+            {
+                MessageBox.Show("Thêm không thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Thêm thành công!");
+                dgr_ReadyBus.DataSource = BusBLL.Instance.GetBusReady(today);
+            }
+         }
     }
 }

@@ -14,7 +14,6 @@ namespace MyLibrary.DAL
     public class AccountDAL
     {
         private static AccountDAL instance;//Khai báo Instance để các Class khác có thể truy cập
-        //DbContext db = new DbContext(DbContext.ConnectionType.ConfigurationManager,"DefaultConnection");
         DbContext db = new DbContext();
         public static AccountDAL Instance
         {

@@ -385,7 +385,7 @@ namespace MyLibrary
 
             return data;
         }
-        public object ExecuteScalar(string sql, object[] parameter = null)
+        public int ExecuteScalar(string sql, object[] parameter = null)
         {
             OpenConnect();
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -404,11 +404,11 @@ namespace MyLibrary
                     }
                 }
             }
-            object kq = cmd.ExecuteScalar();
+            var kq = Convert.ToInt32(cmd.ExecuteScalar());
             CloseConnect();
             return kq;
         }
-        public object ExecuteNonQuery(string sql, object[] parameter =null)
+        public int ExecuteNonQuery(string sql, object[] parameter =null)
         {
             OpenConnect();
             SqlCommand cmd = new SqlCommand(sql, conn);
