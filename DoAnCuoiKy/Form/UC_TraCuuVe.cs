@@ -1,4 +1,5 @@
 ﻿using MyLibrary;
+using MyLibrary.BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace DoAnCuoiKy
 {
     public partial class UC_TraCuuVe : UserControl
     {
-        BanVeXe obj = new BanVeXe();
+        DbContext obj = new DbContext();
         public UC_TraCuuVe()
         {
             InitializeComponent();
@@ -44,9 +45,12 @@ namespace DoAnCuoiKy
             autosizedgv(dataGridView_TraCuuVe);
             //LOAD database cho các Tuyến
             string sqlstart = "select StartLocation from Route group by StartLocation";
-            comboBox_Start.DataSource = obj.GetListOneColumn(sqlstart);
+            comboBox_Start.DataSource = obj.GetDataTable(sqlstart);
+            comboBox_Start.DisplayMember = "StartLocation";
+
             string sqlend = "select EndLocation from Route group by EndLocation";
-            comboBox_End.DataSource = obj.GetListOneColumn(sqlend);
+            comboBox_End.DataSource = obj.GetDataTable(sqlend);
+            comboBox_End.DisplayMember = "EndLocation";
         }
 
         private void btnTraCuu_Click(object sender, EventArgs e)
@@ -59,7 +63,7 @@ namespace DoAnCuoiKy
             else
             {
                 string dpt = dateTimePicker_StartDay.Value.ToString("yyyy/MM/dd");
-                dataGridView_TraCuuVe.DataSource = obj.GetDataTable(txtSDT.Text, dpt, "TraCuuVe");
+                dataGridView_TraCuuVe.DataSource = DetailsTicketBLL.Instance.TRACUUVE(txtSDT.Text, dpt);//obj.GetDataTable(txtSDT.Text, dpt, "TraCuuVe");
 
                 autosizedgv(dataGridView_TraCuuVe);
             }

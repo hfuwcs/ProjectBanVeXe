@@ -1,4 +1,4 @@
-﻿using DoAnCuoiKy.BusinessClass;
+﻿using MyLibrary.DTO;
 using MyLibrary;
 using MyLibrary.BusinessClass;
 using System;
@@ -10,13 +10,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyLibrary.BLL;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
+using System.Security.Cryptography;
 
 namespace DoAnCuoiKy
 {
     public partial class MainForm : Form
     {
         MainForm ths;
-        BanVeXe obj = new BanVeXe();//Khai báo obj để xử dụng các method trong MyLibrary
+        DbContext db = new DbContext();//Khai báo obj để xử dụng các method trong MyLibrary
 
         public Button button_Thoat;
         public Button button_QuanLyChuyen;
@@ -96,9 +99,9 @@ namespace DoAnCuoiKy
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Passenger passenger = obj.GetOnePassenger("1", "1@example.com");
+            Passenger passenger = db.GetOnePassenger("1", "1@example.com");
             string sqls = "select B.BusID from  Bus B Inner join Trip T on b.BusID=t.BusID WHERE DepartureLocation = 'TP HCM'  AND ArrivalLocation= 'Da Nang'";
-            int BusID = obj.GetOneID(sqls); 
+            int BusID = db.GetOneID(sqls); 
         }
 
         private void btn_DoanhThu_Click(object sender, EventArgs e)
@@ -122,24 +125,20 @@ namespace DoAnCuoiKy
 
         private void btn_QuanLyChuyen_Click(object sender, EventArgs e)
         {
-            Account account = obj.GetAccount(this.userID);
-            int RoleID = obj.GetIDRole(account.UserID);
-            if (account != null) {
-                if(RoleID == 1)
-                {
-                    UC_QuanLyChuyen uC_QuanLyChuyen = new UC_QuanLyChuyen();
-                    AddUserControl(uC_QuanLyChuyen);
-                }
-                else
-                {
-                    MessageBox.Show("Bạn không đủ quyền hạn để thực hiện việc này.","Cảnh báo",MessageBoxButtons.OK,MessageBoxIcon.Stop);
-                }
+            Account account = AccountBLL.Instance.GetAccount(this.userID);
+            if (account != null && AccountBLL.Instance.IsAdmin(account)){
+                UC_QuanLyChuyen uC_QuanLyChuyen = new UC_QuanLyChuyen();
+                AddUserControl(uC_QuanLyChuyen);
             }
             else
             {
-                MessageBox.Show("Chưa đăng nhập hoặc người dùng không tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("Bạn không đủ quyền hạn để thực hiện việc này.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            BusBLL.Instance.GetListBookedSeat(1);
         }
     }
 }

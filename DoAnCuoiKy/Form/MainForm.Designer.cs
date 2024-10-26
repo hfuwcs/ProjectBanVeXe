@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panel_logo = new System.Windows.Forms.Panel();
             this.panel_Sidebar = new System.Windows.Forms.Panel();
             this.btn_DangXuat = new System.Windows.Forms.Button();
             this.btn_DoanhThu = new System.Windows.Forms.Button();
@@ -38,18 +40,21 @@
             this.btn_BanVe = new System.Windows.Forms.Button();
             this.btn_QuanLyChuyen = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.label_Name = new System.Windows.Forms.Label();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel_logo = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel_Sidebar.SuspendLayout();
             this.panelContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -73,6 +78,14 @@
             this.splitContainer1.Size = new System.Drawing.Size(1549, 742);
             this.splitContainer1.SplitterDistance = 210;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // panel_logo
+            // 
+            this.panel_logo.BackColor = System.Drawing.Color.IndianRed;
+            this.panel_logo.Location = new System.Drawing.Point(3, 4);
+            this.panel_logo.Name = "panel_logo";
+            this.panel_logo.Size = new System.Drawing.Size(204, 81);
+            this.panel_logo.TabIndex = 1;
             // 
             // panel_Sidebar
             // 
@@ -167,6 +180,8 @@
             // 
             // panelContainer
             // 
+            this.panelContainer.Controls.Add(this.dataGridView1);
+            this.panelContainer.Controls.Add(this.button1);
             this.panelContainer.Controls.Add(this.label_Name);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,6 +189,27 @@
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1335, 742);
             this.panelContainer.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(209, 335);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(757, 150);
+            this.dataGridView1.TabIndex = 28;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(437, 151);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(195, 65);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "TEST";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label_Name
             // 
@@ -231,13 +267,11 @@
             this.Exit_ToolStripMenuItem.Text = "Thoát";
             this.Exit_ToolStripMenuItem.Click += new System.EventHandler(this.Exit_ToolStripMenuItem_Click);
             // 
-            // panel_logo
+            // contextMenuStrip1
             // 
-            this.panel_logo.BackColor = System.Drawing.Color.IndianRed;
-            this.panel_logo.Location = new System.Drawing.Point(3, 4);
-            this.panel_logo.Name = "panel_logo";
-            this.panel_logo.Size = new System.Drawing.Size(204, 81);
-            this.panel_logo.TabIndex = 1;
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // MainForm
             // 
@@ -262,6 +296,7 @@
             this.panel_Sidebar.ResumeLayout(false);
             this.panelContainer.ResumeLayout(false);
             this.panelContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
@@ -291,6 +326,9 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Exit_ToolStripMenuItem;
         private System.Windows.Forms.Panel panel_logo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 

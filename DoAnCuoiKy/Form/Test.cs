@@ -14,7 +14,7 @@ namespace DoAnCuoiKy
 {
     public partial class Test : Form
     {
-        BanVeXe obj = new BanVeXe();
+        DbContext obj = new DbContext();
         SqlDataAdapter userada = new SqlDataAdapter();
         public string sqls;
         public string tableName;
@@ -35,7 +35,7 @@ namespace DoAnCuoiKy
         private void btninsert_Click(object sender, EventArgs e)
         {
             string sqlinsert = "Insert into UserAccount([FullName],[Email] ,[Password]) VALUES(@name,@email,@pass)";
-            obj.OpenConnect();
+            //obj.OpenConnect();
             userada.TableMappings.Add("UserAccount", tableName);
             userada = obj.GetDataAdapter(sqls, tableName);
             userada.InsertCommand = new SqlCommand(sqlinsert,obj.conn);

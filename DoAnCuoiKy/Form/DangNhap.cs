@@ -1,4 +1,4 @@
-﻿using DoAnCuoiKy.BusinessClass;
+﻿using MyLibrary.DTO;
 using MyLibrary;
 using System;
 using System.Collections.Generic;
@@ -10,17 +10,15 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyLibrary.BLL;
 
 namespace DoAnCuoiKy
 {
     public partial class DangNhap : Form
     {
-        //public DangNhap instance;
-        BanVeXe obj = new BanVeXe();
         public bool isLogin = false;
         public TextBox tb1;
         public TextBox tb2;
-        public string Name;
         public Account account;
         
         public DangNhap()
@@ -29,7 +27,6 @@ namespace DoAnCuoiKy
             //instance = this;
             tb1 = txtBox_Email;
             tb2 = txtBox_Pass;
-            Name = string.Empty;
         }
 
         private void txtBox_Pass_Enter(object sender, EventArgs e)
@@ -57,13 +54,14 @@ namespace DoAnCuoiKy
 
         private void btn_DangNhap_Click(object sender, EventArgs e)
         {
-            account = new Account() { UserName=txtBox_Email.Text, Password=txtBox_Pass.Text};
+            account = new Account() 
+            { UserName = txtBox_Email.Text, Password = txtBox_Pass.Text };
             
             //Check xem User có tồn tại không
-            if (obj.CheckUser(account))
+            if (AccountBLL.Instance.IsLogin(account))
             {
                 //Nếu tồn tại thì lấy tất cả thông tin của user
-                account = obj.GetAccount(txtBox_Email.Text);
+                account = AccountBLL.Instance.GetAccount(txtBox_Email.Text);
 
 
                 //Đặt biến isLogin để biết người dùng đã đăng nhập thành công
@@ -87,7 +85,6 @@ namespace DoAnCuoiKy
         {
             (sender as MainForm).isExit = false;
             (sender as MainForm).Close();
-            obj.OpenConnect();
             this.Show(); 
         }
 

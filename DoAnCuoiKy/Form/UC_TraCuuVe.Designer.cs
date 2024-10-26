@@ -36,9 +36,6 @@
             this.lblNgayDi = new System.Windows.Forms.Label();
             this.lblTuyen = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox_End = new System.Windows.Forms.ComboBox();
-            this.comboBox_Start = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.dataGridView_TraCuuVe = new System.Windows.Forms.DataGridView();
             this.DetailsTicketID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +45,9 @@
             this.DepartureTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SeatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox_End = new System.Windows.Forms.ComboBox();
+            this.comboBox_Start = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TraCuuVe)).BeginInit();
             this.SuspendLayout();
@@ -136,6 +136,99 @@
             this.panel1.Size = new System.Drawing.Size(1062, 233);
             this.panel1.TabIndex = 12;
             // 
+            // dataGridView_TraCuuVe
+            // 
+            this.dataGridView_TraCuuVe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_TraCuuVe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DetailsTicketID,
+            this.FullName,
+            this.PhoneNumber,
+            this.DepartureLocation,
+            this.ArrivalLocation,
+            this.DepartureTime,
+            this.SeatID,
+            this.Price});
+            this.dataGridView_TraCuuVe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_TraCuuVe.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView_TraCuuVe.Name = "dataGridView_TraCuuVe";
+            this.dataGridView_TraCuuVe.ReadOnly = true;
+            this.dataGridView_TraCuuVe.RowHeadersWidth = 51;
+            this.dataGridView_TraCuuVe.RowTemplate.Height = 24;
+            this.dataGridView_TraCuuVe.Size = new System.Drawing.Size(1060, 231);
+            this.dataGridView_TraCuuVe.TabIndex = 0;
+            // 
+            // DetailsTicketID
+            // 
+            this.DetailsTicketID.DataPropertyName = "DetailsTicketID";
+            this.DetailsTicketID.HeaderText = "Mã vé";
+            this.DetailsTicketID.MinimumWidth = 6;
+            this.DetailsTicketID.Name = "DetailsTicketID";
+            this.DetailsTicketID.ReadOnly = true;
+            this.DetailsTicketID.Width = 125;
+            // 
+            // FullName
+            // 
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.HeaderText = "Họ và tên";
+            this.FullName.MinimumWidth = 6;
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
+            this.FullName.Width = 125;
+            // 
+            // PhoneNumber
+            // 
+            this.PhoneNumber.DataPropertyName = "PhoneNumber";
+            this.PhoneNumber.HeaderText = "Số điện thoại";
+            this.PhoneNumber.MinimumWidth = 6;
+            this.PhoneNumber.Name = "PhoneNumber";
+            this.PhoneNumber.ReadOnly = true;
+            this.PhoneNumber.Width = 125;
+            // 
+            // DepartureLocation
+            // 
+            this.DepartureLocation.DataPropertyName = "DepartureLocation";
+            this.DepartureLocation.HeaderText = "Điểm khởi hành";
+            this.DepartureLocation.MinimumWidth = 6;
+            this.DepartureLocation.Name = "DepartureLocation";
+            this.DepartureLocation.ReadOnly = true;
+            this.DepartureLocation.Width = 125;
+            // 
+            // ArrivalLocation
+            // 
+            this.ArrivalLocation.DataPropertyName = "ArrivalLocation";
+            this.ArrivalLocation.HeaderText = "Điểm đến";
+            this.ArrivalLocation.MinimumWidth = 6;
+            this.ArrivalLocation.Name = "ArrivalLocation";
+            this.ArrivalLocation.ReadOnly = true;
+            this.ArrivalLocation.Width = 125;
+            // 
+            // DepartureTime
+            // 
+            this.DepartureTime.DataPropertyName = "DepartureTime";
+            this.DepartureTime.HeaderText = "Khởi gian khởi hành";
+            this.DepartureTime.MinimumWidth = 6;
+            this.DepartureTime.Name = "DepartureTime";
+            this.DepartureTime.ReadOnly = true;
+            this.DepartureTime.Width = 125;
+            // 
+            // SeatID
+            // 
+            this.SeatID.DataPropertyName = "SeatNumber";
+            this.SeatID.HeaderText = "Mã số ghế";
+            this.SeatID.MinimumWidth = 6;
+            this.SeatID.Name = "SeatID";
+            this.SeatID.ReadOnly = true;
+            this.SeatID.Width = 125;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Giá vé";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            this.Price.Width = 125;
+            // 
             // comboBox_End
             // 
             this.comboBox_End.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -166,90 +259,6 @@
             this.label2.Size = new System.Drawing.Size(48, 32);
             this.label2.TabIndex = 75;
             this.label2.Text = "=>";
-            // 
-            // dataGridView_TraCuuVe
-            // 
-            this.dataGridView_TraCuuVe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_TraCuuVe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DetailsTicketID,
-            this.FullName,
-            this.PhoneNumber,
-            this.DepartureLocation,
-            this.ArrivalLocation,
-            this.DepartureTime,
-            this.SeatID,
-            this.Price});
-            this.dataGridView_TraCuuVe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_TraCuuVe.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView_TraCuuVe.Name = "dataGridView_TraCuuVe";
-            this.dataGridView_TraCuuVe.RowHeadersWidth = 51;
-            this.dataGridView_TraCuuVe.RowTemplate.Height = 24;
-            this.dataGridView_TraCuuVe.Size = new System.Drawing.Size(1060, 231);
-            this.dataGridView_TraCuuVe.TabIndex = 0;
-            // 
-            // DetailsTicketID
-            // 
-            this.DetailsTicketID.DataPropertyName = "DetailsTicketID";
-            this.DetailsTicketID.HeaderText = "Mã vé";
-            this.DetailsTicketID.MinimumWidth = 6;
-            this.DetailsTicketID.Name = "DetailsTicketID";
-            this.DetailsTicketID.Width = 125;
-            // 
-            // FullName
-            // 
-            this.FullName.DataPropertyName = "FullName";
-            this.FullName.HeaderText = "Họ và tên";
-            this.FullName.MinimumWidth = 6;
-            this.FullName.Name = "FullName";
-            this.FullName.Width = 125;
-            // 
-            // PhoneNumber
-            // 
-            this.PhoneNumber.DataPropertyName = "PhoneNumber";
-            this.PhoneNumber.HeaderText = "Số điện thoại";
-            this.PhoneNumber.MinimumWidth = 6;
-            this.PhoneNumber.Name = "PhoneNumber";
-            this.PhoneNumber.Width = 125;
-            // 
-            // DepartureLocation
-            // 
-            this.DepartureLocation.DataPropertyName = "DepartureLocation";
-            this.DepartureLocation.HeaderText = "Điểm khởi hành";
-            this.DepartureLocation.MinimumWidth = 6;
-            this.DepartureLocation.Name = "DepartureLocation";
-            this.DepartureLocation.Width = 125;
-            // 
-            // ArrivalLocation
-            // 
-            this.ArrivalLocation.DataPropertyName = "ArrivalLocation";
-            this.ArrivalLocation.HeaderText = "Điểm đến";
-            this.ArrivalLocation.MinimumWidth = 6;
-            this.ArrivalLocation.Name = "ArrivalLocation";
-            this.ArrivalLocation.Width = 125;
-            // 
-            // DepartureTime
-            // 
-            this.DepartureTime.DataPropertyName = "DepartureTime";
-            this.DepartureTime.HeaderText = "Khởi gian khởi hành";
-            this.DepartureTime.MinimumWidth = 6;
-            this.DepartureTime.Name = "DepartureTime";
-            this.DepartureTime.Width = 125;
-            // 
-            // SeatID
-            // 
-            this.SeatID.DataPropertyName = "SeatNumber";
-            this.SeatID.HeaderText = "Mã số ghế";
-            this.SeatID.MinimumWidth = 6;
-            this.SeatID.Name = "SeatID";
-            this.SeatID.Width = 125;
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "Giá vé";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.Width = 125;
             // 
             // UC_TraCuuVe
             // 

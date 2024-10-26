@@ -1,4 +1,4 @@
-﻿using DoAnCuoiKy.BusinessClass;
+﻿using MyLibrary.DTO;
 using MyLibrary;
 using System;
 using System.Collections.Generic;
@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyLibrary.BLL;
 
 namespace DoAnCuoiKy
 {
@@ -16,7 +17,7 @@ namespace DoAnCuoiKy
     {
         private int _userID;
         private Account account;
-        BanVeXe obj = new BanVeXe();
+        DbContext obj = new DbContext();
         public int UserID
         {
             get { return _userID; }
@@ -33,8 +34,8 @@ namespace DoAnCuoiKy
         private void UC_QLTK_Load(object sender, EventArgs e)
         {
 
-            account = obj.GetAccount(UserID);
-            string str = obj.GetRoleName(UserID);
+            account = AccountBLL.Instance.GetAccount(UserID);
+            string str = AccountBLL.Instance.GetRoleName(UserID);
             label_Name.Text += account.Name;
             label_RoleName.Text += str;
         }
