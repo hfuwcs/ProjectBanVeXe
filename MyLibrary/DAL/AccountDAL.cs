@@ -92,8 +92,12 @@ namespace MyLibrary.DAL
         {
             string sqls = "EXEC GetRoleName @USERID";
             string str = string.Empty;
-            str = db.Instance.ExecuteScalar(sqls, new object[] { userid }).ToString();
-            return str;
+            DataTable data = db.Instance.ExecuteQuery(sqls, new object[] { userid });
+            foreach(DataRow row in data.Rows)
+            {
+                return row["RoleName"].ToString();
+            }
+            return null;
         }
 
         public void ChangePassword( string password, int userid)

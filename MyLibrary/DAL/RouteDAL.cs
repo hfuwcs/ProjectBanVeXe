@@ -28,7 +28,8 @@ namespace MyLibrary.DAL
             Route route = new Route();
             string sqls = $"SELECT * FROM ROUTE WHERE StartLocation = '{start}' AND EndLocation = '{end}'";
             DataTable data = db.ExecuteQuery(sqls);
-            foreach (DataRow row in data.Rows) { 
+            foreach (DataRow row in data.Rows)
+            {
                 route.RouteID = Convert.ToInt32(row["RouteID"]);
                 route.RouteName = row["RouteName"].ToString();
                 route.StartLocation = row["StartLocation"].ToString();
@@ -51,6 +52,26 @@ namespace MyLibrary.DAL
                 route.Distance = Convert.ToInt32(row["Distance"]);
             }
             return route;
+        }
+        public string GetStartLocation(string routename)
+        {
+            string sqls = $"SELECT StartLocation FROM ROUTE WHERE RouteName = '{routename}'";
+            DataTable data = db.ExecuteQuery(sqls);
+            foreach (DataRow row in data.Rows)
+            {
+                return row["StartLocation"].ToString();
+            }
+            return null;
+        }
+        public string GetEndLocation(string routename)
+        {
+            string sqls = $"SELECT EndLocation FROM ROUTE WHERE RouteName = '{routename}'";
+            DataTable data = db.ExecuteQuery(sqls);
+            foreach (DataRow row in data.Rows)
+            {
+                return row["EndLocation"].ToString();
+            }
+            return null;
         }
     }
 }

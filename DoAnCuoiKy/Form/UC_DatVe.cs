@@ -233,11 +233,11 @@ namespace DoAnCuoiKy
 
             //LOAD database cho các Tuyến
             string sqlstart = "select StartLocation from Route group by StartLocation";
-            comboBox_Start.DataSource = obj.GetDataTable(sqlstart);
+            comboBox_Start.DataSource = obj.Instance.ExecuteQuery(sqlstart);
             comboBox_Start.DisplayMember = "StartLocation";
 
             string sqlend = "select EndLocation from Route group by EndLocation";
-            comboBox_End.DataSource = obj.GetDataTable(sqlend);
+            comboBox_End.DataSource = obj.Instance.ExecuteQuery(sqlend);
             comboBox_End.DisplayMember = "EndLocation";
             autosizedgv(dataGridView_TimXe);
 

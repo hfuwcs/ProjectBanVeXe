@@ -120,50 +120,6 @@ namespace MyLibrary
 
 
 
-            //START: Xử lý hành khách/Passenger
-
-        //Lấy thông tin 1 khách hàng bằng SĐT và Email
-        public Passenger GetOnePassenger(string phonenumber, string email)
-        {
-            Passenger passenger = new Passenger();
-            string sqls = "SELECT * FROM Passenger where PhoneNumber = @PhoneNumber and Email = @Email";
-            SqlCommand cmd = new SqlCommand(sqls,conn);
-            cmd.CommandType = CommandType.Text;
-            //Truyền giá trị cho tham số
-            cmd.Parameters.AddWithValue("@PhoneNumber", phonenumber);
-            cmd.Parameters.AddWithValue("@Email", email);
-
-            OpenConnect();
-            SqlDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                passenger.PassengerID = rdr.GetInt32(0);
-                //passenger.PassengerName = rdr.GetString(1);
-                passenger.PhoneNumber = rdr.GetString(2);
-                passenger.Email = rdr.GetString(3);
-            }
-            CloseConnect();
-            return passenger;            
-        }
-
-            //Insert khách hàng vào Database
-        public int InsertPassenger(string hoten, string sdt, string email)
-        {
-            string sqls = "Insert into Passenger VALUES (@FullName, @PhoneNumber ,@Email)";
-            SqlCommand cmd =new SqlCommand(sqls,conn);
-            cmd.CommandType = CommandType.Text;
-
-            //Truyền tham số
-            cmd.Parameters.AddWithValue("@FullName", hoten);
-            cmd.Parameters.AddWithValue("@PhoneNumber", sdt);
-            cmd.Parameters.AddWithValue ("@Email", email);
-            OpenConnect();
-            int kt = cmd.ExecuteNonQuery();
-            CloseConnect();
-            return kt; 
-        }
-
-
         //END: Xử lý hành khách/Passenger
         
 

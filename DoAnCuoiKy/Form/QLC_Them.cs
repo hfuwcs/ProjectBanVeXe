@@ -28,13 +28,13 @@ namespace DoAnCuoiKy
         {
             //Load các tuyến
 
-            string sqlstart = "select RouteName from Route";
-            cbc_Start.DataSource = obj.GetDataTable(sqlstart);
-            cbc_Start.DisplayMember = "RouteName";
+            string sqlstart = "select RouteName from Route Group by RouteName";
+            cbc_start.DataSource = obj.Instance.ExecuteQuery(sqlstart);
+            cbc_start.DisplayMember = "RouteName";
 
             string sqlend = "select EndLocation from Route group by EndLocation";
-            cbc_End.DataSource = obj.GetDataTable(sqlend);
-            cbc_End.DisplayMember = "EndLocation";
+            cbc_end.DataSource = obj.Instance.ExecuteQuery(sqlend);
+            cbc_end.DisplayMember = "EndLocation";
 
 
             //Lấy ID các Bus sẵn sàng:
@@ -64,45 +64,26 @@ namespace DoAnCuoiKy
                 dataGridView.Columns[i].Width = colw;
             }
         }
-        //private void QLC_Them_Load(object sender, EventArgs e)
-        //{
-        //    //Load các tuyến
-
-        //    string sqlstart = "select RouteName from Route";
-        //    cbc_Start.DataSource = obj.GetDataTable(sqlstart);
-        //    cbc_Start.DisplayMember = "RouteName";
-
-        //    string sqlend = "select EndLocation from Route group by EndLocation";
-        //    cbc_End.DataSource = obj.GetDataTable(sqlend);
-        //    cbc_End.DisplayMember = "EndLocation";
-
-
-        //    //Lấy ID các Bus sẵn sàng:
-        //    dgr_ReadyBus.DataSource = BusBLL.Instance.GetBusReady(today);
-        //    //cbc_hStart.DataSource = MyLibrary.Helpers.Hours;
-        //    //cbc_hend.DataSource = MyLibrary.Helpers.Hours;
-        //    autosizedgv(dgr_ReadyBus);
-        //}
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
             Random random = new Random();
 
-
+            string routename =cbc_start.Text + " - " + cbc_end.Text;
             //Lấy RouteID
-            Route route = RouteBLL.Instance.GetRouteByName(cbc_Start.Text);
+            Route route = RouteBLL.Instance.GetRouteByName(routename);
 
             List<int> readyBus = BusBLL.Instance.GetBusIDReady(today);
             int readyBusID = Convert.ToInt32(dgr_ReadyBus.CurrentRow.Cells[0].Value);
 
             //Lấy Random tài xế đang sẵn sàng
             List<int> readyDriver = DriverBLL.Instance.GetReadyDriverID(today);
-            int randomIndex = random.Next(0, readyDriver.Count-1);
+            int randomIndex = random.Next(0, readyDriver.Count - 1);
             int readyDriverID = readyDriver[randomIndex];
 
             //Lấy điểm đi và điểm đến
-            string depploc = cbc_Start.Text;
-            string arrloc = cbc_End.Text;
+            string depploc = RouteBLL.Instance.GetStartLocation(routename);
+            string arrloc = RouteBLL.Instance.GetEndLocation(routename);
 
             string depptime = dtp_StartDate.Value.ToString("yyyy/MM/dd ") + cbc_hStart.SelectedValue;
             string arrtime = dtp_StartDate.Value.ToString("yyyy/MM/dd ") + cbc_hEnd.SelectedValue;
@@ -117,6 +98,6 @@ namespace DoAnCuoiKy
                 MessageBox.Show("Thêm thành công!");
                 dgr_ReadyBus.DataSource = BusBLL.Instance.GetBusReady(today);
             }
-         }
+        }
     }
 }

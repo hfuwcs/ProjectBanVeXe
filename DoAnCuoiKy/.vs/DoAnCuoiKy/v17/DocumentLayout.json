@@ -1,18 +1,23 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\",
+  "WorkspaceRootPath": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\test\\projectbanvexe\\doancuoiky\\form\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E53A555-935D-4702-A14F-AD9E55F10A10}|..\\MyLibrary\\MyLibrary.csproj|d:\\hk5\\dotnet\\projectbanvexe\\mylibrary\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\form\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5E53A555-935D-4702-A14F-AD9E55F10A10}|..\\MyLibrary\\MyLibrary.csproj|d:\\hk5\\dotnet\\projectbanvexe\\mylibrary\\dal\\routedal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\form\\uc_qltk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\uc_qltk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E53A555-935D-4702-A14F-AD9E55F10A10}|..\\MyLibrary\\MyLibrary.csproj|d:\\hk5\\dotnet\\projectbanvexe\\mylibrary\\dal\\accountdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\form\\uc_qltk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\uc_qltk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +27,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,38 +36,63 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UC_DatVe.cs [Design]",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_DatVe.cs",
-              "RelativeDocumentMoniker": "Form\\UC_DatVe.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_DatVe.cs [Design]",
-              "RelativeToolTip": "Form\\UC_DatVe.cs [Design]",
+              "Title": "RouteDAL.cs",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\MyLibrary\\DAL\\RouteDAL.cs",
+              "RelativeDocumentMoniker": "..\\MyLibrary\\DAL\\RouteDAL.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\MyLibrary\\DAL\\RouteDAL.cs",
+              "RelativeToolTip": "..\\MyLibrary\\DAL\\RouteDAL.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwCAAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T04:56:04.23Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-28T07:40:57.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountDAL.cs",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\MyLibrary\\DAL\\AccountDAL.cs",
+              "RelativeDocumentMoniker": "..\\MyLibrary\\DAL\\AccountDAL.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\MyLibrary\\DAL\\AccountDAL.cs",
+              "RelativeToolTip": "..\\MyLibrary\\DAL\\AccountDAL.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAArwGMAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T07:36:40.525Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAOAAAA",
+              "Title": "UC_QLTK.cs",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_QLTK.cs",
+              "RelativeDocumentMoniker": "Form\\UC_QLTK.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_QLTK.cs",
+              "RelativeToolTip": "Form\\UC_QLTK.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwCgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T09:25:49.557Z"
+              "WhenOpened": "2024-10-28T07:36:10.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UC_QLTK.cs [Design]",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_QLTK.cs",
+              "RelativeDocumentMoniker": "Form\\UC_QLTK.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_QLTK.cs [Design]",
+              "RelativeToolTip": "Form\\UC_QLTK.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T07:36:08.092Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UC_DatVe.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_DatVe.cs",
-              "RelativeDocumentMoniker": "Form\\UC_DatVe.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_DatVe.cs",
-              "RelativeToolTip": "Form\\UC_DatVe.cs",
-              "ViewState": "AQIAAOwAAAAAAAAAAAAwwAMBAAAIAAAA",
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\MyLibrary\\DbContext.cs",
+              "RelativeDocumentMoniker": "..\\MyLibrary\\DbContext.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\MyLibrary\\DbContext.cs",
+              "RelativeToolTip": "..\\MyLibrary\\DbContext.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAkwEYAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T08:51:09.859Z",
+              "WhenOpened": "2024-10-28T07:05:08.159Z",
               "EditorCaption": ""
             }
           ]

@@ -30,20 +30,20 @@
         {
             this.lblTuyen = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbc_End = new System.Windows.Forms.ComboBox();
-            this.cbc_Start = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.dtp_Endday = new System.Windows.Forms.DateTimePicker();
             this.dtp_StartDate = new System.Windows.Forms.DateTimePicker();
             this.lblDenNgay = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbc_hEnd = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.cbc_hStart = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgr_ReadyBus = new System.Windows.Forms.DataGridView();
             this.btn_Them = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbc_hEnd = new System.Windows.Forms.ComboBox();
+            this.cbc_start = new System.Windows.Forms.ComboBox();
+            this.cbc_end = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -65,48 +65,15 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.cbc_End);
-            this.panel1.Controls.Add(this.lblTuyen);
-            this.panel1.Controls.Add(this.cbc_Start);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.cbc_end);
+            this.panel1.Controls.Add(this.cbc_start);
+            this.panel1.Controls.Add(this.lblTuyen);
             this.panel1.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(785, 100);
             this.panel1.TabIndex = 80;
-            // 
-            // cbc_End
-            // 
-            this.cbc_End.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbc_End.FormattingEnabled = true;
-            this.cbc_End.Location = new System.Drawing.Point(617, 36);
-            this.cbc_End.Margin = new System.Windows.Forms.Padding(4);
-            this.cbc_End.Name = "cbc_End";
-            this.cbc_End.Size = new System.Drawing.Size(168, 36);
-            this.cbc_End.TabIndex = 83;
-            this.cbc_End.Visible = false;
-            // 
-            // cbc_Start
-            // 
-            this.cbc_Start.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbc_Start.FormattingEnabled = true;
-            this.cbc_Start.Location = new System.Drawing.Point(219, 36);
-            this.cbc_Start.Margin = new System.Windows.Forms.Padding(4);
-            this.cbc_Start.Name = "cbc_Start";
-            this.cbc_Start.Size = new System.Drawing.Size(302, 36);
-            this.cbc_Start.TabIndex = 82;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(545, 36);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 32);
-            this.label2.TabIndex = 81;
-            this.label2.Text = "=>";
-            this.label2.Visible = false;
             // 
             // dtp_Endday
             // 
@@ -150,6 +117,24 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(785, 176);
             this.panel2.TabIndex = 85;
+            // 
+            // cbc_hEnd
+            // 
+            this.cbc_hEnd.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbc_hEnd.Location = new System.Drawing.Point(608, 102);
+            this.cbc_hEnd.Name = "cbc_hEnd";
+            this.cbc_hEnd.Size = new System.Drawing.Size(165, 31);
+            this.cbc_hEnd.TabIndex = 89;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(445, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 23);
+            this.label3.TabIndex = 88;
+            this.label3.Text = "Giờ khởi hành";
             // 
             // cbc_hStart
             // 
@@ -201,23 +186,33 @@
             this.btn_Them.UseVisualStyleBackColor = true;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
-            // label3
+            // cbc_start
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(445, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 23);
-            this.label3.TabIndex = 88;
-            this.label3.Text = "Giờ khởi hành";
+            this.cbc_start.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbc_start.FormattingEnabled = true;
+            this.cbc_start.Location = new System.Drawing.Point(241, 36);
+            this.cbc_start.Name = "cbc_start";
+            this.cbc_start.Size = new System.Drawing.Size(175, 31);
+            this.cbc_start.TabIndex = 82;
             // 
-            // cbc_hEnd
+            // cbc_end
             // 
-            this.cbc_hEnd.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbc_hEnd.Location = new System.Drawing.Point(608, 102);
-            this.cbc_hEnd.Name = "cbc_hEnd";
-            this.cbc_hEnd.Size = new System.Drawing.Size(165, 31);
-            this.cbc_hEnd.TabIndex = 89;
+            this.cbc_end.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbc_end.FormattingEnabled = true;
+            this.cbc_end.Location = new System.Drawing.Point(502, 36);
+            this.cbc_end.Name = "cbc_end";
+            this.cbc_end.Size = new System.Drawing.Size(175, 31);
+            this.cbc_end.TabIndex = 83;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(445, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 23);
+            this.label2.TabIndex = 90;
+            this.label2.Text = "=>";
             // 
             // QLC_Them
             // 
@@ -246,9 +241,6 @@
 
         private System.Windows.Forms.Label lblTuyen;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cbc_End;
-        public System.Windows.Forms.ComboBox cbc_Start;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtp_Endday;
         private System.Windows.Forms.DateTimePicker dtp_StartDate;
         private System.Windows.Forms.Label lblDenNgay;
@@ -260,5 +252,8 @@
         private System.Windows.Forms.ComboBox cbc_hStart;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbc_hEnd;
+        private System.Windows.Forms.ComboBox cbc_start;
+        private System.Windows.Forms.ComboBox cbc_end;
+        private System.Windows.Forms.Label label2;
     }
 }

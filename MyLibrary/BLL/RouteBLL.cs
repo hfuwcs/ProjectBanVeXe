@@ -33,5 +33,13 @@ namespace MyLibrary.BLL
         {
             return RouteDAL.Instance.GetRouteByName(name);
         }
+        public string GetStartLocation(string routename)
+        {
+            return RouteDAL.Instance.GetStartLocation(routename);
+        }
+        public string GetEndLocation(string routename)
+        {
+            return RouteDAL.Instance.GetEndLocation(routename);
+        }
     }
 }
