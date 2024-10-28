@@ -1,6 +1,5 @@
 ﻿using MyLibrary.DTO;
 using MyLibrary;
-using MyLibrary.BusinessClass;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -95,13 +94,6 @@ namespace DoAnCuoiKy
         private void btn_DangXuat_Click(object sender, EventArgs e)
         {
             DangXuat(this, new EventArgs());
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Passenger passenger = db.GetOnePassenger("1", "1@example.com");
-            string sqls = "select B.BusID from  Bus B Inner join Trip T on b.BusID=t.BusID WHERE DepartureLocation = 'TP HCM'  AND ArrivalLocation= 'Da Nang'";
-            int BusID = db.GetOneID(sqls); 
         }
 
         private void btn_DoanhThu_Click(object sender, EventArgs e)

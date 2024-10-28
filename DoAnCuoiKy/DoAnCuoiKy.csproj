@@ -95,12 +95,6 @@
     <Compile Include="Form\QLC_Them.Designer.cs">
       <DependentUpon>QLC_Them.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\UC_DatVe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -161,9 +155,6 @@
     </Compile>
     <EmbeddedResource Include="Form\QLC_Sua.resx">
       <DependentUpon>QLC_Sua.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\UC_DatVe.resx">
       <DependentUpon>UC_DatVe.cs</DependentUpon>

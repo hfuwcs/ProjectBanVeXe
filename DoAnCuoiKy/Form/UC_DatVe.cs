@@ -1,5 +1,5 @@
 ﻿using MyLibrary;
-using MyLibrary.BusinessClass;
+using MyLibrary.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using System.Globalization;
 using System.Security.Cryptography.X509Certificates;
 using MyLibrary.BLL;
+using MyLibrary.DAL;
+using System.Runtime.ConstrainedExecution;
 
 namespace DoAnCuoiKy
 {
@@ -103,6 +105,23 @@ namespace DoAnCuoiKy
                 if (control.HasChildren)
                 {
                     EnableAllSeats(control.Controls);
+                }
+            }
+        }
+        private void DisableAllSeats(Control.ControlCollection controls)
+        {
+            foreach (Control control in controls)
+            {
+                if (control is Button button && (button.Text.StartsWith("A") || button.Text.StartsWith("B")))
+                {
+                    button.Enabled = false;
+                    button.BackColor = Color.Gray;
+                }
+
+                // Duyệt đệ quy nếu có các control con
+                if (control.HasChildren)
+                {
+                    DisableAllSeats(control.Controls);
                 }
             }
         }
@@ -208,6 +227,7 @@ namespace DoAnCuoiKy
 
         private void UC_DatVe_Load(object sender, EventArgs e)
         {
+            DisableAllSeats(this.Controls);
             //Load giờ
             cbc_hours.DataSource = MyLibrary.Helpers.Hours;
 
@@ -244,6 +264,7 @@ namespace DoAnCuoiKy
             string deploc = comboBox_Start.Text;
             string arrloc = comboBox_End.Text;
             dataGridView_TimXe.DataSource = TripBLL.Instance.SearchTrip(deploc, arrloc, selectedday);
+
         }
         private void dataGridView_TimXe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -266,11 +287,11 @@ namespace DoAnCuoiKy
                 string OrderDate = DateTime.Now.Date.ToString("yyyy/MM/dd HH:mm");
                 string selectedDate = deppDate();
 
-                Passenger passenger = obj.GetOnePassenger(txtSDT.Text,txtEmail.Text);
+                Passenger passenger = PassengerBLL.Instance.GetOnePassenger(txtSDT.Text, txtEmail.Text);///obj.GetOnePassenger(txtSDT.Text,txtEmail.Text);
                 if (passenger.PassengerID == 0)
                 {
-                    obj.InsertPassenger(txtHoTen.Text, txtSDT.Text, txtEmail.Text);
-                    passenger = obj.GetOnePassenger(txtSDT.Text, txtEmail.Text);
+                    PassengerBLL.Instance.InsertPassenger(txtHoTen.Text, txtSDT.Text, txtEmail.Text);///obj.InsertPassenger(txtHoTen.Text, txtSDT.Text, txtEmail.Text);
+                    passenger = PassengerBLL.Instance.GetOnePassenger(txtSDT.Text, txtEmail.Text);//obj.GetOnePassenger(txtSDT.Text, txtEmail.Text);
                 }
 
                 //DangNhap dangNhap = new DangNhap();
@@ -292,8 +313,8 @@ namespace DoAnCuoiKy
                 foreach(var ghe in listsGheDaChon)
                 {
                     //Lấy ID ghế
-                    string sqlSeatID = "SELECT SEATID FROM SEAT WHERE SeatNumber='"+ghe+"' AND BusID = '"+BusID+"'";
-                    int SeatID = obj.GetOneID(sqlSeatID);
+                    string sqlSeatID = "SELECT SEATID FROM SEAT WHERE SeatNumber= @seatnumber AND BusID = @busid";
+                    int SeatID = obj.ExecuteScalar(sqlSeatID, new object[] { ghe, BusID });//obj.GetOneID(sqlSeatID);
 
                     DetailsTicketBLL.Instance.InsertDetailsTicket(OrderTicketID,TripID, SeatID, 1, 210000);
 
@@ -305,8 +326,19 @@ namespace DoAnCuoiKy
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if(!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+             {
+                Control ctr = (Control)sender;
+                e.Handled = true;
+                this.errorProvider1.SetError(ctr, "Bạn phải nhập số điện thoại này đúng định dạng");
+                txtSDT.Focus();
+            }
+            else
+            {
+                this.errorProvider1.Clear();
+            }
         }
     }
 }

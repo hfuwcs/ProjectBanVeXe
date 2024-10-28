@@ -43,9 +43,12 @@ namespace DoAnCuoiKy
         private void ThemXoa_QLChuyen_Load(object sender, EventArgs e)
         {
             string sqlstart = "select StartLocation from Route group by StartLocation";
-            comboBox_Start.DataSource = obj.GetListOneColumn(sqlstart);
+            comboBox_Start.DataSource = obj.GetDataTable(sqlstart);
+            comboBox_Start.DisplayMember = "StartLocation";
+
             string sqlend = "select EndLocation from Route group by EndLocation";
-            comboBox_End.DataSource = obj.GetListOneColumn(sqlend);
+            comboBox_End.DataSource = obj.GetDataTable(sqlend);
+            comboBox_End.DisplayMember = "EndLocation";
 
             string sqlBus = "Select * from Bus";
             //obj.GetDataTable(sqlBus,"Bus");
