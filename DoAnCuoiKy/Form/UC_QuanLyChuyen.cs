@@ -46,7 +46,7 @@ namespace DoAnCuoiKy
 
         private void UC_QuanLyChuyen_Load(object sender, EventArgs e)
         {
-            string sqls = "select B.BusID, BusNumber, TotalSeat, BusType,  DepartureTime, ArrivalTime \r\nfrom  Bus B \r\nInner join Trip T on b.BusID=t.BusID \r\n";
+            string sqls = "select Distinct B.BusID, BusNumber, TotalSeat, BusType,  DepartureTime, ArrivalTime \r\nfrom  Bus B \r\nInner join Trip T on b.BusID=t.BusID \r\n";
             dataGridView_TatCaChuyenXe.DataSource = obj.GetDataTable(sqls);
             autosizedgv(dataGridView_TatCaChuyenXe);
         }

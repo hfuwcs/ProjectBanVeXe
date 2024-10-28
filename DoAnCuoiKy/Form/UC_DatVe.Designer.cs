@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTang1 = new System.Windows.Forms.Label();
             this.btnB25 = new System.Windows.Forms.Button();
             this.btnB24 = new System.Windows.Forms.Button();
@@ -110,10 +111,12 @@
             this.comboBox_Start = new System.Windows.Forms.ComboBox();
             this.comboBox_End = new System.Windows.Forms.ComboBox();
             this.cbc_hours = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TimXe)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTang1
@@ -377,6 +380,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(440, 34);
             this.txtSDT.TabIndex = 63;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // lblSDT
             // 
@@ -1164,6 +1168,10 @@
             this.cbc_hours.Size = new System.Drawing.Size(203, 36);
             this.cbc_hours.TabIndex = 76;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // UC_DatVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -1202,6 +1210,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1291,5 +1300,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartureTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ArrivalTime;
         private System.Windows.Forms.ComboBox cbc_hours;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

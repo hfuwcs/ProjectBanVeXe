@@ -3,30 +3,16 @@
   "WorkspaceRootPath": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\test\\projectbanvexe\\doancuoiky\\form\\qlc_them.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\qlc_them.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\test\\projectbanvexe\\doancuoiky\\form\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\form\\qlc_them.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\qlc_them.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\form\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E53A555-935D-4702-A14F-AD9E55F10A10}|..\\MyLibrary\\MyLibrary.csproj|d:\\hk5\\dotnet\\test\\projectbanvexe\\mylibrary\\dal\\routedal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E53A555-935D-4702-A14F-AD9E55F10A10}|..\\MyLibrary\\MyLibrary.csproj|d:\\hk5\\dotnet\\test\\projectbanvexe\\mylibrary\\bll\\routebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E53A555-935D-4702-A14F-AD9E55F10A10}|..\\MyLibrary\\MyLibrary.csproj|d:\\hk5\\dotnet\\test\\projectbanvexe\\mylibrary\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E53A555-935D-4702-A14F-AD9E55F10A10}|..\\MyLibrary\\MyLibrary.csproj|d:\\hk5\\dotnet\\test\\projectbanvexe\\mylibrary\\dal\\tripdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E53A555-935D-4702-A14F-AD9E55F10A10}|..\\MyLibrary\\MyLibrary.csproj|d:\\hk5\\dotnet\\test\\projectbanvexe\\mylibrary\\bll\\tripbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E53A555-935D-4702-A14F-AD9E55F10A10}|..\\MyLibrary\\MyLibrary.csproj|d:\\hk5\\dotnet\\test\\projectbanvexe\\mylibrary\\dto\\route.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -44,99 +30,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RouteBLL.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\MyLibrary\\BLL\\RouteBLL.cs",
-              "RelativeDocumentMoniker": "..\\MyLibrary\\BLL\\RouteBLL.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\MyLibrary\\BLL\\RouteBLL.cs",
-              "RelativeToolTip": "..\\MyLibrary\\BLL\\RouteBLL.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAgwB8AAAAjAAAA",
+              "DocumentIndex": 1,
+              "Title": "UC_DatVe.cs [Design]",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_DatVe.cs",
+              "RelativeDocumentMoniker": "Form\\UC_DatVe.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_DatVe.cs [Design]",
+              "RelativeToolTip": "Form\\UC_DatVe.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T18:02:49.336Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TripBLL.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\MyLibrary\\BLL\\TripBLL.cs",
-              "RelativeDocumentMoniker": "..\\MyLibrary\\BLL\\TripBLL.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\MyLibrary\\BLL\\TripBLL.cs",
-              "RelativeToolTip": "..\\MyLibrary\\BLL\\TripBLL.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAYwCQAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T17:11:46.908Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DbContext.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\MyLibrary\\DbContext.cs",
-              "RelativeDocumentMoniker": "..\\MyLibrary\\DbContext.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\MyLibrary\\DbContext.cs",
-              "RelativeToolTip": "..\\MyLibrary\\DbContext.cs",
-              "ViewState": "AQIAAJwBAAAAAAAAAAArwK0BAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T17:10:04.722Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TripDAL.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\MyLibrary\\DAL\\TripDAL.cs",
-              "RelativeDocumentMoniker": "..\\MyLibrary\\DAL\\TripDAL.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\MyLibrary\\DAL\\TripDAL.cs",
-              "RelativeToolTip": "..\\MyLibrary\\DAL\\TripDAL.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAYwCcAAABUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T17:03:45.134Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Route.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\MyLibrary\\DTO\\Route.cs",
-              "RelativeDocumentMoniker": "..\\MyLibrary\\DTO\\Route.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\MyLibrary\\DTO\\Route.cs",
-              "RelativeToolTip": "..\\MyLibrary\\DTO\\Route.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T16:37:41.514Z"
+              "WhenOpened": "2024-10-28T04:56:04.23Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RouteDAL.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\MyLibrary\\DAL\\RouteDAL.cs",
-              "RelativeDocumentMoniker": "..\\MyLibrary\\DAL\\RouteDAL.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\MyLibrary\\DAL\\RouteDAL.cs",
-              "RelativeToolTip": "..\\MyLibrary\\DAL\\RouteDAL.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAwwDUAAAAJAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T15:49:27.125Z"
+              "WhenOpened": "2024-10-27T09:25:49.557Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "QLC_Them.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\QLC_Them.cs",
-              "RelativeDocumentMoniker": "Form\\QLC_Them.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\QLC_Them.cs",
-              "RelativeToolTip": "Form\\QLC_Them.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAuwFcAAAAIAAAA",
+              "Title": "UC_DatVe.cs",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_DatVe.cs",
+              "RelativeDocumentMoniker": "Form\\UC_DatVe.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_DatVe.cs",
+              "RelativeToolTip": "Form\\UC_DatVe.cs",
+              "ViewState": "AQIAAOwAAAAAAAAAAAAwwAMBAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T14:59:33.749Z",
+              "WhenOpened": "2024-10-27T08:51:09.859Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "QLC_Them.cs [Design]",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\QLC_Them.cs",
-              "RelativeDocumentMoniker": "Form\\QLC_Them.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\Test\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\QLC_Them.cs [Design]",
-              "RelativeToolTip": "Form\\QLC_Them.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T12:06:51.689Z"
             }
           ]
         }

@@ -108,8 +108,8 @@
     <Compile Include="DTO\DetailsTicket.cs" />
     <Compile Include="DTO\Driver.cs" />
     <Compile Include="DTO\OrderTicket.cs" />
-    <Compile Include="DTO\Passenger.cs" />
     <Compile Include="DbContext.cs" />
+    <Compile Include="DTO\Passenger.cs" />
     <Compile Include="DTO\Route.cs" />
     <Compile Include="DTO\Seat.cs" />
     <Compile Include="DTO\Trip.cs" />

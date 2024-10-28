@@ -1,5 +1,4 @@
-﻿using MyLibrary.DTO; 
-using MyLibrary.BusinessClass;
+﻿using MyLibrary.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;

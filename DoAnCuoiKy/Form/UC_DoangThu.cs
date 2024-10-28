@@ -24,22 +24,12 @@ namespace DoAnCuoiKy
         private void UC_DoangThu_Load(object sender, EventArgs e)
         {
             //START: LOAD database cho Tuyen
-            DbContext db1 = new DbContext();
-            string sqls1 = "select StartLocation from Route group by StartLocation";
-            string tableName1 = "StartLocation";
-            db1.GetDataAdapter(sqls1, tableName1);
-
-            comboBox_Start.DataSource = db1.DataSet.Tables[0];
-            comboBox_Start.ValueMember = "StartLocation";
+            string sqlstart = "select StartLocation from Route group by StartLocation";
+            comboBox_Start.DataSource = obj.GetDataTable(sqlstart);
             comboBox_Start.DisplayMember = "StartLocation";
 
-            DbContext db2 = new DbContext();
-            string sqls2 = "select EndLocation from Route group by EndLocation";
-            string tableName2 = "EndLocation";
-            db2.GetDataAdapter(sqls2, tableName2);
-
-            comboBox_End.DataSource = db2.DataSet.Tables[0];
-            comboBox_End.ValueMember = "EndLocation";
+            string sqlend = "select EndLocation from Route group by EndLocation";
+            comboBox_End.DataSource = obj.GetDataTable(sqlend);
             comboBox_End.DisplayMember = "EndLocation";
             //END: LOAD database cho Tuyen
         }
