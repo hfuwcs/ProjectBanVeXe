@@ -287,14 +287,16 @@ namespace DoAnCuoiKy
                 string OrderDate = DateTime.Now.Date.ToString("yyyy/MM/dd HH:mm");
                 string selectedDate = deppDate();
 
+                //Lấy Route để tính giá trên mỗi Distance
+                Route route = RouteBLL.Instance.GetRoute(comboBox_Start.Text, comboBox_End.Text);
+                int price = route.Distance * MyLibrary.Helpers.PricePerKm;
+
                 Passenger passenger = PassengerBLL.Instance.GetOnePassenger(txtSDT.Text, txtEmail.Text);///obj.GetOnePassenger(txtSDT.Text,txtEmail.Text);
                 if (passenger.PassengerID == 0)
                 {
                     PassengerBLL.Instance.InsertPassenger(txtHoTen.Text, txtSDT.Text, txtEmail.Text);///obj.InsertPassenger(txtHoTen.Text, txtSDT.Text, txtEmail.Text);
                     passenger = PassengerBLL.Instance.GetOnePassenger(txtSDT.Text, txtEmail.Text);//obj.GetOnePassenger(txtSDT.Text, txtEmail.Text);
                 }
-
-                //DangNhap dangNhap = new DangNhap();
 
                 //Tạo 1 record mới trong bảng OrderTicket (Tạo và lưu giao dịch khi bấm đặt vé)
                 OrderTicketBLL.Instance.InsertOrderTicket(passenger.PassengerID, OrderDate, UserID);
@@ -316,7 +318,7 @@ namespace DoAnCuoiKy
                     string sqlSeatID = "SELECT SEATID FROM SEAT WHERE SeatNumber= @seatnumber AND BusID = @busid";
                     int SeatID = obj.ExecuteScalar(sqlSeatID, new object[] { ghe, BusID });//obj.GetOneID(sqlSeatID);
 
-                    DetailsTicketBLL.Instance.InsertDetailsTicket(OrderTicketID,TripID, SeatID, 1, 210000);
+                    DetailsTicketBLL.Instance.InsertDetailsTicket(OrderTicketID,TripID, SeatID, 1, price);
 
                 }
                 List<string> list = disableButtonList(TripID);

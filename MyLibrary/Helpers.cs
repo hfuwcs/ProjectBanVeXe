@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace MyLibrary
 {
     public class Helpers
+       
     {
+        //List giờ khởi hành
         public static readonly List<string> Hours = new List<string>()
         {
             "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00",
@@ -15,5 +17,7 @@ namespace MyLibrary
             "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00",
             "23:00"
         };
+        //1k cho mỗi km
+        public static readonly int PricePerKm = 1000;
     }
 }

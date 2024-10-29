@@ -55,5 +55,20 @@ namespace DoAnCuoiKy
         {
             QLC_Them.ShowDialog();
         }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng đang phát triển");
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng đang phát triển");
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.MemberwiseClone();
+        }
     }
 }
