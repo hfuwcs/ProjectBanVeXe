@@ -1,4 +1,6 @@
 ﻿using MyLibrary;
+using MyLibrary.BLL;
+using MyLibrary.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +15,11 @@ namespace DoAnCuoiKy
 {
     public partial class QLC_Sua : Form
     {
-        DbContext obj = new DbContext();
-        public QLC_Sua()
+        DbContext db = new DbContext();
+        int TripID;
+        public QLC_Sua(int tripID)
         {
+            this.TripID = tripID;
             InitializeComponent();
         }
         //autosize datagridview
@@ -43,17 +47,16 @@ namespace DoAnCuoiKy
         private void ThemXoa_QLChuyen_Load(object sender, EventArgs e)
         {
             string sqlstart = "select StartLocation from Route group by StartLocation";
-            comboBox_Start.DataSource = obj.GetDataTable(sqlstart);
+            comboBox_Start.DataSource = db.GetDataTable(sqlstart);
             comboBox_Start.DisplayMember = "StartLocation";
 
             string sqlend = "select EndLocation from Route group by EndLocation";
-            comboBox_End.DataSource = obj.GetDataTable(sqlend);
+            comboBox_End.DataSource = db.GetDataTable(sqlend);
             comboBox_End.DisplayMember = "EndLocation";
 
-            string sqlBus = "Select * from Bus";
-            //obj.GetDataTable(sqlBus,"Bus");
-            dataGridView_Bus.DataSource = obj.GetDataTable(sqlBus);
-            autosizedgv(dataGridView_Bus);
+            Trip trip = TripBLL.Instance.GetTripByID(TripID);
+            comboBox_Start.Text = trip._departureLocation;
+            comboBox_End.Text = trip._arrivalLocation;
         }
 
     }

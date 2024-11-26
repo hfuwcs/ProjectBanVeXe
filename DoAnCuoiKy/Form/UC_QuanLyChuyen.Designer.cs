@@ -33,14 +33,13 @@
             this.dataGridView_TatCaChuyenXe = new System.Windows.Forms.DataGridView();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TatCaChuyenXe)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(780, 535);
+            this.btnSua.Location = new System.Drawing.Point(601, 528);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(144, 39);
@@ -53,7 +52,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.dataGridView_TatCaChuyenXe);
-            this.panel1.Location = new System.Drawing.Point(257, 44);
+            this.panel1.Location = new System.Drawing.Point(78, 37);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(927, 454);
@@ -72,7 +71,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(257, 535);
+            this.btnThem.Location = new System.Drawing.Point(78, 528);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(144, 39);
@@ -83,7 +82,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(518, 535);
+            this.btnXoa.Location = new System.Drawing.Point(339, 528);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(144, 39);
@@ -92,28 +91,16 @@
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Location = new System.Drawing.Point(1041, 535);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(144, 39);
-            this.btnThoat.TabIndex = 10;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // UC_QuanLyChuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.panel1);
             this.Name = "UC_QuanLyChuyen";
-            this.Size = new System.Drawing.Size(1335, 742);
+            this.Size = new System.Drawing.Size(1135, 668);
             this.Load += new System.EventHandler(this.UC_QuanLyChuyen_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TatCaChuyenXe)).EndInit();
@@ -127,7 +114,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.DataGridView dataGridView_TatCaChuyenXe;
     }
 }

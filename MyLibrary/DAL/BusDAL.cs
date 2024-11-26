@@ -34,14 +34,14 @@ namespace MyLibrary.DAL
             }
             return list;
         }
-        public DataTable GetBusReady(string today)
+        public DataTable GetBusReady(string deppTime, string arrTime)
         {
-            string sqls = "EXEC GETREADYBUS @TODAY";
-            DataTable data = db.ExecuteQuery(sqls,new object[] {today});
+            string sqls = "EXEC GETREADYBUS @deppTime , @arrTime ";
+            DataTable data = db.ExecuteQuery(sqls,new object[] { deppTime , arrTime});
             return data;
         }
-        public List<int> GetBusIDReady(string today) {
-            DataTable data = GetBusReady(today);
+        public List<int> GetBusIDReady(string deppTime, string arrTime) {
+            DataTable data = GetBusReady(deppTime, arrTime);
             List<int> list = new List<int>();
             foreach (DataRow row in data.Rows)
             {

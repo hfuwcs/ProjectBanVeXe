@@ -13,8 +13,7 @@ namespace DoAnCuoiKy
 {
     public partial class UC_QuanLyChuyen : UserControl
     {
-        DbContext obj = new DbContext();
-        QLC_Sua QLC_Sua = new QLC_Sua();
+        DbContext db = new DbContext();
         QLC_Them QLC_Them = new QLC_Them();
         public UC_QuanLyChuyen()
         {
@@ -46,8 +45,10 @@ namespace DoAnCuoiKy
 
         private void UC_QuanLyChuyen_Load(object sender, EventArgs e)
         {
-            string sqls = "select Distinct B.BusID, BusNumber, TotalSeat, BusType,  DepartureTime, ArrivalTime \r\nfrom  Bus B \r\nInner join Trip T on b.BusID=t.BusID \r\n";
-            dataGridView_TatCaChuyenXe.DataSource = obj.GetDataTable(sqls);
+            string today = DateTime.Now.ToString("yyyy/MM/dd") + (" 00:00");
+
+            string sqls = $"select Distinct B.BusID, BusNumber, TotalSeat, BusType,  DepartureTime, ArrivalTime \r\nfrom  Bus B \r\nInner join Trip T on b.BusID=t.BusID WHERE DepartureTime>= '{today}'";
+            dataGridView_TatCaChuyenXe.DataSource = db.GetDataTable(sqls);
             autosizedgv(dataGridView_TatCaChuyenXe);
         }
 
@@ -58,12 +59,36 @@ namespace DoAnCuoiKy
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng đang phát triển");
+            int tripID = int.Parse(dataGridView_TatCaChuyenXe.CurrentRow.Cells[0].Value.ToString());
+
+            QLC_Sua qlc = new QLC_Sua(tripID);
+            qlc.ShowDialog();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng đang phát triển");
+            string deppTime = dataGridView_TatCaChuyenXe.CurrentRow.Cells[4].Value.ToString();
+            deppTime = DateTime.Parse(deppTime).ToString("yyyy/MM/dd HH:mm");
+
+            string arrTime = dataGridView_TatCaChuyenXe.CurrentRow.Cells[5].Value.ToString();
+            arrTime = DateTime.Parse(arrTime).ToString("yyyy/MM/dd HH:mm");
+            if (MessageBox.Show("Bạn có chắc muốn xóa?","Thông báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Question,MessageBoxDefaultButton.Button2) == DialogResult.OK)
+            {
+                string sqls = "Select TripID from Trip where DepartureTime = '" + deppTime + "' and ArrivalTime = '" + arrTime + "'";
+                int tripId = db.ExecuteScalar(sqls);
+                string sqlDelete = "Delete from Trip where TripID = " + tripId;
+                int res = db.ExecuteNonQuery(sqlDelete);
+                if (res > 0)
+                {
+                    MessageBox.Show("Xóa thành công");
+                    UC_QuanLyChuyen_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại");
+                }
+                
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

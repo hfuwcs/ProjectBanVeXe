@@ -22,14 +22,15 @@ namespace MyLibrary.DAL
             }
             set => instance = value; 
         }
-        public DataTable SearchTrip(string deploc, string arrloc, string selectedday)
+        public DataTable SearchTrip(string deploc, string arrloc, DateTime selectedday)
         {
             string sqls = "EXEC TIMCHUYENXE @DEPLOC , @ARRLOC , @SECLECTEDDAY";
             DataTable data = db.Instance.ExecuteQuery(sqls, new object[] { deploc, arrloc, selectedday });
             return data;
         }
-        public int GetTripID(string deppLoc, string arrLoc, string deppDate)
+        public int GetTripID(string deppLoc, string arrLoc, DateTime deppDateA)
         {
+            string deppDate = deppDateA.ToString("yyyy-MM-dd HH:mm:ss");
             string sqlTripID = $"SELECT TripID FROM Trip WHERE DepartureLocation = '{deppLoc}' AND ArrivalLocation = '{arrLoc}' AND DepartureTime = '{deppDate}'";
             int id = db.Instance.ExecuteScalar(sqlTripID);
             return id;
@@ -41,6 +42,25 @@ namespace MyLibrary.DAL
             
             res = db.ExecuteNonQuery(sqls, new object[] { routeid, busid, driverid, depploc, arrloc, depptime, arrtime });
             return res;
+        }
+
+        public Trip GetTripByID(int tripID)
+        {
+            string sqls = $"SELECT * FROM Trip WHERE TripID = {tripID}";
+            DataTable data = db.GetDataTable(sqls);
+            Trip trip = new Trip();
+            foreach (DataRow dr in data.Rows)
+            {
+                trip.tripID = int.Parse(dr["TripID"].ToString());
+                trip._routeID = int.Parse(dr["RouteID"].ToString());
+                trip._busID = int.Parse(dr["BusID"].ToString());
+                trip._driverID = int.Parse(dr["DriverID"].ToString());
+                trip._departureLocation = dr["DepartureLocation"].ToString();
+                trip._arrivalLocation = dr["ArrivalLocation"].ToString();
+                trip._departureLocation = dr["DepartureTime"].ToString();
+                trip._arrivalLocation = dr["ArrivalTime"].ToString();
+            }
+            return trip;
         }
     }
 }

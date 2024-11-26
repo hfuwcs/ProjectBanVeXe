@@ -88,11 +88,6 @@ namespace DoAnCuoiKy
             this.Show(); 
         }
 
-        private void btn_ThoatDangNhap_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void linkLabel_DoiMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (isLogin)

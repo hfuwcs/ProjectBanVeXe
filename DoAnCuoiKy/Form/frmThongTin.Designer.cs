@@ -41,6 +41,7 @@
             // 
             // listView1
             // 
+            this.listView1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -50,9 +51,12 @@
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
-            this.listView1.Location = new System.Drawing.Point(12, 12);
+            this.listView1.ForeColor = System.Drawing.Color.Tomato;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(16, 16);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(831, 405);
+            this.listView1.Size = new System.Drawing.Size(1107, 528);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -99,10 +103,12 @@
             // 
             // frmThongTin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 429);
+            this.ClientSize = new System.Drawing.Size(1140, 561);
             this.Controls.Add(this.listView1);
+            this.Font = new System.Drawing.Font("Montserrat", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmThongTin";
             this.Text = "Thông tin chuyến";
             this.ResumeLayout(false);

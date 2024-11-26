@@ -34,14 +34,15 @@
             this.comboBox_Start = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView_Bus = new System.Windows.Forms.DataGridView();
-            this.BusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BusNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalSeat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BusType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbc_hEnd = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbc_hStart = new System.Windows.Forms.ComboBox();
+            this.dtp_EndDate = new System.Windows.Forms.DateTimePicker();
+            this.lblDenNgay = new System.Windows.Forms.Label();
+            this.dtp_StartDate = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Bus)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -103,78 +104,103 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dataGridView_Bus);
-            this.panel2.Location = new System.Drawing.Point(1, 108);
+            this.panel2.Controls.Add(this.cbc_hEnd);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.cbc_hStart);
+            this.panel2.Controls.Add(this.dtp_EndDate);
+            this.panel2.Controls.Add(this.lblDenNgay);
+            this.panel2.Controls.Add(this.dtp_StartDate);
+            this.panel2.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(1, 107);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(785, 272);
-            this.panel2.TabIndex = 80;
+            this.panel2.Size = new System.Drawing.Size(785, 176);
+            this.panel2.TabIndex = 86;
             // 
-            // dataGridView_Bus
+            // cbc_hEnd
             // 
-            this.dataGridView_Bus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Bus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.BusID,
-            this.BusNumber,
-            this.TotalSeat,
-            this.BusType});
-            this.dataGridView_Bus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_Bus.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView_Bus.Name = "dataGridView_Bus";
-            this.dataGridView_Bus.RowHeadersWidth = 51;
-            this.dataGridView_Bus.RowTemplate.Height = 24;
-            this.dataGridView_Bus.Size = new System.Drawing.Size(783, 270);
-            this.dataGridView_Bus.TabIndex = 0;
+            this.cbc_hEnd.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbc_hEnd.Location = new System.Drawing.Point(608, 102);
+            this.cbc_hEnd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbc_hEnd.Name = "cbc_hEnd";
+            this.cbc_hEnd.Size = new System.Drawing.Size(165, 31);
+            this.cbc_hEnd.TabIndex = 89;
             // 
-            // BusID
+            // label3
             // 
-            this.BusID.HeaderText = "BusID";
-            this.BusID.MinimumWidth = 6;
-            this.BusID.Name = "BusID";
-            this.BusID.Visible = false;
-            this.BusID.Width = 125;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(445, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 23);
+            this.label3.TabIndex = 88;
+            this.label3.Text = "Giờ khởi hành";
             // 
-            // BusNumber
+            // cbc_hStart
             // 
-            this.BusNumber.DataPropertyName = "BusNumber";
-            this.BusNumber.HeaderText = "Biển số xe";
-            this.BusNumber.MinimumWidth = 6;
-            this.BusNumber.Name = "BusNumber";
-            this.BusNumber.ReadOnly = true;
-            this.BusNumber.Width = 125;
+            this.cbc_hStart.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbc_hStart.Location = new System.Drawing.Point(608, 16);
+            this.cbc_hStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbc_hStart.Name = "cbc_hStart";
+            this.cbc_hStart.Size = new System.Drawing.Size(165, 31);
+            this.cbc_hStart.TabIndex = 87;
             // 
-            // TotalSeat
+            // dtp_EndDate
             // 
-            this.TotalSeat.DataPropertyName = "TotalSeat";
-            this.TotalSeat.HeaderText = "Tổng số chỗ ngồi";
-            this.TotalSeat.MinimumWidth = 6;
-            this.TotalSeat.Name = "TotalSeat";
-            this.TotalSeat.ReadOnly = true;
-            this.TotalSeat.Width = 125;
+            this.dtp_EndDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dtp_EndDate.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_EndDate.Location = new System.Drawing.Point(163, 105);
+            this.dtp_EndDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtp_EndDate.Name = "dtp_EndDate";
+            this.dtp_EndDate.Size = new System.Drawing.Size(273, 28);
+            this.dtp_EndDate.TabIndex = 84;
             // 
-            // BusType
+            // lblDenNgay
             // 
-            this.BusType.DataPropertyName = "BusType";
-            this.BusType.HeaderText = "Loại xe";
-            this.BusType.MinimumWidth = 6;
-            this.BusType.Name = "BusType";
-            this.BusType.ReadOnly = true;
-            this.BusType.Width = 125;
+            this.lblDenNgay.AutoSize = true;
+            this.lblDenNgay.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDenNgay.Location = new System.Drawing.Point(21, 79);
+            this.lblDenNgay.Name = "lblDenNgay";
+            this.lblDenNgay.Size = new System.Drawing.Size(100, 23);
+            this.lblDenNgay.TabIndex = 82;
+            this.lblDenNgay.Text = "Đến ngày:";
+            // 
+            // dtp_StartDate
+            // 
+            this.dtp_StartDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dtp_StartDate.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_StartDate.Location = new System.Drawing.Point(163, 30);
+            this.dtp_StartDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtp_StartDate.Name = "dtp_StartDate";
+            this.dtp_StartDate.Size = new System.Drawing.Size(273, 28);
+            this.dtp_StartDate.TabIndex = 83;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(258, 325);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(218, 50);
+            this.button1.TabIndex = 87;
+            this.button1.Text = "Lưu thay đổi";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // QLC_Sua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 773);
+            this.ClientSize = new System.Drawing.Size(786, 413);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "QLC_Sua";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ThemXoa_QLChuyen";
+            this.Text = "Sửa";
             this.Load += new System.EventHandler(this.ThemXoa_QLChuyen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Bus)).EndInit();
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -187,10 +213,12 @@
         public System.Windows.Forms.ComboBox comboBox_Start;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView_Bus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BusID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BusNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalSeat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BusType;
+        private System.Windows.Forms.ComboBox cbc_hEnd;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbc_hStart;
+        private System.Windows.Forms.DateTimePicker dtp_EndDate;
+        private System.Windows.Forms.Label lblDenNgay;
+        private System.Windows.Forms.DateTimePicker dtp_StartDate;
+        private System.Windows.Forms.Button button1;
     }
 }

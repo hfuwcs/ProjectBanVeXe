@@ -41,6 +41,7 @@ namespace DoAnCuoiKy
             lbl_Name = label_Name;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
+
         private void AddUserControl(UserControl userControl)
         {
             userControl.Dock=DockStyle.Fill;
@@ -130,7 +131,7 @@ namespace DoAnCuoiKy
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            BusBLL.Instance.GetListBookedSeat(1);
+            dgr_test.DataSource = null;
         }
     }
 }

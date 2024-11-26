@@ -112,6 +112,7 @@
             this.comboBox_End = new System.Windows.Forms.ComboBox();
             this.cbc_hours = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TimXe)).BeginInit();
             this.panel2.SuspendLayout();
@@ -341,18 +342,24 @@
             // 
             // btnTimChuyenXe
             // 
+            this.btnTimChuyenXe.BackColor = System.Drawing.Color.Tomato;
+            this.btnTimChuyenXe.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
+            this.btnTimChuyenXe.FlatAppearance.BorderSize = 3;
+            this.btnTimChuyenXe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimChuyenXe.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimChuyenXe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnTimChuyenXe.Location = new System.Drawing.Point(697, 466);
             this.btnTimChuyenXe.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimChuyenXe.Name = "btnTimChuyenXe";
             this.btnTimChuyenXe.Size = new System.Drawing.Size(729, 60);
             this.btnTimChuyenXe.TabIndex = 66;
             this.btnTimChuyenXe.Text = "Tìm chuyến xe";
-            this.btnTimChuyenXe.UseVisualStyleBackColor = true;
+            this.btnTimChuyenXe.UseVisualStyleBackColor = false;
             this.btnTimChuyenXe.Click += new System.EventHandler(this.btnTimChuyenXe_Click);
             // 
             // txtEmail
             // 
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtEmail.Location = new System.Drawing.Point(897, 392);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
@@ -374,6 +381,7 @@
             // 
             // txtSDT
             // 
+            this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtSDT.Location = new System.Drawing.Point(897, 307);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
@@ -396,6 +404,7 @@
             // 
             // txtHoTen
             // 
+            this.txtHoTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtHoTen.Location = new System.Drawing.Point(897, 228);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(4);
@@ -441,6 +450,7 @@
             // 
             // txtTamTinh
             // 
+            this.txtTamTinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTamTinh.Enabled = false;
             this.txtTamTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTamTinh.Location = new System.Drawing.Point(177, 709);
@@ -1118,14 +1128,17 @@
             // 
             // btnDatVe
             // 
+            this.btnDatVe.BackColor = System.Drawing.Color.Tomato;
+            this.btnDatVe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDatVe.Font = new System.Drawing.Font("Montserrat SemiBold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatVe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDatVe.Location = new System.Drawing.Point(242, 790);
             this.btnDatVe.Margin = new System.Windows.Forms.Padding(4);
             this.btnDatVe.Name = "btnDatVe";
             this.btnDatVe.Size = new System.Drawing.Size(184, 76);
             this.btnDatVe.TabIndex = 75;
             this.btnDatVe.Text = "Đặt vé";
-            this.btnDatVe.UseVisualStyleBackColor = true;
+            this.btnDatVe.UseVisualStyleBackColor = false;
             this.btnDatVe.Click += new System.EventHandler(this.btnDatVe_Click);
             // 
             // label2
@@ -1141,6 +1154,7 @@
             // 
             // comboBox_Start
             // 
+            this.comboBox_Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_Start.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Start.FormattingEnabled = true;
             this.comboBox_Start.Location = new System.Drawing.Point(891, 79);
@@ -1151,6 +1165,7 @@
             // 
             // comboBox_End
             // 
+            this.comboBox_End.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_End.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_End.FormattingEnabled = true;
             this.comboBox_End.Location = new System.Drawing.Point(1132, 79);
@@ -1161,6 +1176,7 @@
             // 
             // cbc_hours
             // 
+            this.cbc_hours.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbc_hours.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbc_hours.FormattingEnabled = true;
             this.cbc_hours.Location = new System.Drawing.Point(1117, 163);
@@ -1172,10 +1188,22 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(1093, 177);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 77;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox1.CheckStateChanged += new System.EventHandler(this.checkBox1_CheckStateChanged);
+            // 
             // UC_DatVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.cbc_hours);
             this.Controls.Add(this.btnDatVe);
             this.Controls.Add(this.comboBox_End);
@@ -1301,5 +1329,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ArrivalTime;
         private System.Windows.Forms.ComboBox cbc_hours;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

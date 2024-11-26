@@ -26,13 +26,13 @@ namespace MyLibrary.BLL
         {
             return BusDAL.Instance.GetListBookedSeat(tripID);
         }
-        public DataTable GetBusReady(string today)
+        public DataTable GetBusReady(string deppTime, string arrTime)
         {
-            return BusDAL.Instance.GetBusReady(today);
+            return BusDAL.Instance.GetBusReady(deppTime, arrTime);
         }
-        public List<int> GetBusIDReady(string today)
+        public List<int> GetBusIDReady(string deppTime, string arrTime)
         {
-            return BusDAL.Instance.GetBusIDReady(today);
+            return BusDAL.Instance.GetBusIDReady(deppTime, arrTime);
         }
     }
 }

@@ -3,30 +3,20 @@
   "WorkspaceRootPath": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5E53A555-935D-4702-A14F-AD9E55F10A10}|..\\MyLibrary\\MyLibrary.csproj|d:\\hk5\\dotnet\\projectbanvexe\\mylibrary\\dal\\routedal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\form\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\form\\uc_quanlychuyen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\uc_quanlychuyen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\form\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\form\\uc_quanlychuyen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\uc_quanlychuyen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\form\\frmthongtin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\frmthongtin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\form\\uc_qltk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\uc_qltk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\form\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\form\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:form\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E53A555-935D-4702-A14F-AD9E55F10A10}|..\\MyLibrary\\MyLibrary.csproj|d:\\hk5\\dotnet\\projectbanvexe\\mylibrary\\helpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,99 +26,65 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UC_QuanLyChuyen.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_QuanLyChuyen.cs",
-              "RelativeDocumentMoniker": "Form\\UC_QuanLyChuyen.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_QuanLyChuyen.cs",
-              "RelativeToolTip": "Form\\UC_QuanLyChuyen.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAApwEYAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T04:21:45.937Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UC_QLTK.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_QLTK.cs",
-              "RelativeDocumentMoniker": "Form\\UC_QLTK.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_QLTK.cs",
-              "RelativeToolTip": "Form\\UC_QLTK.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAArwCIAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T04:19:55.702Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UC_QuanLyChuyen.cs [Design]",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_QuanLyChuyen.cs",
-              "RelativeDocumentMoniker": "Form\\UC_QuanLyChuyen.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_QuanLyChuyen.cs [Design]",
-              "RelativeToolTip": "Form\\UC_QuanLyChuyen.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T04:19:50.475Z",
-              "EditorCaption": " [Design]"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "frmThongTin.cs [Design]",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\frmThongTin.cs",
-              "RelativeDocumentMoniker": "Form\\frmThongTin.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\frmThongTin.cs [Design]",
-              "RelativeToolTip": "Form\\frmThongTin.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T04:19:46.68Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Helpers.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\MyLibrary\\Helpers.cs",
-              "RelativeDocumentMoniker": "..\\MyLibrary\\Helpers.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\MyLibrary\\Helpers.cs",
-              "RelativeToolTip": "..\\MyLibrary\\Helpers.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T17:09:08.263Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "UC_DatVe.cs",
               "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_DatVe.cs",
               "RelativeDocumentMoniker": "Form\\UC_DatVe.cs",
               "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_DatVe.cs",
               "RelativeToolTip": "Form\\UC_DatVe.cs",
-              "ViewState": "AQIAAAsBAAAAAAAAAAAwwCoBAAARAAAA",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAuwGQAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T17:07:01.785Z",
+              "WhenOpened": "2024-11-26T05:11:47.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UC_DatVe.cs [Design]",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_DatVe.cs",
+              "RelativeDocumentMoniker": "Form\\UC_DatVe.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\UC_DatVe.cs [Design]",
+              "RelativeToolTip": "Form\\UC_DatVe.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T05:11:33.311Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\MainForm.cs",
+              "RelativeDocumentMoniker": "Form\\MainForm.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\MainForm.cs",
+              "RelativeToolTip": "Form\\MainForm.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAA1wGIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T23:41:56.715Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RouteDAL.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\MyLibrary\\DAL\\RouteDAL.cs",
-              "RelativeDocumentMoniker": "..\\MyLibrary\\DAL\\RouteDAL.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\MyLibrary\\DAL\\RouteDAL.cs",
-              "RelativeToolTip": "..\\MyLibrary\\DAL\\RouteDAL.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBQAAAAuAAAA",
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\MainForm.cs",
+              "RelativeDocumentMoniker": "Form\\MainForm.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Form\\MainForm.cs [Design]",
+              "RelativeToolTip": "Form\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T07:40:57.585Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T22:54:00.791Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
