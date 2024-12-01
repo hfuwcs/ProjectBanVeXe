@@ -28,6 +28,7 @@ namespace DoAnCuoiKy
             cbc_hStart.SelectedValueChanged += TimeChange;
             cbc_hEnd.SelectedValueChanged += TimeChange;
         }
+        public event EventHandler TripAdded;
         private string GetDateTimeString(DateTimePicker datePicker, ComboBox comboBox)
         {
             // Lấy ngày từ DateTimePicker
@@ -58,6 +59,7 @@ namespace DoAnCuoiKy
                 if (arrTime < depTime)
                 {
                     MessageBox.Show("Thời gian đến phải lớn hơn thời gian đi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    dtp_StartDate.Value = DateTime.Today;
                     return;
                 }
 
@@ -152,6 +154,7 @@ namespace DoAnCuoiKy
             {
                 MessageBox.Show("Thêm thành công!");
                 dgr_ReadyBus.DataSource = BusBLL.Instance.GetBusReady(depptime, arrtime);
+                TripAdded?.Invoke(this, EventArgs.Empty);
             }
         }
     }

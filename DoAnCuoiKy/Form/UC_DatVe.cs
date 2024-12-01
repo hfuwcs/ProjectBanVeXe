@@ -37,7 +37,6 @@ namespace DoAnCuoiKy
         {
             InitializeComponent();
             RegisterButtonClickEvent(this.Controls);
-
             TripID = 0;
             totalPrice  = 0;
             //Lấy 2 chữ số thập phân
@@ -98,7 +97,7 @@ namespace DoAnCuoiKy
                 if (control is Button button && (button.Text.StartsWith("A") || button.Text.StartsWith("B")))
                 {
                     button.Enabled = true; 
-                    button.BackColor = Color.Salmon;
+                    button.BackColor = Color.LightCyan;
                 }
 
                 // Duyệt đệ quy nếu có các control con
@@ -227,7 +226,6 @@ namespace DoAnCuoiKy
 
         private void UC_DatVe_Load(object sender, EventArgs e)
         {
-            dateTimePicker_StarDate.Enabled = false;
             DisableAllSeats(this.Controls);
             //Load giờ
             cbc_hours.DataSource = MyLibrary.Helpers.Hours;
@@ -363,12 +361,12 @@ namespace DoAnCuoiKy
 
         private void checkBox1_CheckStateChanged(object sender, EventArgs e)
         {
-            if(checkBox1.Checked)
-            {
-                dateTimePicker_StarDate.Enabled = true;
-                return;
-            }
-            dateTimePicker_StarDate.Enabled = false;
+            //if(checkBox1.Checked)
+            //{
+            //    dateTimePicker_StarDate.Enabled = true;
+            //    return;
+            //}
+            //dateTimePicker_StarDate.Enabled = false;
 
         }
 

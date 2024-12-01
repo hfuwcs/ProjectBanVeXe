@@ -57,8 +57,8 @@ namespace MyLibrary.DAL
                 trip._driverID = int.Parse(dr["DriverID"].ToString());
                 trip._departureLocation = dr["DepartureLocation"].ToString();
                 trip._arrivalLocation = dr["ArrivalLocation"].ToString();
-                trip._departureLocation = dr["DepartureTime"].ToString();
-                trip._arrivalLocation = dr["ArrivalTime"].ToString();
+                trip._departureTime = DateTime.Parse( dr["DepartureTime"].ToString());
+                trip._arrivalTime = DateTime.Parse(dr["ArrivalTime"].ToString());
             }
             return trip;
         }

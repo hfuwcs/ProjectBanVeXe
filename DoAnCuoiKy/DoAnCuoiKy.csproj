@@ -227,5 +227,11 @@
   <ItemGroup>
     <None Include="Resources\bus-ticket %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_8138970.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_8138970 %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

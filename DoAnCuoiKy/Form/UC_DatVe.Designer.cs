@@ -112,7 +112,6 @@
             this.comboBox_End = new System.Windows.Forms.ComboBox();
             this.cbc_hours = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TimXe)).BeginInit();
             this.panel2.SuspendLayout();
@@ -227,10 +226,10 @@
             this.dateTimePicker_StarDate.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker_StarDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_StarDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker_StarDate.Location = new System.Drawing.Point(897, 164);
+            this.dateTimePicker_StarDate.Location = new System.Drawing.Point(864, 144);
             this.dateTimePicker_StarDate.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker_StarDate.Name = "dateTimePicker_StarDate";
-            this.dateTimePicker_StarDate.Size = new System.Drawing.Size(189, 34);
+            this.dateTimePicker_StarDate.Size = new System.Drawing.Size(167, 34);
             this.dateTimePicker_StarDate.TabIndex = 70;
             // 
             // Thoat
@@ -372,7 +371,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.DodgerBlue;
             this.lblEmail.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(720, 392);
+            this.lblEmail.Location = new System.Drawing.Point(730, 382);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(81, 32);
@@ -395,7 +394,7 @@
             this.lblSDT.AutoSize = true;
             this.lblSDT.BackColor = System.Drawing.Color.DodgerBlue;
             this.lblSDT.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSDT.Location = new System.Drawing.Point(720, 307);
+            this.lblSDT.Location = new System.Drawing.Point(693, 307);
             this.lblSDT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(174, 32);
@@ -417,7 +416,7 @@
             this.lblHoTen.AutoSize = true;
             this.lblHoTen.BackColor = System.Drawing.Color.DodgerBlue;
             this.lblHoTen.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoTen.Location = new System.Drawing.Point(720, 228);
+            this.lblHoTen.Location = new System.Drawing.Point(732, 227);
             this.lblHoTen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHoTen.Name = "lblHoTen";
             this.lblHoTen.Size = new System.Drawing.Size(96, 32);
@@ -429,7 +428,7 @@
             this.lblNgayDi.AutoSize = true;
             this.lblNgayDi.BackColor = System.Drawing.Color.DodgerBlue;
             this.lblNgayDi.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayDi.Location = new System.Drawing.Point(720, 146);
+            this.lblNgayDi.Location = new System.Drawing.Point(730, 146);
             this.lblNgayDi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNgayDi.Name = "lblNgayDi";
             this.lblNgayDi.Size = new System.Drawing.Size(107, 32);
@@ -441,7 +440,7 @@
             this.lblTuyen.AutoSize = true;
             this.lblTuyen.BackColor = System.Drawing.Color.DodgerBlue;
             this.lblTuyen.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTuyen.Location = new System.Drawing.Point(720, 79);
+            this.lblTuyen.Location = new System.Drawing.Point(739, 86);
             this.lblTuyen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTuyen.Name = "lblTuyen";
             this.lblTuyen.Size = new System.Drawing.Size(89, 32);
@@ -1157,7 +1156,7 @@
             this.comboBox_Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_Start.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Start.FormattingEnabled = true;
-            this.comboBox_Start.Location = new System.Drawing.Point(891, 79);
+            this.comboBox_Start.Location = new System.Drawing.Point(864, 82);
             this.comboBox_Start.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_Start.Name = "comboBox_Start";
             this.comboBox_Start.Size = new System.Drawing.Size(160, 36);
@@ -1168,7 +1167,7 @@
             this.comboBox_End.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_End.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_End.FormattingEnabled = true;
-            this.comboBox_End.Location = new System.Drawing.Point(1132, 79);
+            this.comboBox_End.Location = new System.Drawing.Point(1150, 76);
             this.comboBox_End.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_End.Name = "comboBox_End";
             this.comboBox_End.Size = new System.Drawing.Size(168, 36);
@@ -1179,7 +1178,7 @@
             this.cbc_hours.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbc_hours.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbc_hours.FormattingEnabled = true;
-            this.cbc_hours.Location = new System.Drawing.Point(1117, 163);
+            this.cbc_hours.Location = new System.Drawing.Point(1150, 142);
             this.cbc_hours.Name = "cbc_hours";
             this.cbc_hours.Size = new System.Drawing.Size(203, 36);
             this.cbc_hours.TabIndex = 76;
@@ -1188,40 +1187,28 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(1093, 177);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 77;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            this.checkBox1.CheckStateChanged += new System.EventHandler(this.checkBox1_CheckStateChanged);
-            // 
             // UC_DatVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.cbc_hours);
-            this.Controls.Add(this.btnDatVe);
-            this.Controls.Add(this.comboBox_End);
-            this.Controls.Add(this.comboBox_Start);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker_StarDate);
-            this.Controls.Add(this.Thoat);
-            this.Controls.Add(this.btnThanhToan);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.btnTimChuyenXe);
-            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.lblSDT);
-            this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.lblHoTen);
             this.Controls.Add(this.lblNgayDi);
             this.Controls.Add(this.lblTuyen);
+            this.Controls.Add(this.cbc_hours);
+            this.Controls.Add(this.btnDatVe);
+            this.Controls.Add(this.dateTimePicker_StarDate);
+            this.Controls.Add(this.comboBox_End);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Thoat);
+            this.Controls.Add(this.btnThanhToan);
+            this.Controls.Add(this.comboBox_Start);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.btnTimChuyenXe);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.txtTamTinh);
             this.Controls.Add(this.lblTamTinh);
             this.Controls.Add(this.panel2);
@@ -1329,6 +1316,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ArrivalTime;
         private System.Windows.Forms.ComboBox cbc_hours;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

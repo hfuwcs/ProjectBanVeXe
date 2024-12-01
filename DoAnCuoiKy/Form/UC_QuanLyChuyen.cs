@@ -18,7 +18,9 @@ namespace DoAnCuoiKy
         public UC_QuanLyChuyen()
         {
             InitializeComponent();
+            QLC_Them.TripAdded += QLC_Them_TripAdded;
         }
+
 
         //Autosize datagridview thôi ;)
         private void autosizedgv(object sender)
@@ -42,12 +44,16 @@ namespace DoAnCuoiKy
                 dataGridView.Columns[i].Width = colw;
             }
         }
-
+        private void QLC_Them_TripAdded(object sender, EventArgs e)
+        {
+            // Refresh the dataGridView_TatCaChuyenXe
+            UC_QuanLyChuyen_Load(sender, e);
+        }
         private void UC_QuanLyChuyen_Load(object sender, EventArgs e)
         {
             string today = DateTime.Now.ToString("yyyy/MM/dd") + (" 00:00");
 
-            string sqls = $"select Distinct B.BusID, BusNumber, TotalSeat, BusType,  DepartureTime, ArrivalTime \r\nfrom  Bus B \r\nInner join Trip T on b.BusID=t.BusID WHERE DepartureTime>= '{today}'";
+            string sqls = $"select Distinct T.TRIPID, B.BusID, BusNumber, TotalSeat, BusType,  DepartureTime, ArrivalTime, DepartureLocation, ArrivalLocation \r\nfrom  Bus B \r\nInner join Trip T on b.BusID=t.BusID WHERE ArrivalTime>= '{today}'";
             dataGridView_TatCaChuyenXe.DataSource = db.GetDataTable(sqls);
             autosizedgv(dataGridView_TatCaChuyenXe);
         }

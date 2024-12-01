@@ -198,3 +198,5 @@ AS
 BEGIN
 SELECT * FROM SEAT WHERE SeatNumber = @SeatNumber AND BusID = @BusID
 END
+
+

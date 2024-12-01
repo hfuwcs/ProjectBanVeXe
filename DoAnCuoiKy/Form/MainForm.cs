@@ -18,11 +18,12 @@ namespace DoAnCuoiKy
     public partial class MainForm : Form
     {
         MainForm ths;
-        DbContext db = new DbContext();//Khai báo obj để xử dụng các method trong MyLibrary
+        DbContext db = new DbContext();
 
         public Button button_Thoat;
         public Button button_QuanLyChuyen;
         public Label lbl_Name;
+        private Form activeForm;
 
         //Biến trạng thái cho phép thoát khỏi form
         public bool isExit = true;
@@ -35,7 +36,6 @@ namespace DoAnCuoiKy
 
             //Lấy ID người dùng đã được đăng nhập
             this.userID = userid;
-            //instance = this;
             button_Thoat = btn_DoanhThu;
             button_QuanLyChuyen = btn_QuanLyChuyen;
             lbl_Name = label_Name;

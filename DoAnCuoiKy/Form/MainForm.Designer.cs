@@ -32,8 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel_logo = new System.Windows.Forms.Panel();
+            this.btnReLoad = new System.Windows.Forms.Button();
             this.panel_Sidebar = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_BanVe = new System.Windows.Forms.Button();
+            this.btn_DoanhThu = new System.Windows.Forms.Button();
+            this.btn_QuanLyTaiKhoan = new System.Windows.Forms.Button();
+            this.btn_TraCuuVe = new System.Windows.Forms.Button();
+            this.btn_QuanLyChuyen = new System.Windows.Forms.Button();
+            this.btn_DangXuat = new System.Windows.Forms.Button();
+            this.btn_TrangChu = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_Name = new System.Windows.Forms.Label();
@@ -44,17 +52,11 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btn_BanVe = new System.Windows.Forms.Button();
-            this.btn_DoanhThu = new System.Windows.Forms.Button();
-            this.btn_QuanLyTaiKhoan = new System.Windows.Forms.Button();
-            this.btn_TraCuuVe = new System.Windows.Forms.Button();
-            this.btn_QuanLyChuyen = new System.Windows.Forms.Button();
-            this.btn_DangXuat = new System.Windows.Forms.Button();
-            this.btn_TrangChu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.panel_logo.SuspendLayout();
             this.panel_Sidebar.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelContainer.SuspendLayout();
@@ -81,7 +83,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panelContainer);
-            this.splitContainer1.Size = new System.Drawing.Size(1924, 921);
+            this.splitContainer1.Size = new System.Drawing.Size(1924, 923);
             this.splitContainer1.SplitterDistance = 320;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
@@ -89,11 +91,25 @@
             // panel_logo
             // 
             this.panel_logo.BackColor = System.Drawing.Color.Tomato;
+            this.panel_logo.Controls.Add(this.btnReLoad);
             this.panel_logo.Location = new System.Drawing.Point(4, 5);
             this.panel_logo.Margin = new System.Windows.Forms.Padding(4);
             this.panel_logo.Name = "panel_logo";
             this.panel_logo.Size = new System.Drawing.Size(281, 100);
             this.panel_logo.TabIndex = 1;
+            // 
+            // btnReLoad
+            // 
+            this.btnReLoad.BackColor = System.Drawing.Color.Tomato;
+            this.btnReLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReLoad.ForeColor = System.Drawing.Color.Tomato;
+            this.btnReLoad.Image = global::DoAnCuoiKy.Properties.Resources.refresh_8138970__1_;
+            this.btnReLoad.Location = new System.Drawing.Point(76, 21);
+            this.btnReLoad.Name = "btnReLoad";
+            this.btnReLoad.Size = new System.Drawing.Size(104, 71);
+            this.btnReLoad.TabIndex = 0;
+            this.btnReLoad.UseVisualStyleBackColor = false;
+            this.btnReLoad.Visible = false;
             // 
             // panel_Sidebar
             // 
@@ -128,118 +144,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(311, 753);
             this.tableLayoutPanel1.TabIndex = 29;
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.BackColor = System.Drawing.Color.Transparent;
-            this.panelContainer.Controls.Add(this.panel1);
-            this.panelContainer.Controls.Add(this.button1);
-            this.panelContainer.Controls.Add(this.dgr_test);
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelContainer.Location = new System.Drawing.Point(0, 0);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(4, 4, 0, 4);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1599, 921);
-            this.panelContainer.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Tomato;
-            this.panel1.Controls.Add(this.label_Name);
-            this.panel1.Location = new System.Drawing.Point(3, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1596, 100);
-            this.panel1.TabIndex = 29;
-            // 
-            // label_Name
-            // 
-            this.label_Name.AutoSize = true;
-            this.label_Name.BackColor = System.Drawing.Color.Tomato;
-            this.label_Name.Font = new System.Drawing.Font("Montserrat", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Name.Location = new System.Drawing.Point(570, 26);
-            this.label_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_Name.Name = "label_Name";
-            this.label_Name.Size = new System.Drawing.Size(333, 46);
-            this.label_Name.TabIndex = 1;
-            this.label_Name.Text = "Quản lý bán vé xe";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(591, 180);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 80);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "TEST";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // dgr_test
-            // 
-            this.dgr_test.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgr_test.Location = new System.Drawing.Point(261, 414);
-            this.dgr_test.Margin = new System.Windows.Forms.Padding(4);
-            this.dgr_test.Name = "dgr_test";
-            this.dgr_test.RowHeadersWidth = 51;
-            this.dgr_test.RowTemplate.Height = 24;
-            this.dgr_test.Size = new System.Drawing.Size(946, 185);
-            this.dgr_test.TabIndex = 28;
-            // 
-            // toolStripContainer1
-            // 
-            // 
-            // toolStripContainer1.ContentPanel
-            // 
-            this.toolStripContainer1.ContentPanel.AutoScroll = true;
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.splitContainer1);
-            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1924, 921);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(1924, 951);
-            this.toolStripContainer1.TabIndex = 1;
-            this.toolStripContainer1.Text = "toolStripContainer1";
-            // 
-            // toolStripContainer1.TopToolStripPanel
-            // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 30);
-            this.menuStrip1.TabIndex = 34;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Exit_ToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // Exit_ToolStripMenuItem
-            // 
-            this.Exit_ToolStripMenuItem.Name = "Exit_ToolStripMenuItem";
-            this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
-            this.Exit_ToolStripMenuItem.Text = "Thoát";
-            this.Exit_ToolStripMenuItem.Click += new System.EventHandler(this.Exit_ToolStripMenuItem_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // btn_BanVe
             // 
@@ -362,6 +266,118 @@
             this.btn_TrangChu.UseVisualStyleBackColor = false;
             this.btn_TrangChu.Click += new System.EventHandler(this.btn_TrangChu_Click);
             // 
+            // panelContainer
+            // 
+            this.panelContainer.BackColor = System.Drawing.Color.Transparent;
+            this.panelContainer.Controls.Add(this.panel1);
+            this.panelContainer.Controls.Add(this.button1);
+            this.panelContainer.Controls.Add(this.dgr_test);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(4, 4, 0, 4);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1599, 923);
+            this.panelContainer.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Tomato;
+            this.panel1.Controls.Add(this.label_Name);
+            this.panel1.Location = new System.Drawing.Point(3, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1596, 100);
+            this.panel1.TabIndex = 29;
+            // 
+            // label_Name
+            // 
+            this.label_Name.AutoSize = true;
+            this.label_Name.BackColor = System.Drawing.Color.Tomato;
+            this.label_Name.Font = new System.Drawing.Font("Montserrat", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name.Location = new System.Drawing.Point(570, 26);
+            this.label_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_Name.Name = "label_Name";
+            this.label_Name.Size = new System.Drawing.Size(333, 46);
+            this.label_Name.TabIndex = 1;
+            this.label_Name.Text = "Quản lý bán vé xe";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(591, 180);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(244, 80);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "TEST";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // dgr_test
+            // 
+            this.dgr_test.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgr_test.Location = new System.Drawing.Point(261, 414);
+            this.dgr_test.Margin = new System.Windows.Forms.Padding(4);
+            this.dgr_test.Name = "dgr_test";
+            this.dgr_test.RowHeadersWidth = 51;
+            this.dgr_test.RowTemplate.Height = 24;
+            this.dgr_test.Size = new System.Drawing.Size(946, 185);
+            this.dgr_test.TabIndex = 28;
+            // 
+            // toolStripContainer1
+            // 
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            this.toolStripContainer1.ContentPanel.AutoScroll = true;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.splitContainer1);
+            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1924, 923);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.Size = new System.Drawing.Size(1924, 951);
+            this.toolStripContainer1.TabIndex = 1;
+            this.toolStripContainer1.Text = "toolStripContainer1";
+            // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
+            this.menuStrip1.TabIndex = 34;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Exit_ToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // Exit_ToolStripMenuItem
+            // 
+            this.Exit_ToolStripMenuItem.Name = "Exit_ToolStripMenuItem";
+            this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
+            this.Exit_ToolStripMenuItem.Text = "Thoát";
+            this.Exit_ToolStripMenuItem.Click += new System.EventHandler(this.Exit_ToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -382,6 +398,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.panel_logo.ResumeLayout(false);
             this.panel_Sidebar.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panelContainer.ResumeLayout(false);
@@ -422,6 +439,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnReLoad;
     }
 }
 
