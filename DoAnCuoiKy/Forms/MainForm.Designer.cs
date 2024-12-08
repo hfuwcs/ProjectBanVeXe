@@ -95,7 +95,7 @@
             this.panel_logo.Location = new System.Drawing.Point(4, 5);
             this.panel_logo.Margin = new System.Windows.Forms.Padding(4);
             this.panel_logo.Name = "panel_logo";
-            this.panel_logo.Size = new System.Drawing.Size(281, 100);
+            this.panel_logo.Size = new System.Drawing.Size(303, 100);
             this.panel_logo.TabIndex = 1;
             // 
             // btnReLoad
@@ -156,7 +156,7 @@
             this.btn_BanVe.Location = new System.Drawing.Point(4, 78);
             this.btn_BanVe.Margin = new System.Windows.Forms.Padding(4);
             this.btn_BanVe.Name = "btn_BanVe";
-            this.btn_BanVe.Size = new System.Drawing.Size(276, 66);
+            this.btn_BanVe.Size = new System.Drawing.Size(298, 66);
             this.btn_BanVe.TabIndex = 27;
             this.btn_BanVe.Text = "Bán vé";
             this.btn_BanVe.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@
             this.btn_DoanhThu.Location = new System.Drawing.Point(4, 406);
             this.btn_DoanhThu.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DoanhThu.Name = "btn_DoanhThu";
-            this.btn_DoanhThu.Size = new System.Drawing.Size(276, 66);
+            this.btn_DoanhThu.Size = new System.Drawing.Size(298, 66);
             this.btn_DoanhThu.TabIndex = 29;
             this.btn_DoanhThu.Text = "Doanh thu";
             this.btn_DoanhThu.UseVisualStyleBackColor = true;
@@ -190,7 +190,7 @@
             this.btn_QuanLyTaiKhoan.Location = new System.Drawing.Point(4, 316);
             this.btn_QuanLyTaiKhoan.Margin = new System.Windows.Forms.Padding(4);
             this.btn_QuanLyTaiKhoan.Name = "btn_QuanLyTaiKhoan";
-            this.btn_QuanLyTaiKhoan.Size = new System.Drawing.Size(276, 82);
+            this.btn_QuanLyTaiKhoan.Size = new System.Drawing.Size(298, 82);
             this.btn_QuanLyTaiKhoan.TabIndex = 32;
             this.btn_QuanLyTaiKhoan.Text = "Quản lý tài khoản";
             this.btn_QuanLyTaiKhoan.UseVisualStyleBackColor = true;
@@ -207,7 +207,7 @@
             this.btn_TraCuuVe.Location = new System.Drawing.Point(4, 152);
             this.btn_TraCuuVe.Margin = new System.Windows.Forms.Padding(4);
             this.btn_TraCuuVe.Name = "btn_TraCuuVe";
-            this.btn_TraCuuVe.Size = new System.Drawing.Size(276, 66);
+            this.btn_TraCuuVe.Size = new System.Drawing.Size(298, 66);
             this.btn_TraCuuVe.TabIndex = 31;
             this.btn_TraCuuVe.Text = "Tra cứu vé";
             this.btn_TraCuuVe.UseVisualStyleBackColor = true;
@@ -224,7 +224,7 @@
             this.btn_QuanLyChuyen.Location = new System.Drawing.Point(4, 226);
             this.btn_QuanLyChuyen.Margin = new System.Windows.Forms.Padding(4);
             this.btn_QuanLyChuyen.Name = "btn_QuanLyChuyen";
-            this.btn_QuanLyChuyen.Size = new System.Drawing.Size(276, 81);
+            this.btn_QuanLyChuyen.Size = new System.Drawing.Size(298, 81);
             this.btn_QuanLyChuyen.TabIndex = 28;
             this.btn_QuanLyChuyen.Text = "Quản lý chuyến";
             this.btn_QuanLyChuyen.UseVisualStyleBackColor = true;
@@ -241,7 +241,7 @@
             this.btn_DangXuat.Location = new System.Drawing.Point(4, 480);
             this.btn_DangXuat.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DangXuat.Name = "btn_DangXuat";
-            this.btn_DangXuat.Size = new System.Drawing.Size(276, 65);
+            this.btn_DangXuat.Size = new System.Drawing.Size(298, 65);
             this.btn_DangXuat.TabIndex = 33;
             this.btn_DangXuat.Text = "Đăng Xuất";
             this.btn_DangXuat.UseVisualStyleBackColor = true;
@@ -260,7 +260,7 @@
             this.btn_TrangChu.Location = new System.Drawing.Point(4, 4);
             this.btn_TrangChu.Margin = new System.Windows.Forms.Padding(4);
             this.btn_TrangChu.Name = "btn_TrangChu";
-            this.btn_TrangChu.Size = new System.Drawing.Size(276, 66);
+            this.btn_TrangChu.Size = new System.Drawing.Size(298, 66);
             this.btn_TrangChu.TabIndex = 26;
             this.btn_TrangChu.Text = "Trang chủ";
             this.btn_TrangChu.UseVisualStyleBackColor = false;

@@ -104,6 +104,7 @@
     <Compile Include="DAL\SeatDAL.cs" />
     <Compile Include="DAL\TripDAL.cs" />
     <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Account_Role.cs" />
     <Compile Include="DTO\Bus.cs" />
     <Compile Include="DTO\DetailsTicket.cs" />
     <Compile Include="DTO\Driver.cs" />

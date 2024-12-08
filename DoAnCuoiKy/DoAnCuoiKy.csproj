@@ -13,6 +13,22 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\HK5\PublishApp\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +49,24 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>AB4538D5D1616D26BDFD06F07C76CA2C15A7157A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DoAnCuoiKy_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -51,96 +85,102 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\DangNhap.cs">
+    <Compile Include="Forms\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\DangNhap.Designer.cs">
+    <Compile Include="Forms\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\DoiMatKhau.cs">
+    <Compile Include="Forms\DoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\DoiMatKhau.Designer.cs">
+    <Compile Include="Forms\DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\frmHoaDon.cs">
+    <Compile Include="Forms\frmHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\frmHoaDon.Designer.cs">
+    <Compile Include="Forms\frmHoaDon.Designer.cs">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\frmThongTin.cs">
+    <Compile Include="Forms\frmThongTin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\frmThongTin.Designer.cs">
+    <Compile Include="Forms\frmThongTin.Designer.cs">
       <DependentUpon>frmThongTin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TrangChu.Designer.cs">
+      <DependentUpon>TrangChu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Form\QLC_Sua.cs">
+    <Compile Include="Forms\QLC_Sua.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\QLC_Sua.Designer.cs">
+    <Compile Include="Forms\QLC_Sua.Designer.cs">
       <DependentUpon>QLC_Sua.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\QLC_Them.cs">
+    <Compile Include="Forms\QLC_Them.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\QLC_Them.Designer.cs">
+    <Compile Include="Forms\QLC_Them.Designer.cs">
       <DependentUpon>QLC_Them.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\UC_DatVe.cs">
+    <Compile Include="Forms\UC_DatVe.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\UC_DatVe.Designer.cs">
+    <Compile Include="Forms\UC_DatVe.Designer.cs">
       <DependentUpon>UC_DatVe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\UC_DoangThu.cs">
+    <Compile Include="Forms\UC_DoangThu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\UC_DoangThu.Designer.cs">
+    <Compile Include="Forms\UC_DoangThu.Designer.cs">
       <DependentUpon>UC_DoangThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\UC_QLTK.cs">
+    <Compile Include="Forms\UC_QLTK.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\UC_QLTK.Designer.cs">
+    <Compile Include="Forms\UC_QLTK.Designer.cs">
       <DependentUpon>UC_QLTK.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\UC_QuanLyChuyen.cs">
+    <Compile Include="Forms\UC_QuanLyChuyen.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\UC_QuanLyChuyen.Designer.cs">
+    <Compile Include="Forms\UC_QuanLyChuyen.Designer.cs">
       <DependentUpon>UC_QuanLyChuyen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\UC_TraCuuVe.cs">
+    <Compile Include="Forms\UC_TraCuuVe.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\UC_TraCuuVe.Designer.cs">
+    <Compile Include="Forms\UC_TraCuuVe.Designer.cs">
       <DependentUpon>UC_TraCuuVe.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form\DangNhap.resx">
+    <EmbeddedResource Include="Forms\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\DoiMatKhau.resx">
+    <EmbeddedResource Include="Forms\DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\QLC_Them.resx">
+    <EmbeddedResource Include="Forms\QLC_Them.resx">
       <DependentUpon>QLC_Them.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\frmHoaDon.resx">
+    <EmbeddedResource Include="Forms\frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\frmThongTin.resx">
+    <EmbeddedResource Include="Forms\frmThongTin.resx">
       <DependentUpon>frmThongTin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -153,25 +193,27 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Form\QLC_Sua.resx">
+    <EmbeddedResource Include="Forms\QLC_Sua.resx">
       <DependentUpon>QLC_Sua.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\UC_DatVe.resx">
+    <EmbeddedResource Include="Forms\UC_DatVe.resx">
       <DependentUpon>UC_DatVe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\UC_DoangThu.resx">
+    <EmbeddedResource Include="Forms\UC_DoangThu.resx">
       <DependentUpon>UC_DoangThu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\UC_QLTK.resx">
+    <EmbeddedResource Include="Forms\UC_QLTK.resx">
       <DependentUpon>UC_QLTK.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\UC_QuanLyChuyen.resx">
+    <EmbeddedResource Include="Forms\UC_QuanLyChuyen.resx">
       <DependentUpon>UC_QuanLyChuyen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\UC_TraCuuVe.resx">
+    <EmbeddedResource Include="Forms\UC_TraCuuVe.resx">
       <DependentUpon>UC_TraCuuVe.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DoAnCuoiKy_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -232,6 +274,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\refresh_8138970 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
