@@ -1,5 +1,4 @@
 ﻿using MyLibrary;
-using MyLibrary.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,23 +43,7 @@ namespace DoAnCuoiKy
             string endDay = dateTimePicker_Endday.Value.ToString("yyyy/MM/dd HH:mm");
             string depLoc = comboBox_Start.Text.ToString();
             string arrLoc = comboBox_End.Text.ToString();
-
-//            DECLARE @EndDate DATETIME
-//DECLARE @StartDate DATETIME
-
-//SET @StartDate = '2024-10-10'
-//SET @EndDate = GETDATE()
-
-
-//SELECT*
-//FROM OrderTicket OT
-
-//    RIGHT JOIN DetailsTicket DT
-
-//    ON OT.OrderTicketID = DT.OrderTicketID
-//WHERE(OrderDate <= @EndDate AND OrderDate >= @StartDate) AND DT.TripID = 1
-
-
+            
             txtTongDoanhThu.Text += obj.GetIncome(startDay, endDay, depLoc, arrLoc).ToString("C",obj.nfi);
         }
 

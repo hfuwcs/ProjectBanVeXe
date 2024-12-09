@@ -211,7 +211,6 @@
     <EmbeddedResource Include="Forms\UC_TraCuuVe.resx">
       <DependentUpon>UC_TraCuuVe.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DoAnCuoiKy_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

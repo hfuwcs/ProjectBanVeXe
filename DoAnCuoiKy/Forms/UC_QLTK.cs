@@ -95,7 +95,7 @@ namespace DoAnCuoiKy
                 return;
             }
 
-            if (db.GetTable<Account>().Where(a=>a.Name==txtTen.Text).FirstOrDefault() == null) { 
+            if (db.GetTable<Account>().Where(a=>a.Name==txtTen.Text) == null) { 
                 MessageBox.Show("Không có dữ liệu");
             }
             else

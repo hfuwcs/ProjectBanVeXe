@@ -131,7 +131,7 @@ namespace DoAnCuoiKy
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            dgr_test.DataSource = db.GetTable<OrderTicket>().ToList();
+            dgr_test.DataSource = null;
         }
     }
 }
