@@ -283,6 +283,7 @@ namespace DoAnCuoiKy
         }
         private void dataGridView_TimXe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             EnableAllSeats(this.Controls);
             DateTime selectedday = deppDate();
             TripID = db.GetTable<Trip>().Where(t => t._departureLocation.Equals(comboBox_Start.Text) && t._arrivalLocation.Equals(comboBox_End.Text)).Select(t => t.tripID).FirstOrDefault();

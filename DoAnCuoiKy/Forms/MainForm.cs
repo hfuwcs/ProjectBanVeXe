@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using MyLibrary.BLL;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 using System.Security.Cryptography;
+using DoAnCuoiKy.Forms;
 
 namespace DoAnCuoiKy
 {
@@ -24,6 +25,7 @@ namespace DoAnCuoiKy
         public Button button_QuanLyChuyen;
         public Label lbl_Name;
         private Form activeForm;
+        private Button currentButton;
 
         //Biến trạng thái cho phép thoát khỏi form
         public bool isExit = true;
@@ -38,8 +40,48 @@ namespace DoAnCuoiKy
             this.userID = userid;
             button_Thoat = btn_DoanhThu;
             button_QuanLyChuyen = btn_QuanLyChuyen;
-            lbl_Name = label_Name;
+            UC_TrangChu uC_TrangChu = new UC_TrangChu();
+            uC_TrangChu.UserID = this.userID;
+            AddUserControl(uC_TrangChu);
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+        }
+        private void OpenChildForm(Form childForm, object btnSender)
+        {
+            if (activeForm != null)
+            {
+
+                activeForm.Close();
+            }
+            //ActivateButton(btnSender);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            //this.panelMain.Controls.Add(childForm);
+            //this.panelMain.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            //btn_CloseChildForm.Visible = true;
+            //btn_CloseChildForm.Image = ((System.Drawing.Image)(Properties.Resources.exit));
+        }
+        private void ActivateButton(object btnSender)
+        {
+            if (btnSender != null)
+            {
+                if (currentButton != (Button)btnSender)
+                {
+                    {
+                        //DisableButton();
+                        Color color = Color.Tomato;
+                        currentButton = (Button)btnSender;
+                        currentButton.BackColor = color;
+                        currentButton.ForeColor = Color.White;
+                        currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        //panel_TitleBar.BackColor = color;
+                        //panel_Logo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
+                    }
+                }
+            }
         }
 
         private void AddUserControl(UserControl userControl)
@@ -81,6 +123,10 @@ namespace DoAnCuoiKy
         private void btn_TrangChu_Click(object sender, EventArgs e)
         {
             panelContainer.Controls.Clear();
+            UC_TrangChu uC_TrangChu = new UC_TrangChu();
+            uC_TrangChu.UserID = this.userID;
+            AddUserControl(uC_TrangChu);
+            //OpenChildForm(new TrangChu(), sender);
             
         }
 

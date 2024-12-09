@@ -1,4 +1,5 @@
-﻿using MyLibrary;
+﻿using DoAnCuoiKy.Forms;
+using MyLibrary;
 using MyLibrary.DTO;
 using System;
 using System.Collections.Generic;
@@ -66,6 +67,12 @@ namespace DoAnCuoiKy
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnDoanhThu_Click(object sender, EventArgs e)
+        {
+            FormDoanhThuReport frm = new FormDoanhThuReport();
+            frm.ShowDialog();
         }
     }
 }

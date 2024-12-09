@@ -73,7 +73,7 @@ namespace DoAnCuoiKy
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string deppTime = dataGridView_TatCaChuyenXe.CurrentRow.Cells[4].Value.ToString();
+            string deppTime = dataGridView_TatCaChuyenXe.CurrentRow.Cells[5].Value.ToString();
             deppTime = DateTime.Parse(deppTime).ToString("yyyy/MM/dd HH:mm");
 
             string arrTime = dataGridView_TatCaChuyenXe.CurrentRow.Cells[5].Value.ToString();

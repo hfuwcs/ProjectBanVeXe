@@ -1,9 +1,11 @@
-﻿using System;
+﻿using StackExchange.Redis;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-
+using MyLibrary.DTO;
 namespace MyLibrary
 {
     public class Helpers
@@ -19,5 +21,28 @@ namespace MyLibrary
         };
         //1k cho mỗi km
         public static readonly int PricePerKm = 1000;
+        public static readonly List<Roles> roles = new List<Roles>()
+        {
+            new Roles(){RoleID=1, RoleName="Admin"},
+            new Roles(){RoleID=2, RoleName="User"}
+        };
+
+        public static string EncryptSHA256(string plainText)
+        {
+            string res = "";
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                //Chuyển plaintText thành mảng Byte
+                //Convert plaint text to a bytes array
+
+                byte[] sourceData = Encoding.UTF8.GetBytes(plainText);
+                byte[] hashRes = sha256.ComputeHash(sourceData);
+
+                res = BitConverter.ToString(hashRes, 0, hashRes.Length).Replace("-", string.Empty);
+
+                return res;
+            }
+        }
     }
+
 }

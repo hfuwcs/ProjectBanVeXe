@@ -40,6 +40,7 @@
             this.comboBox_End = new System.Windows.Forms.ComboBox();
             this.comboBox_Start = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnDoanhThu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTinh
@@ -159,11 +160,23 @@
             this.label2.TabIndex = 77;
             this.label2.Text = "=>";
             // 
+            // btnDoanhThu
+            // 
+            this.btnDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnDoanhThu.Location = new System.Drawing.Point(577, 551);
+            this.btnDoanhThu.Name = "btnDoanhThu";
+            this.btnDoanhThu.Size = new System.Drawing.Size(112, 83);
+            this.btnDoanhThu.TabIndex = 78;
+            this.btnDoanhThu.Text = "In doanh thu";
+            this.btnDoanhThu.UseVisualStyleBackColor = true;
+            this.btnDoanhThu.Click += new System.EventHandler(this.btnDoanhThu_Click);
+            // 
             // UC_DoangThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
+            this.Controls.Add(this.btnDoanhThu);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox_End);
             this.Controls.Add(this.comboBox_Start);
@@ -177,7 +190,7 @@
             this.Controls.Add(this.lblTuNgay);
             this.Controls.Add(this.lblDoanhThu);
             this.Font = new System.Drawing.Font("Montserrat", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_DoangThu";
             this.Size = new System.Drawing.Size(908, 772);
             this.Load += new System.EventHandler(this.UC_DoangThu_Load);
@@ -199,5 +212,6 @@
         private System.Windows.Forms.ComboBox comboBox_End;
         private System.Windows.Forms.ComboBox comboBox_Start;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnDoanhThu;
     }
 }

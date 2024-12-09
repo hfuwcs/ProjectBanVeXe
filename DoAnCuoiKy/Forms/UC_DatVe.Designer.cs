@@ -266,6 +266,8 @@
             // 
             // dataGridView_TimXe
             // 
+            this.dataGridView_TimXe.AllowUserToAddRows = false;
+            this.dataGridView_TimXe.AllowUserToDeleteRows = false;
             this.dataGridView_TimXe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_TimXe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BusID,
@@ -278,6 +280,8 @@
             this.dataGridView_TimXe.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_TimXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView_TimXe.Name = "dataGridView_TimXe";
+            this.dataGridView_TimXe.ReadOnly = true;
+            this.dataGridView_TimXe.RowHeadersVisible = false;
             this.dataGridView_TimXe.RowHeadersWidth = 51;
             this.dataGridView_TimXe.RowTemplate.Height = 24;
             this.dataGridView_TimXe.Size = new System.Drawing.Size(725, 280);
@@ -371,7 +375,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.DodgerBlue;
             this.lblEmail.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(730, 382);
+            this.lblEmail.Location = new System.Drawing.Point(739, 382);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(81, 32);
@@ -394,7 +398,7 @@
             this.lblSDT.AutoSize = true;
             this.lblSDT.BackColor = System.Drawing.Color.DodgerBlue;
             this.lblSDT.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSDT.Location = new System.Drawing.Point(693, 307);
+            this.lblSDT.Location = new System.Drawing.Point(697, 307);
             this.lblSDT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(174, 32);

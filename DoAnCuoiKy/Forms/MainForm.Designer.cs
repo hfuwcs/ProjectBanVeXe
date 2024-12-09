@@ -43,8 +43,6 @@
             this.btn_DangXuat = new System.Windows.Forms.Button();
             this.btn_TrangChu = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label_Name = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dgr_test = new System.Windows.Forms.DataGridView();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
@@ -60,7 +58,6 @@
             this.panel_Sidebar.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelContainer.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgr_test)).BeginInit();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -269,7 +266,6 @@
             // panelContainer
             // 
             this.panelContainer.BackColor = System.Drawing.Color.Transparent;
-            this.panelContainer.Controls.Add(this.panel1);
             this.panelContainer.Controls.Add(this.button1);
             this.panelContainer.Controls.Add(this.dgr_test);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -279,27 +275,6 @@
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1599, 923);
             this.panelContainer.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Tomato;
-            this.panel1.Controls.Add(this.label_Name);
-            this.panel1.Location = new System.Drawing.Point(3, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1596, 100);
-            this.panel1.TabIndex = 29;
-            // 
-            // label_Name
-            // 
-            this.label_Name.AutoSize = true;
-            this.label_Name.BackColor = System.Drawing.Color.Tomato;
-            this.label_Name.Font = new System.Drawing.Font("Montserrat", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Name.Location = new System.Drawing.Point(570, 26);
-            this.label_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_Name.Name = "label_Name";
-            this.label_Name.Size = new System.Drawing.Size(333, 46);
-            this.label_Name.TabIndex = 1;
-            this.label_Name.Text = "Quản lý bán vé xe";
             // 
             // button1
             // 
@@ -402,8 +377,6 @@
             this.panel_Sidebar.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panelContainer.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgr_test)).EndInit();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
@@ -429,7 +402,6 @@
         public System.Windows.Forms.Button btn_QuanLyChuyen;
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.Label label_Name;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Exit_ToolStripMenuItem;
@@ -438,7 +410,6 @@
         private System.Windows.Forms.DataGridView dgr_test;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnReLoad;
     }
 }
