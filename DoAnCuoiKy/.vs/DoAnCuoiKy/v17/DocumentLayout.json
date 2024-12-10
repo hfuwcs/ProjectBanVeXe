@@ -3,15 +3,39 @@
   "WorkspaceRootPath": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\forms\\uc_qltk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\uc_qltk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\forms\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\forms\\uc_qltk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\uc_qltk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5E53A555-935D-4702-A14F-AD9E55F10A10}|..\\MyLibrary\\MyLibrary.csproj|d:\\hk5\\dotnet\\projectbanvexe\\mylibrary\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E53A555-935D-4702-A14F-AD9E55F10A10}|..\\MyLibrary\\MyLibrary.csproj|d:\\hk5\\dotnet\\projectbanvexe\\mylibrary\\helpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\forms\\uc_doangthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\uc_doangthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\forms\\uc_doangthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\uc_doangthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\forms\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\uc_datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\forms\\formdoanhthureport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\formdoanhthureport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\forms\\formdoanhthureport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\formdoanhthureport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|d:\\hk5\\dotnet\\projectbanvexe\\doancuoiky\\crystalreport\\incomereport.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:crystalreport\\incomereport.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\forms\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,7 +45,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -33,41 +57,116 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UC_QLTK.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QLTK.cs",
-              "RelativeDocumentMoniker": "Forms\\UC_QLTK.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QLTK.cs",
-              "RelativeToolTip": "Forms\\UC_QLTK.cs",
-              "ViewState": "AQIAAOkAAAAAAAAAAAAQwPQAAAAIAAAA",
+              "DocumentIndex": 1,
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\MyLibrary\\DbContext.cs",
+              "RelativeDocumentMoniker": "..\\MyLibrary\\DbContext.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\MyLibrary\\DbContext.cs",
+              "RelativeToolTip": "..\\MyLibrary\\DbContext.cs",
+              "ViewState": "AQIAAIYBAAAAAAAAAAAAwIMBAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T15:39:05.486Z",
+              "WhenOpened": "2024-12-10T07:50:16.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UC_DatVe.cs",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_DatVe.cs",
+              "RelativeDocumentMoniker": "Forms\\UC_DatVe.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_DatVe.cs",
+              "RelativeToolTip": "Forms\\UC_DatVe.cs",
+              "ViewState": "AQIAAB0BAAAAAAAAAAAuwCgBAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T07:49:16.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UC_DatVe.cs [Design]",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_DatVe.cs",
+              "RelativeDocumentMoniker": "Forms\\UC_DatVe.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_DatVe.cs [Design]",
+              "RelativeToolTip": "Forms\\UC_DatVe.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T07:49:16.322Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormDoanhThuReport.cs",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\FormDoanhThuReport.cs",
+              "RelativeDocumentMoniker": "Forms\\FormDoanhThuReport.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\FormDoanhThuReport.cs",
+              "RelativeToolTip": "Forms\\FormDoanhThuReport.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABIAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T07:17:37.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormDoanhThuReport.cs [Design]",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\FormDoanhThuReport.cs",
+              "RelativeDocumentMoniker": "Forms\\FormDoanhThuReport.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\FormDoanhThuReport.cs [Design]",
+              "RelativeToolTip": "Forms\\FormDoanhThuReport.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T07:17:29.662Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DangNhap.cs",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\DangNhap.cs",
+              "RelativeDocumentMoniker": "Forms\\DangNhap.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\DangNhap.cs",
+              "RelativeToolTip": "Forms\\DangNhap.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAD4v1MAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T07:02:31.587Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Helpers.cs",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\MyLibrary\\Helpers.cs",
-              "RelativeDocumentMoniker": "..\\MyLibrary\\Helpers.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\MyLibrary\\Helpers.cs",
-              "RelativeToolTip": "..\\MyLibrary\\Helpers.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAABBAAAA",
+              "Title": "UC_DoangThu.cs",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_DoangThu.cs",
+              "RelativeDocumentMoniker": "Forms\\UC_DoangThu.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_DoangThu.cs",
+              "RelativeToolTip": "Forms\\UC_DoangThu.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAwCgAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T15:28:23.864Z",
+              "WhenOpened": "2024-12-10T05:42:26.785Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UC_QLTK.cs [Design]",
-              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QLTK.cs",
-              "RelativeDocumentMoniker": "Forms\\UC_QLTK.cs",
-              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QLTK.cs [Design]",
-              "RelativeToolTip": "Forms\\UC_QLTK.cs [Design]",
+              "DocumentIndex": 3,
+              "Title": "UC_DoangThu.cs [Design]",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_DoangThu.cs",
+              "RelativeDocumentMoniker": "Forms\\UC_DoangThu.cs",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_DoangThu.cs [Design]",
+              "RelativeToolTip": "Forms\\UC_DoangThu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T14:44:43.858Z",
+              "WhenOpened": "2024-12-09T23:03:50.533Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IncomeReport.rpt",
+              "DocumentMoniker": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\CrystalReport\\IncomeReport.rpt",
+              "RelativeDocumentMoniker": "CrystalReport\\IncomeReport.rpt",
+              "ToolTip": "D:\\HK5\\dotNET\\ProjectBanVeXe\\DoAnCuoiKy\\CrystalReport\\IncomeReport.rpt",
+              "RelativeToolTip": "CrystalReport\\IncomeReport.rpt",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPdSURBVDhPrZRbaBxVGMf/c9nd2Vuyu9nN5m7aStI2oWtSCBgtWgj10oe2D2Le1FRRBBEk\u002BCJo8amIIL5U0BfFF6mFalOs0CdrWqhJNkmTUEyyzaXuJpvsdXZ2dnauntmdbJvEvvkb/pxvZr7vP\u002Bec\u002BTj4XzEMg7LCCj39z7/y6vC7n1m3T2RtaWHi8ncXP7Bud8FaYwVPnS94pPeZgcihIBiGBkWuvfyzXcC0P9SsKrJ08\u002Br3XxbymaT1qgJjjRXaOrsiz518\u002BdyJSCv8Xid8HgcCXo7Ej1QQZciGrf7EswN9W\u002BlMLpva3hCLfNayAG2NNcw50RSFYklBtiAhs0diWYXXZcfxo23O4fMfXewbHHrNWx8IV6v/w7AGcSa\u002B\u002B0VebeVEXBuPgSezPT383qdDZ98YrRY9YYYmDKlm6KpkWsLvxhg2qTjaw14M9rRg4EgTBntbcKCtwel2OzmrbLchRUxoYmBe5kjTNAS6gHvGLK4LV/FD/lssUBMIB9xosuThbOSjj2z2GJr7txNTyGgpLGl/Y5G6j/viPH4VruAX4WfMKzOVD5qzN/Meh2ZcjRxRHZGPste7dIOGphuQjCKiUhTjpXFojAyH7oCmabjJ38Cl9FfIKCkYlLbPkG0\u002Bc/lFQI\u002BQOEg1cpGlDYP8TQVjxetYLi9DhYZcKYdCloeqqSQViKYn8f7GCL4\u002BdolsjrPqZMF\u002B8\u002BExV1lRfGleaY5tlP0zqzIu/JQC6\u002BtCOryCXDgKw6OD1hhIs2WU4xI6mjsx\u002BvrHaORCyFCCZVWFVgtri7qw/mebt3Br4BC73NPBIZGWEVsM4uFsL9KrByGyAkkkWxFX0cf24/zRt/FC6CQ8Ns\u002B\u002BJTM5tX47OrOwSp6vdbb6Q4c73Kc4O4tYUkN6MwRKDsLuT0HMJ/CU1I43B0bw1tBIxcjUZlpAdGpqYvavWzcqhrH524jN39FFxVZk65qebm1uOHeqP4BkXsc2r0NM\u002BWE8OAy7L4rPX/oEZyJnwZI22WmvZKaE6ejkxPTdqmGtbebu/oa529dgt7FwO\u002B3obnGgI2iDi2PgdzRg9MAFdLl6YZBcilSZKzXbj5whtVYzqRlKRR6lYp4kUzBbJ1cCNFJZ72Hhd9sRtIXB6nboul5b7uPaoWZoompAtghMLEuIZwxyhDFoD9LoDqvI8SISKQFxcnytb/E1lWS1cpjssOs8pGiGVw37yty61Ej\u002BC9cZouBlVTHoKKTWE7liOsvL0EpaucSbK6\u002BR2kqsWeFuw5YAN336eOCLsqK\u002BIxSl7rwgI54UZhaWtn9cXElOKqr28N6dMX7qjyuKVbIH4F/CwpxOdjf1iQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2024-12-10T07:40:04.567Z",
+              "EditorCaption": ""
             }
           ]
         }

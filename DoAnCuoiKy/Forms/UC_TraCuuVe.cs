@@ -14,7 +14,7 @@ namespace DoAnCuoiKy
 {
     public partial class UC_TraCuuVe : UserControl
     {
-        DbContext obj = new DbContext();
+        static DbContext obj = new DbContext();
         public UC_TraCuuVe()
         {
             InitializeComponent();

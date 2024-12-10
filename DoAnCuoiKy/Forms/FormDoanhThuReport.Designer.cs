@@ -28,26 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ReportDoanhThu = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.incomeReport1 = new DoAnCuoiKy.CrystalReport.IncomeReport();
             this.SuspendLayout();
             // 
-            // ReportDoanhThu
+            // crystalReportViewer1
             // 
-            this.ReportDoanhThu.ActiveViewIndex = -1;
-            this.ReportDoanhThu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ReportDoanhThu.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ReportDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ReportDoanhThu.Location = new System.Drawing.Point(0, 0);
-            this.ReportDoanhThu.Name = "ReportDoanhThu";
-            this.ReportDoanhThu.Size = new System.Drawing.Size(800, 450);
-            this.ReportDoanhThu.TabIndex = 0;
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(600, 366);
+            this.crystalReportViewer1.TabIndex = 0;
             // 
             // FormDoanhThuReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.ReportDoanhThu);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.crystalReportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormDoanhThuReport";
             this.Text = "FormDoanhThuReport";
             this.ResumeLayout(false);
@@ -56,6 +58,7 @@
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer ReportDoanhThu;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private CrystalReport.IncomeReport incomeReport1;
     }
 }

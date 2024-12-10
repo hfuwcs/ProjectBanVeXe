@@ -31,7 +31,6 @@ namespace DoAnCuoiKy.Forms
             incomeReport.SetParameterValue("@EndDate", DateTime.Now);
             incomeReport.SetParameterValue("@TripID", tripid);
 
-            ReportDoanhThu.ReportSource = incomeReport;
         }
     }
 }
