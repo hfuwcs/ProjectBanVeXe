@@ -179,5 +179,19 @@ namespace DoAnCuoiKy
         {
             dgr_test.DataSource = db.GetTable<OrderTicket>().ToList();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Account account = AccountBLL.Instance.GetAccount(this.userID);
+            if (account != null && AccountBLL.Instance.IsAdmin(account))
+            {
+                UC_QuanLyVe uC_QuanLyVe = new UC_QuanLyVe();
+                AddUserControl(uC_QuanLyVe);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không đủ quyền hạn để thực hiện việc này.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
     }
 }

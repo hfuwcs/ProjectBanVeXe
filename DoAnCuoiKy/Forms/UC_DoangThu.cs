@@ -74,5 +74,7 @@ namespace DoAnCuoiKy
             FormDoanhThuReport frm = new FormDoanhThuReport();
             frm.ShowDialog();
         }
+
+       
     }
 }
