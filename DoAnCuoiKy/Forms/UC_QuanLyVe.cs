@@ -41,7 +41,7 @@ namespace DoAnCuoiKy.Forms
                 dataGridView.Columns[i].Width = colw;
             }
         }
-      
+
         private void UC_QuanLyVe_Load(object sender, EventArgs e)
         {
             string sqls = $"SELECT dt.DetailsTicketID AS \"Mã Vé\", p.FullName AS \"Tên Khách Hàng\", p.PhoneNumber AS \"Số Điện Thoại\", r.RouteName AS \"Tên Tuyến Đường\", t.DepartureLocation AS \"Nơi Đi\", t.ArrivalLocation AS \"Nơi Đến\", t.DepartureTime AS \"Giờ Khởi Hành\", t.ArrivalTime AS \"Giờ Đến\", b.BusNumber AS \"Số Xe\", s.SeatNumber AS \"Số Ghế\", dt.Price AS \"Giá Vé\", ua.FullName AS \"Tên Nhân Viên\",ot.OrderDate AS \"Ngày bán\" " +
@@ -68,23 +68,19 @@ namespace DoAnCuoiKy.Forms
             comboBox_Start2.DisplayMember = "StartLocation";
             comboBox_End2.DataSource = db.GetDataTable(sqlend);
             comboBox_End2.DisplayMember = "EndLocation";
-        }
-       
-    
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.MemberwiseClone();
-        }
-
+            //
+            btnCount1.Text = " ";
+            btnCount2.Text = " ";
+        }     
         private void btnTim_Click(object sender, EventArgs e)
         {
 
             string depLoc = comboBox_Start.Text.ToString();
             string arrLoc = comboBox_End.Text.ToString();
-            string startDay = dateTimePicker_StartDate.Value.ToString("yyyy/MM/dd HH:mm:ss");
-            string endDay = dateTimePicker_EndDate.Value.ToString("yyyy/MM/dd HH:mm:ss");
-           string sqls = $"SELECT dt.DetailsTicketID AS \"Mã Vé\", p.FullName AS \"Tên Khách Hàng\", p.PhoneNumber AS \"Số Điện Thoại\", " +
+            string startDay = dateTimePicker_StartDate.Value.ToString("yyyy/MM/dd");
+            DateTime endOfDay = dateTimePicker_EndDate.Value.Date.AddDays(1).AddSeconds(-1);
+            string endDay = endOfDay.ToString("yyyy/MM/dd HH:mm:ss");
+            string sqls = $"SELECT dt.DetailsTicketID AS \"Mã Vé\", p.FullName AS \"Tên Khách Hàng\", p.PhoneNumber AS \"Số Điện Thoại\", " +
                           $"r.RouteName AS \"Tên Tuyến Đường\", t.DepartureLocation AS \"Nơi Đi\", t.ArrivalLocation AS \"Nơi Đến\", " +
                           $"t.DepartureTime AS \"Giờ Khởi Hành\", t.ArrivalTime AS \"Giờ Đến\", b.BusNumber AS \"Số Xe\", " +
                           $"s.SeatNumber AS \"Số Ghế\", dt.Price AS \"Giá Vé\", ua.FullName AS \"Tên Nhân Viên\",ot.OrderDate AS \"Ngày bán\"  " +
@@ -96,25 +92,21 @@ namespace DoAnCuoiKy.Forms
                           $"JOIN Bus b ON t.BusID = b.BusID " +
                           $"JOIN Seat s ON dt.SeatID = s.SeatID " +
                           $"JOIN UserAccount ua ON ot.UserID = ua.UserID " +
-                          $"WHERE ot.OrderDate >= '{startDay}' AND ot.OrderDate <= '{endDay}'"+
+                          $"WHERE ot.OrderDate >= '{startDay}' AND ot.OrderDate <= '{endDay}'" +
                           $"AND t.DepartureLocation = '{depLoc}' AND t.ArrivalLocation = '{arrLoc}'";
 
             dataGridViewQuanLyVe.DataSource = db.GetDataTable(sqls);
             autosizedgv(dataGridViewQuanLyVe);
-
+            int count = dataGridViewQuanLyVe.Rows.Count - 1;
+            btnCount1.Text = count.ToString();
         }
-
-        private void btnThoat_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btn_Tim2_Click(object sender, EventArgs e)
         {
             string depLoc = comboBox_Start2.Text.ToString();
             string arrLoc = comboBox_End2.Text.ToString();
-            string startDay = dateTimePicker_StartDate2.Value.ToString("yyyy/MM/dd HH:mm:ss:ss");
-            string endDay = dateTimePicker_EndDate2.Value.ToString("yyyy/MM/dd HH:mm:ss:ss");
+            string startDay = dateTimePicker_StartDate2.Value.ToString("yyyy/MM/dd");
+            DateTime endOfDay = dateTimePicker_EndDate2.Value.Date.AddDays(1).AddSeconds(-1);
+            string endDay = endOfDay.ToString("yyyy/MM/dd HH:mm:ss");
             string sqls = $"SELECT dt.DetailsTicketID AS \"Mã Vé\", p.FullName AS \"Tên Khách Hàng\", p.PhoneNumber AS \"Số Điện Thoại\", " +
                            $"r.RouteName AS \"Tên Tuyến Đường\", t.DepartureLocation AS \"Nơi Đi\", t.ArrivalLocation AS \"Nơi Đến\", " +
                            $"t.DepartureTime AS \"Giờ Khởi Hành\", t.ArrivalTime AS \"Giờ Đến\", b.BusNumber AS \"Số Xe\", " +
@@ -132,6 +124,13 @@ namespace DoAnCuoiKy.Forms
 
             dataGridViewQuanLyVe.DataSource = db.GetDataTable(sqls);
             autosizedgv(dataGridViewQuanLyVe);
+            int count = dataGridViewQuanLyVe.Rows.Count - 1;
+            btnCount2.Text = count.ToString();
         }
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.MemberwiseClone();
+        }
+
     }
 }

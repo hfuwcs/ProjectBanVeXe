@@ -36,16 +36,16 @@
             this.panel_Sidebar = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_QuanLyVe = new System.Windows.Forms.Button();
+            this.btn_BanVe = new System.Windows.Forms.Button();
+            this.btnQuanLyKH = new System.Windows.Forms.Button();
             this.btn_DangXuat = new System.Windows.Forms.Button();
             this.btn_QuanLyChuyen = new System.Windows.Forms.Button();
             this.btn_TrangChu = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btn_BanVe = new System.Windows.Forms.Button();
-            this.btn_TraCuuVe = new System.Windows.Forms.Button();
             this.btn_QuanLyTaiKhoan = new System.Windows.Forms.Button();
             this.btn_DoanhThu = new System.Windows.Forms.Button();
+            this.btn_TraCuuVe = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.dgr_test = new System.Windows.Forms.DataGridView();
@@ -126,16 +126,16 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.button4, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.button5, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.button3, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.btn_QuanLyVe, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.btn_BanVe, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnQuanLyKH, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.btn_DangXuat, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.btn_QuanLyChuyen, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.btn_TrangChu, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button2, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.btn_BanVe, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btn_TraCuuVe, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btn_QuanLyTaiKhoan, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.btn_DoanhThu, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btn_TraCuuVe, 0, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 4);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -174,38 +174,56 @@
             this.button4.Text = "Đăng Xuất";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btn_QuanLyVe
             // 
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
-            this.button5.FlatAppearance.BorderSize = 3;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Image = global::DoAnCuoiKy.Properties.Resources.mission;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(4, 394);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(298, 49);
-            this.button5.TabIndex = 37;
-            this.button5.Text = "Quản lý vé";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btn_QuanLyVe.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
+            this.btn_QuanLyVe.FlatAppearance.BorderSize = 3;
+            this.btn_QuanLyVe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_QuanLyVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QuanLyVe.Image = global::DoAnCuoiKy.Properties.Resources.mission;
+            this.btn_QuanLyVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_QuanLyVe.Location = new System.Drawing.Point(4, 394);
+            this.btn_QuanLyVe.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_QuanLyVe.Name = "btn_QuanLyVe";
+            this.btn_QuanLyVe.Size = new System.Drawing.Size(298, 49);
+            this.btn_QuanLyVe.TabIndex = 37;
+            this.btn_QuanLyVe.Text = "Quản lý vé";
+            this.btn_QuanLyVe.UseVisualStyleBackColor = true;
+            this.btn_QuanLyVe.Click += new System.EventHandler(this.btn_QuanLyVe_Click);
             // 
-            // button3
+            // btn_BanVe
             // 
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
-            this.button3.FlatAppearance.BorderSize = 3;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::DoAnCuoiKy.Properties.Resources.mission;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(4, 451);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(298, 53);
-            this.button3.TabIndex = 35;
-            this.button3.Text = "Đăng Xuất";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_BanVe.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
+            this.btn_BanVe.FlatAppearance.BorderSize = 3;
+            this.btn_BanVe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_BanVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BanVe.Image = global::DoAnCuoiKy.Properties.Resources.ticket;
+            this.btn_BanVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_BanVe.Location = new System.Drawing.Point(4, 65);
+            this.btn_BanVe.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_BanVe.Name = "btn_BanVe";
+            this.btn_BanVe.Size = new System.Drawing.Size(298, 53);
+            this.btn_BanVe.TabIndex = 27;
+            this.btn_BanVe.Text = "Bán vé";
+            this.btn_BanVe.UseVisualStyleBackColor = true;
+            this.btn_BanVe.Click += new System.EventHandler(this.btn_BanVe_Click);
+            // 
+            // btnQuanLyKH
+            // 
+            this.btnQuanLyKH.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
+            this.btnQuanLyKH.FlatAppearance.BorderSize = 3;
+            this.btnQuanLyKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanLyKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyKH.Image = global::DoAnCuoiKy.Properties.Resources.mission;
+            this.btnQuanLyKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyKH.Location = new System.Drawing.Point(4, 451);
+            this.btnQuanLyKH.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQuanLyKH.Name = "btnQuanLyKH";
+            this.btnQuanLyKH.Size = new System.Drawing.Size(298, 53);
+            this.btnQuanLyKH.TabIndex = 35;
+            this.btnQuanLyKH.Text = "Quản lý khách hàng";
+            this.btnQuanLyKH.UseVisualStyleBackColor = true;
+            this.btnQuanLyKH.Click += new System.EventHandler(this.btnQuanLyKH_Click);
             // 
             // btn_DangXuat
             // 
@@ -276,40 +294,6 @@
             this.button2.Text = "Đăng Xuất";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // btn_BanVe
-            // 
-            this.btn_BanVe.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
-            this.btn_BanVe.FlatAppearance.BorderSize = 3;
-            this.btn_BanVe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_BanVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BanVe.Image = global::DoAnCuoiKy.Properties.Resources.ticket;
-            this.btn_BanVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_BanVe.Location = new System.Drawing.Point(4, 135);
-            this.btn_BanVe.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_BanVe.Name = "btn_BanVe";
-            this.btn_BanVe.Size = new System.Drawing.Size(298, 53);
-            this.btn_BanVe.TabIndex = 27;
-            this.btn_BanVe.Text = "Bán vé";
-            this.btn_BanVe.UseVisualStyleBackColor = true;
-            this.btn_BanVe.Click += new System.EventHandler(this.btn_BanVe_Click);
-            // 
-            // btn_TraCuuVe
-            // 
-            this.btn_TraCuuVe.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
-            this.btn_TraCuuVe.FlatAppearance.BorderSize = 3;
-            this.btn_TraCuuVe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_TraCuuVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TraCuuVe.Image = global::DoAnCuoiKy.Properties.Resources.loupe;
-            this.btn_TraCuuVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_TraCuuVe.Location = new System.Drawing.Point(4, 65);
-            this.btn_TraCuuVe.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_TraCuuVe.Name = "btn_TraCuuVe";
-            this.btn_TraCuuVe.Size = new System.Drawing.Size(298, 62);
-            this.btn_TraCuuVe.TabIndex = 31;
-            this.btn_TraCuuVe.Text = "Tra cứu vé";
-            this.btn_TraCuuVe.UseVisualStyleBackColor = true;
-            this.btn_TraCuuVe.Click += new System.EventHandler(this.btn_TraCuuVe_Click);
-            // 
             // btn_QuanLyTaiKhoan
             // 
             this.btn_QuanLyTaiKhoan.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
@@ -343,6 +327,23 @@
             this.btn_DoanhThu.Text = "Doanh thu";
             this.btn_DoanhThu.UseVisualStyleBackColor = true;
             this.btn_DoanhThu.Click += new System.EventHandler(this.btn_DoanhThu_Click);
+            // 
+            // btn_TraCuuVe
+            // 
+            this.btn_TraCuuVe.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
+            this.btn_TraCuuVe.FlatAppearance.BorderSize = 3;
+            this.btn_TraCuuVe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_TraCuuVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TraCuuVe.Image = global::DoAnCuoiKy.Properties.Resources.loupe;
+            this.btn_TraCuuVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_TraCuuVe.Location = new System.Drawing.Point(4, 135);
+            this.btn_TraCuuVe.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_TraCuuVe.Name = "btn_TraCuuVe";
+            this.btn_TraCuuVe.Size = new System.Drawing.Size(298, 53);
+            this.btn_TraCuuVe.TabIndex = 31;
+            this.btn_TraCuuVe.Text = "Tra cứu vé";
+            this.btn_TraCuuVe.UseVisualStyleBackColor = true;
+            this.btn_TraCuuVe.Click += new System.EventHandler(this.btn_TraCuuVe_Click);
             // 
             // panelContainer
             // 
@@ -493,8 +494,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnReLoad;
         public System.Windows.Forms.Button button4;
-        public System.Windows.Forms.Button button5;
-        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button btn_QuanLyVe;
+        public System.Windows.Forms.Button btnQuanLyKH;
         public System.Windows.Forms.Button button2;
     }
 }

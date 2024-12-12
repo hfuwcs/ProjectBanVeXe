@@ -180,7 +180,22 @@ namespace DoAnCuoiKy
             dgr_test.DataSource = db.GetTable<OrderTicket>().ToList();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+   
+        private void btnQuanLyKH_Click(object sender, EventArgs e)
+        {
+            Account account = AccountBLL.Instance.GetAccount(this.userID);
+            if (account != null && AccountBLL.Instance.IsAdmin(account))
+            {
+                UC_QuanLyKhachHang uC_QuanLyKhachHang = new UC_QuanLyKhachHang();
+                AddUserControl(uC_QuanLyKhachHang);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không đủ quyền hạn để thực hiện việc này.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void btn_QuanLyVe_Click(object sender, EventArgs e)
         {
             Account account = AccountBLL.Instance.GetAccount(this.userID);
             if (account != null && AccountBLL.Instance.IsAdmin(account))
