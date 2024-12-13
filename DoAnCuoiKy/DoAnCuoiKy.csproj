@@ -162,6 +162,12 @@
     <Compile Include="Forms\UC_QuanLyKhachHang.Designer.cs">
       <DependentUpon>UC_QuanLyKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UC_QuanLyTaiXe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC_QuanLyTaiXe.Designer.cs">
+      <DependentUpon>UC_QuanLyTaiXe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UC_QuanLyVe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UC_QuanLyKhachHang.resx">
       <DependentUpon>UC_QuanLyKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC_QuanLyTaiXe.resx">
+      <DependentUpon>UC_QuanLyTaiXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UC_QuanLyVe.resx">
       <DependentUpon>UC_QuanLyVe.cs</DependentUpon>

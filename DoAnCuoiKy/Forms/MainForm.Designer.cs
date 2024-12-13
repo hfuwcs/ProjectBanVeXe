@@ -42,7 +42,7 @@
             this.btn_DangXuat = new System.Windows.Forms.Button();
             this.btn_QuanLyChuyen = new System.Windows.Forms.Button();
             this.btn_TrangChu = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnQuanLyTX = new System.Windows.Forms.Button();
             this.btn_QuanLyTaiKhoan = new System.Windows.Forms.Button();
             this.btn_DoanhThu = new System.Windows.Forms.Button();
             this.btn_TraCuuVe = new System.Windows.Forms.Button();
@@ -132,7 +132,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btn_DangXuat, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.btn_QuanLyChuyen, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.btn_TrangChu, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.btnQuanLyTX, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.btn_QuanLyTaiKhoan, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.btn_DoanhThu, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.btn_TraCuuVe, 0, 2);
@@ -278,21 +278,22 @@
             this.btn_TrangChu.UseVisualStyleBackColor = false;
             this.btn_TrangChu.Click += new System.EventHandler(this.btn_TrangChu_Click);
             // 
-            // button2
+            // btnQuanLyTX
             // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
-            this.button2.FlatAppearance.BorderSize = 3;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::DoAnCuoiKy.Properties.Resources.log_out;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(4, 512);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(298, 42);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Đăng Xuất";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnQuanLyTX.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
+            this.btnQuanLyTX.FlatAppearance.BorderSize = 3;
+            this.btnQuanLyTX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanLyTX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyTX.Image = global::DoAnCuoiKy.Properties.Resources.mission;
+            this.btnQuanLyTX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyTX.Location = new System.Drawing.Point(4, 512);
+            this.btnQuanLyTX.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQuanLyTX.Name = "btnQuanLyTX";
+            this.btnQuanLyTX.Size = new System.Drawing.Size(298, 42);
+            this.btnQuanLyTX.TabIndex = 34;
+            this.btnQuanLyTX.Text = "Quản Lý Tài Xế";
+            this.btnQuanLyTX.UseVisualStyleBackColor = true;
+            this.btnQuanLyTX.Click += new System.EventHandler(this.btnQuanLyTX_Click);
             // 
             // btn_QuanLyTaiKhoan
             // 
@@ -496,7 +497,7 @@
         public System.Windows.Forms.Button button4;
         public System.Windows.Forms.Button btn_QuanLyVe;
         public System.Windows.Forms.Button btnQuanLyKH;
-        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button btnQuanLyTX;
     }
 }
 

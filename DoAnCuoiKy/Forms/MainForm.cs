@@ -208,5 +208,19 @@ namespace DoAnCuoiKy
                 MessageBox.Show("Bạn không đủ quyền hạn để thực hiện việc này.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
+
+        private void btnQuanLyTX_Click(object sender, EventArgs e)
+        {
+            Account account = AccountBLL.Instance.GetAccount(this.userID);
+            if (account != null && AccountBLL.Instance.IsAdmin(account))
+            {
+                UC_QuanLyTaiXe uC_QuanLyTaiXe = new UC_QuanLyTaiXe();
+                AddUserControl(uC_QuanLyTaiXe);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không đủ quyền hạn để thực hiện việc này.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
     }
 }
