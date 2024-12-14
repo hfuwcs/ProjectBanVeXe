@@ -179,5 +179,62 @@ namespace DoAnCuoiKy
         {
             dgr_test.DataSource = db.GetTable<OrderTicket>().ToList();
         }
+
+   
+        private void btnQuanLyKH_Click(object sender, EventArgs e)
+        {
+            Account account = AccountBLL.Instance.GetAccount(this.userID);
+            if (account != null && AccountBLL.Instance.IsAdmin(account))
+            {
+                UC_QuanLyKhachHang uC_QuanLyKhachHang = new UC_QuanLyKhachHang();
+                AddUserControl(uC_QuanLyKhachHang);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không đủ quyền hạn để thực hiện việc này.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void btn_QuanLyVe_Click(object sender, EventArgs e)
+        {
+            Account account = AccountBLL.Instance.GetAccount(this.userID);
+            if (account != null && AccountBLL.Instance.IsAdmin(account))
+            {
+                UC_QuanLyVe uC_QuanLyVe = new UC_QuanLyVe();
+                AddUserControl(uC_QuanLyVe);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không đủ quyền hạn để thực hiện việc này.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void btnQuanLyTX_Click(object sender, EventArgs e)
+        {
+            Account account = AccountBLL.Instance.GetAccount(this.userID);
+            if (account != null && AccountBLL.Instance.IsAdmin(account))
+            {
+                UC_QuanLyTaiXe uC_QuanLyTaiXe = new UC_QuanLyTaiXe();
+                AddUserControl(uC_QuanLyTaiXe);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không đủ quyền hạn để thực hiện việc này.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Account account = AccountBLL.Instance.GetAccount(this.userID);
+            if (account != null && AccountBLL.Instance.IsAdmin(account))
+            {
+                UC_QuanLyTuyenXe uC_QuanLyTuyenXe = new UC_QuanLyTuyenXe();
+                AddUserControl(uC_QuanLyTuyenXe);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không đủ quyền hạn để thực hiện việc này.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
     }
 }

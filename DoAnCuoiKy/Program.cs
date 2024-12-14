@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoAnCuoiKy.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace DoAnCuoiKy
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new DangNhap());
             Application.Run(new MainForm(4));
+
         }
     }
 }
