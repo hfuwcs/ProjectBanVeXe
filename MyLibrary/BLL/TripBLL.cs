@@ -25,9 +25,7 @@ namespace MyLibrary.BLL
         }
         public DataTable SearchTrip(string deploc, string arrloc, DateTime selectedday)
         {
-            string sqls = "EXEC TIMCHUYENXE @DEPLOC , @ARRLOC , @SECLECTEDDAY";
-            DataTable data = db.Instance.ExecuteQuery(sqls, new object[] { deploc, arrloc, selectedday });
-            return data;
+            return TripDAL.Instance.SearchTrip(deploc, arrloc, selectedday);
         }
         public int GetTripID(string deppLoc, string arrLoc, DateTime deppDate)
         {

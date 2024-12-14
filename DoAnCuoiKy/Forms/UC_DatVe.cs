@@ -262,24 +262,28 @@ namespace DoAnCuoiKy
             string deploc = comboBox_Start.Text;
             string arrloc = comboBox_End.Text;
 
-            var Alreadytrip =  db.GetTable<Bus>().Join(
-                                db.GetTable<Trip>(),
-                                bus => bus.BusID,
-                                trip => trip._busID,
-                                (bus, trip) => new { bus.BusID, bus.BusNumber, bus.TotalSeat, bus.BusType, trip._departureTime, trip._arrivalTime, trip._departureLocation, trip._arrivalLocation })
-                                .Where(x => x._departureTime >= selectedday && x._departureLocation == deploc && x._arrivalLocation == arrloc).ToList();
+            //var Alreadytrip =  db.GetTable<Bus>().Join(
+            //                    db.GetTable<Trip>(),
+            //                    bus => bus.BusID,
+            //                    trip => trip._busID,
+            //                    (bus, trip) => new { bus.BusID, bus.BusNumber, bus.TotalSeat, bus.BusType, trip._departureTime, trip._arrivalTime, trip._departureLocation, trip._arrivalLocation })
+            //                    .Where(x => x._departureTime >= selectedday && x._departureLocation == deploc && x._arrivalLocation == arrloc).ToList();
             //Cách truyền thống
-            //DataTable trip = TripBLL.Instance.SearchTrip(deploc, arrloc, selectedday);
+            DataTable Alreadytrip = TripBLL.Instance.SearchTrip(deploc, arrloc, selectedday);
 
-            if (Alreadytrip.Count <= 0)
+            //if (Alreadytrip.Count <= 0)
+            //{
+            //    MessageBox.Show("Không tìm thấy chuyến xe phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            //else
+            //{
+            if(Alreadytrip.Rows.Count <= 0)
             {
-                MessageBox.Show("Không tìm thấy chuyến xe phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   MessageBox.Show("Không tìm thấy chuyến xe phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
-            {
                 dataGridView_TimXe.DataSource = Alreadytrip;
                 autosizedgv(dataGridView_TimXe);
-            }
+            //}
         }
         private void dataGridView_TimXe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
