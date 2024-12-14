@@ -168,6 +168,12 @@
     <Compile Include="Forms\UC_QuanLyTaiXe.Designer.cs">
       <DependentUpon>UC_QuanLyTaiXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UC_QuanLyTuyenXe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC_QuanLyTuyenXe.Designer.cs">
+      <DependentUpon>UC_QuanLyTuyenXe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UC_QuanLyVe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UC_QuanLyTaiXe.resx">
       <DependentUpon>UC_QuanLyTaiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC_QuanLyTuyenXe.resx">
+      <DependentUpon>UC_QuanLyTuyenXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UC_QuanLyVe.resx">
       <DependentUpon>UC_QuanLyVe.cs</DependentUpon>

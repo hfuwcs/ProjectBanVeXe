@@ -222,5 +222,19 @@ namespace DoAnCuoiKy
                 MessageBox.Show("Bạn không đủ quyền hạn để thực hiện việc này.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Account account = AccountBLL.Instance.GetAccount(this.userID);
+            if (account != null && AccountBLL.Instance.IsAdmin(account))
+            {
+                UC_QuanLyTuyenXe uC_QuanLyTuyenXe = new UC_QuanLyTuyenXe();
+                AddUserControl(uC_QuanLyTuyenXe);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không đủ quyền hạn để thực hiện việc này.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
     }
 }

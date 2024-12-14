@@ -164,15 +164,16 @@
             this.button4.FlatAppearance.BorderSize = 3;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::DoAnCuoiKy.Properties.Resources.log_out;
+            this.button4.Image = global::DoAnCuoiKy.Properties.Resources.mission;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(4, 562);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(298, 51);
             this.button4.TabIndex = 36;
-            this.button4.Text = "Đăng Xuất";
+            this.button4.Text = "Quản lý tuyến xe";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btn_QuanLyVe
             // 

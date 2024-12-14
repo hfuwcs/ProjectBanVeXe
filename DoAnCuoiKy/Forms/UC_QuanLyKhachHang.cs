@@ -1,4 +1,5 @@
 ﻿using MyLibrary;
+using MyLibrary.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace DoAnCuoiKy.Forms
 {
@@ -23,18 +23,23 @@ namespace DoAnCuoiKy.Forms
         {
             DataGridView dataGridView = sender as DataGridView;
             // Set your desired AutoSize Mode:
-            dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns[0].AutoSizeMode =
+                DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[1].AutoSizeMode =
+                DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[2].AutoSizeMode =
+                DataGridViewAutoSizeColumnMode.Fill;
 
-            // Now that DataGridView has calculated it's Widths; we can now store each column Width values.
+            // Now that DataGridView has calculated it's Widths; we can now store each
+            // column Width values.
             for (int i = 0; i <= dataGridView.Columns.Count - 1; i++)
             {
                 // Store Auto Sized Widths:
                 int colw = dataGridView.Columns[i].Width;
 
                 // Remove AutoSizing:
-                dataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dataGridView.Columns[i].AutoSizeMode =
+                    DataGridViewAutoSizeColumnMode.None;
 
                 // Set Width to calculated AutoSize value:
                 dataGridView.Columns[i].Width = colw;
@@ -43,13 +48,15 @@ namespace DoAnCuoiKy.Forms
 
         private void UC_QuanLyKhachHang_Load(object sender, EventArgs e)
         {
-            string sqls = @"
+            string sqls =
+                @"
                              SELECT 
+                                 p.PassengerID AS [Mã khách hàng],
                                  p.FullName AS [Họ và tên], 
                                  p.PhoneNumber AS [Số điện thoại], 
                                  p.Email AS [Email], 
                                  COUNT(dt.DetailsTicketID) AS [Số vé đã đặt],
-                                 ISNULL(SUM(dt.Price), 0) AS [Số tiền đã dùng]
+                                 ISNULL(SUM(dt.Price), 0) AS [Số tiền đã mua vé]
                              FROM Passenger p
                              LEFT JOIN OrderTicket ot ON p.PassengerID = ot.PassengerID
                              LEFT JOIN DetailsTicket dt ON ot.OrderTicketID = dt.OrderTicketID
@@ -57,9 +64,17 @@ namespace DoAnCuoiKy.Forms
                             ";
             dataGridViewQuanLyKH.DataSource = db.GetDataTable(sqls);
             autosizedgv(dataGridViewQuanLyKH);
+            // Cập nhật giá trị vào TextBox
+            txtFullName.Text = "";
+            txtPhoneNumber.Text = "";
+            txtEmail.Text = "";
+            btnTimKiem.Enabled = true;
+            btnCapNhat.Enabled = false;
+            LoadTicketByPassengerID(0);
         }
 
-        private void dataGridViewQuanLyKH_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewQuanLyKH_CellClick(object sender,
+                                                    DataGridViewCellEventArgs e)
         {
             // Kiểm tra nếu người dùng không click vào tiêu đề cột
             if (e.RowIndex >= 0)
@@ -71,6 +86,22 @@ namespace DoAnCuoiKy.Forms
                 txtFullName.Text = row.Cells["Họ và tên"].Value.ToString();
                 txtPhoneNumber.Text = row.Cells["Số điện thoại"].Value.ToString();
                 txtEmail.Text = row.Cells["Email"].Value.ToString();
+                try
+                {
+                    string selectedPassengerID = dataGridViewQuanLyKH.SelectedRows[0]
+                                                     .Cells["Mã khách hàng"]
+                                                     .Value.ToString();
+                    int passengerID = Convert.ToInt32(selectedPassengerID);
+                    LoadTicketByPassengerID(passengerID);
+                    btnTimKiem.Enabled = false;
+                    btnCapNhat.Enabled = true;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Vui lòng chọn khách hàng !");
+                    UC_QuanLyKhachHang_Load(sender, e);
+                }
             }
         }
 
@@ -85,21 +116,58 @@ namespace DoAnCuoiKy.Forms
             if (dataGridViewQuanLyKH.SelectedRows.Count > 0)
             {
                 // Lấy PassengerID của khách hàng từ hàng được chọn
-                string selectedFullName = dataGridViewQuanLyKH.SelectedRows[0].Cells["Họ và tên"].Value.ToString();
+                string selectedPassengerID = dataGridViewQuanLyKH.SelectedRows[0]
+                                                 .Cells["Mã khách hàng"]
+                                                 .Value.ToString();
+                int passengerID = Convert.ToInt32(selectedPassengerID);
 
-                // Câu lệnh SQL để cập nhật thông tin
-                string sqlUpdate = $@"
-            UPDATE Passenger
-            SET 
-                FullName = '{fullName}', 
-                PhoneNumber = '{phoneNumber}', 
-                Email = '{email}'
-            WHERE FullName = '{selectedFullName}'";
+                // Kiểm tra trùng số điện thoại
+                string sqlCheckPhone =
+                    $@"
+            SELECT COUNT(*) 
+            FROM Passenger 
+            WHERE PhoneNumber = '{phoneNumber}' AND PassengerID != {passengerID}";
 
-                // Gọi phương thức thực thi SQL từ DbContext
+                // Kiểm tra trùng email
+                string sqlCheckEmail =
+                    $@"
+            SELECT COUNT(*) 
+            FROM Passenger 
+            WHERE Email = '{email}' AND PassengerID != {passengerID}";
+
                 try
                 {
-                    db.ExecuteNonQuery(sqlUpdate); // Giả sử bạn có phương thức ExecuteNonQuery trong DbContext
+                    // Thực thi truy vấn kiểm tra
+                    int phoneCount = Convert.ToInt32(db.ExecuteScalar(sqlCheckPhone));
+                    int emailCount = Convert.ToInt32(db.ExecuteScalar(sqlCheckEmail));
+
+                    if (phoneCount > 0)
+                    {
+                        MessageBox.Show("Số điện thoại đã tồn tại. Vui lòng nhập số khác.",
+                                        "Thông báo");
+                        return;
+                    }
+
+                    if (emailCount > 0)
+                    {
+                        MessageBox.Show("Email đã tồn tại. Vui lòng nhập email khác.",
+                                        "Thông báo");
+                        return;
+                    }
+
+                    // Câu lệnh SQL để cập nhật thông tin
+                    string sqlUpdate =
+                        $@"
+                UPDATE Passenger
+                SET 
+                    FullName = '{fullName}', 
+                    PhoneNumber = '{phoneNumber}', 
+                    Email = '{email}'
+                WHERE PassengerID = {passengerID}";
+
+                    // Gọi phương thức thực thi SQL từ DbContext
+                    db.ExecuteNonQuery(sqlUpdate);  // Giả sử bạn có phương thức
+                                                    // ExecuteNonQuery trong DbContext
                     MessageBox.Show("Cập nhật thành công!", "Thông báo");
 
                     // Làm mới DataGridView sau khi cập nhật
@@ -112,7 +180,8 @@ namespace DoAnCuoiKy.Forms
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một hàng trong danh sách để cập nhật.", "Thông báo");
+                MessageBox.Show("Vui lòng chọn một hàng trong danh sách để cập nhật.",
+                                "Thông báo");
             }
         }
 
@@ -139,8 +208,10 @@ namespace DoAnCuoiKy.Forms
             }
 
             // Truy vấn SQL
-            string sql = $@"
+            string sql =
+                $@"
         SELECT 
+            p.PassengerID AS [Mã khách hàng],
             p.FullName AS [Họ và tên], 
             p.PhoneNumber AS [Số điện thoại], 
             p.Email AS [Email], 
@@ -165,23 +236,20 @@ namespace DoAnCuoiKy.Forms
             else
             {
                 // Hiển thị thông báo nếu không tìm thấy
-                MessageBox.Show("Không tìm thấy ai phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Không tìm thấy ai phù hợp!", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void btnXuat_Click(object sender, EventArgs e)
+        private void LoadTicketByPassengerID(int passengerID)
         {
-            // Kiểm tra xem người dùng đã chọn hành khách chưa
-            if (dataGridViewQuanLyKH.SelectedRows.Count > 0)
-            {
-                // Lấy thông tin từ hàng được chọn
-                DataGridViewRow selectedRow = dataGridViewQuanLyKH.SelectedRows[0];
-                string fullName = selectedRow.Cells["Họ và tên"].Value.ToString();
-
-                string sqls = $@"
+            string sqls =
+                $@"
                                     SELECT 
                                         dt.DetailsTicketID AS [Mã Vé],
-                                        p.PhoneNumber AS [Số điện thoại],
+                                        p.PassengerID AS [Mã khách hàng],
+                                        p.FullName AS [Họ và tên], 
+                                        p.PhoneNumber AS [Số điện thoại], 
                                         r.RouteName AS [Tên Tuyến Đường], 
                                         t.DepartureLocation AS [Nơi Đi], 
                                         t.ArrivalLocation AS [Nơi Đến], 
@@ -200,24 +268,15 @@ namespace DoAnCuoiKy.Forms
                                     JOIN Bus b ON t.BusID = b.BusID
                                     JOIN Seat s ON dt.SeatID = s.SeatID
                                     JOIN UserAccount ua ON ot.UserID = ua.UserID
-                                    WHERE p.FullName = N'{fullName}';
+                                    WHERE p.PassengerID = N'{passengerID}';
                                     ";
 
-                // Thực thi truy vấn và hiển thị kết quả
-                DataTable tickets = db.GetDataTable(sqls);
-                if (tickets.Rows.Count > 0)
-                {
-                    dataGridView2.DataSource = tickets;
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy vé nào của hành khách này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một hành khách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            // Thực thi truy vấn và hiển thị kết quả
+            DataTable tickets = db.GetDataTable(sqls);
+
+            dataGridView2.DataSource = tickets;
         }
+
+        private void txtFullName_Click(object sender, EventArgs e) { }
     }
 }
