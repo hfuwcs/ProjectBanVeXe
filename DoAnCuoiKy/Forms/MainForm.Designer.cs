@@ -124,6 +124,8 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.button4, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.btn_QuanLyVe, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.btn_BanVe, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btn_TrangChu, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn_QuanLyChuyen, 0, 2);

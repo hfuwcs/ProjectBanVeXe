@@ -1,32 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\ProjectBanVeXe\\DoAnCuoiKy\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|e:\\projectbanvexe\\doancuoiky\\forms\\uc_quanlykhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\uc_quanlykhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|e:\\projectbanvexe\\doancuoiky\\forms\\uc_quanlykhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\uc_quanlykhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|e:\\projectbanvexe\\doancuoiky\\forms\\uc_quanlytaixe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\uc_quanlytaixe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|e:\\projectbanvexe\\doancuoiky\\forms\\uc_quanlytaixe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\uc_quanlytaixe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|e:\\projectbanvexe\\doancuoiky\\forms\\uc_quanlytuyenxe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\uc_quanlytuyenxe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|e:\\projectbanvexe\\doancuoiky\\forms\\uc_quanlytuyenxe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85D31B9B-FEB1-4E62-B311-CE85B67B1775}|DoAnCuoiKy.csproj|solutionrelative:forms\\uc_quanlytuyenxe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "WorkspaceRootPath": "E:\\ProjectBanVeXe1\\DoAnCuoiKy\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,81 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UC_QuanLyKhachHang.cs",
-              "DocumentMoniker": "E:\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QuanLyKhachHang.cs",
-              "RelativeDocumentMoniker": "Forms\\UC_QuanLyKhachHang.cs",
-              "ToolTip": "E:\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QuanLyKhachHang.cs",
-              "RelativeToolTip": "Forms\\UC_QuanLyKhachHang.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T16:13:29.985Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UC_QuanLyKhachHang.cs [Design]",
-              "DocumentMoniker": "E:\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QuanLyKhachHang.cs",
-              "RelativeDocumentMoniker": "Forms\\UC_QuanLyKhachHang.cs",
-              "ToolTip": "E:\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QuanLyKhachHang.cs [Design]",
-              "RelativeToolTip": "Forms\\UC_QuanLyKhachHang.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T16:13:28.932Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UC_QuanLyTaiXe.cs",
-              "DocumentMoniker": "E:\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QuanLyTaiXe.cs",
-              "RelativeDocumentMoniker": "Forms\\UC_QuanLyTaiXe.cs",
-              "ToolTip": "E:\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QuanLyTaiXe.cs",
-              "RelativeToolTip": "Forms\\UC_QuanLyTaiXe.cs",
-              "ViewState": "AgIAAJEBAAAAAAAAAAAQwLgBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T16:12:38.409Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UC_QuanLyTaiXe.cs [Design]",
-              "DocumentMoniker": "E:\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QuanLyTaiXe.cs",
-              "RelativeDocumentMoniker": "Forms\\UC_QuanLyTaiXe.cs",
-              "ToolTip": "E:\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QuanLyTaiXe.cs [Design]",
-              "RelativeToolTip": "Forms\\UC_QuanLyTaiXe.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T16:12:36.658Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UC_QuanLyTuyenXe.cs",
-              "DocumentMoniker": "E:\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QuanLyTuyenXe.cs",
-              "RelativeDocumentMoniker": "Forms\\UC_QuanLyTuyenXe.cs",
-              "ToolTip": "E:\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QuanLyTuyenXe.cs",
-              "RelativeToolTip": "Forms\\UC_QuanLyTuyenXe.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAgwFEBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T16:07:17.663Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UC_QuanLyTuyenXe.cs [Design]",
-              "DocumentMoniker": "E:\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QuanLyTuyenXe.cs",
-              "RelativeDocumentMoniker": "Forms\\UC_QuanLyTuyenXe.cs",
-              "ToolTip": "E:\\ProjectBanVeXe\\DoAnCuoiKy\\Forms\\UC_QuanLyTuyenXe.cs [Design]",
-              "RelativeToolTip": "Forms\\UC_QuanLyTuyenXe.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T16:07:16.467Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

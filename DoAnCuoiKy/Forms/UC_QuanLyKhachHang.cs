@@ -111,7 +111,20 @@ namespace DoAnCuoiKy.Forms
             string fullName = txtFullName.Text;
             string phoneNumber = txtPhoneNumber.Text;
             string email = txtEmail.Text;
-
+            // Kiểm tra định dạng số điện thoại
+            if (!System.Text.RegularExpressions.Regex.IsMatch(phoneNumber, @"^0\d{9}$"))
+            {
+                MessageBox.Show("Số điện thoại phải có 10 số và bắt đầu bằng số 0!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            // Kiểm tra định dạng email
+            if (!System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                MessageBox.Show("Email không hợp lệ. Vui lòng nhập lại!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             // Lấy dòng được chọn trong DataGridView
             if (dataGridViewQuanLyKH.SelectedRows.Count > 0)
             {
@@ -196,16 +209,20 @@ namespace DoAnCuoiKy.Forms
             string whereClause = "WHERE 1=1";
             if (!string.IsNullOrEmpty(fullName))
             {
-                whereClause += $" AND p.FullName LIKE N'%{fullName}%'";
+                whereClause += $@"
+        AND p.FullName COLLATE SQL_Latin1_General_CP1_CI_AI LIKE N'%{fullName}%'";
             }
             if (!string.IsNullOrEmpty(phoneNumber))
             {
-                whereClause += $" AND p.PhoneNumber LIKE '%{phoneNumber}%'";
+                whereClause += $@"
+        AND p.PhoneNumber COLLATE SQL_Latin1_General_CP1_CI_AI LIKE '%{phoneNumber}%'";
             }
             if (!string.IsNullOrEmpty(email))
             {
-                whereClause += $" AND p.Email LIKE '%{email}%'";
+                whereClause += $@"
+        AND p.Email COLLATE SQL_Latin1_General_CP1_CI_AI LIKE '%{email}%'";
             }
+
 
             // Truy vấn SQL
             string sql =
