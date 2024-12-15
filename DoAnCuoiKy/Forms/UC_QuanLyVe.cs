@@ -1,4 +1,5 @@
 ﻿using MyLibrary;
+using MyLibrary.BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,6 +57,8 @@ namespace DoAnCuoiKy.Forms
             dataGridViewQuanLyVe.DataSource = db.GetDataTable(sqls);
             autosizedgv(dataGridViewQuanLyVe);
 
+
+            //tab 1 - Quản lý vé
             string sqlstart = "select StartLocation from Route group by StartLocation";
             comboBox_Start.DataSource = db.GetDataTable(sqlstart);
             comboBox_Start.DisplayMember = "StartLocation";
@@ -68,6 +71,7 @@ namespace DoAnCuoiKy.Forms
             comboBox_Start2.DisplayMember = "StartLocation";
             comboBox_End2.DataSource = db.GetDataTable(sqlend);
             comboBox_End2.DisplayMember = "EndLocation";
+
 
             btnCount1.Text = " ";
             btnCount2.Text = " ";
@@ -157,6 +161,22 @@ namespace DoAnCuoiKy.Forms
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.MemberwiseClone();
+        }
+
+        private void btnTraCuu_Click(object sender, EventArgs e)
+        {
+            if (txtSDT.Text == string.Empty)
+            {
+                MessageBox.Show("Bạn phải nhập Số điện thoại!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSDT.Focus();
+            }
+            else
+            {
+                string dpt = dateTimePicker_StartDay.Value.ToString("yyyy/MM/dd");
+                dataGridView_TraCuuVe.DataSource = DetailsTicketBLL.Instance.TRACUUVE(txtSDT.Text, dpt);//obj.GetDataTable(txtSDT.Text, dpt, "TraCuuVe");
+
+                autosizedgv(dataGridView_TraCuuVe);
+            }
         }
     }
 }

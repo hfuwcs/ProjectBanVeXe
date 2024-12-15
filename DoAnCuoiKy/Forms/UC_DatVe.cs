@@ -15,6 +15,7 @@ using System.Security.Cryptography.X509Certificates;
 using MyLibrary.BLL;
 using MyLibrary.DAL;
 using System.Runtime.ConstrainedExecution;
+using System.Diagnostics;
 
 namespace DoAnCuoiKy
 {
@@ -298,54 +299,62 @@ namespace DoAnCuoiKy
 
         private void btnDatVe_Click(object sender, EventArgs e)
         {
-            if (txtSDT.Text == string.Empty)
+            try
             {
-                MessageBox.Show("Bạn phải nhập Số điện thoại!","Lỗi!",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                txtSDT.Focus();
+                if (txtSDT.Text == string.Empty)
+                {
+                    MessageBox.Show("Bạn phải nhập Số điện thoại!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtSDT.Focus();
+                }
+                else
+                {
+                    string OrderDate = DateTime.Now.Date.ToString("yyyy/MM/dd HH:mm");
+                    DateTime selectedDate = deppDate();
+
+                    //Lấy Route để tính giá trên mỗi Distance
+                    Route route = RouteBLL.Instance.GetRoute(comboBox_Start.Text, comboBox_End.Text);
+                    int price = route.Distance * MyLibrary.Helpers.PricePerKm;
+
+                    Passenger passenger = PassengerBLL.Instance.GetOnePassenger(txtSDT.Text, txtEmail.Text);///obj.GetOnePassenger(txtSDT.Text,txtEmail.Text);
+                    if (passenger.PassengerID == 0)
+                    {
+                        PassengerBLL.Instance.InsertPassenger(txtHoTen.Text, txtSDT.Text, txtEmail.Text);///obj.InsertPassenger(txtHoTen.Text, txtSDT.Text, txtEmail.Text);
+                        passenger = PassengerBLL.Instance.GetOnePassenger(txtSDT.Text, txtEmail.Text);//obj.GetOnePassenger(txtSDT.Text, txtEmail.Text);
+                    }
+
+                    //Tạo 1 record mới trong bảng OrderTicket (Tạo và lưu giao dịch khi bấm đặt vé)
+                    OrderTicketBLL.Instance.InsertOrderTicket(passenger.PassengerID, OrderDate, UserID);
+
+                    //Lấy ID của giao dịch vừa tạo
+                    int OrderTicketID = OrderTicketBLL.Instance.GetLatestOrderID(OrderDate, passenger.PassengerID);
+
+                    //Lấy TripID
+                    int TripID = TripBLL.Instance.GetTripID(comboBox_Start.Text, comboBox_End.Text, selectedDate);
+
+                    //Lấy ID của Xe đang chứa ghế được chọn
+                    int BusID = Convert.ToInt32(dataGridView_TimXe.CurrentRow.Cells[0].Value);
+
+                    //Lấy danh sách những ghế được chọn
+                    List<string> listsGheDaChon = GetClickedButtonTexts(this.Controls);
+                    foreach (var ghe in listsGheDaChon)
+                    {
+                        //Lấy ID ghế
+                        string sqlSeatID = "SELECT SEATID FROM SEAT WHERE SeatNumber= @seatnumber AND BusID = @busid";
+                        int SeatID = db.ExecuteScalar(sqlSeatID, new object[] { ghe, BusID });//obj.GetOneID(sqlSeatID);
+
+                        DetailsTicketBLL.Instance.InsertDetailsTicket(OrderTicketID, TripID, SeatID, 1, price);
+
+                    }
+                    List<string> list = disableButtonList(TripID);
+                    DisableButtons(this.Controls, list);
+                    txtTamTinh.Text = string.Empty;
+                    MessageBox.Show("Đặt vé thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                string OrderDate = DateTime.Now.Date.ToString("yyyy/MM/dd HH:mm");
-                DateTime selectedDate = deppDate();
-
-                //Lấy Route để tính giá trên mỗi Distance
-                Route route = RouteBLL.Instance.GetRoute(comboBox_Start.Text, comboBox_End.Text);
-                int price = route.Distance * MyLibrary.Helpers.PricePerKm;
-
-                Passenger passenger = PassengerBLL.Instance.GetOnePassenger(txtSDT.Text, txtEmail.Text);///obj.GetOnePassenger(txtSDT.Text,txtEmail.Text);
-                if (passenger.PassengerID == 0)
-                {
-                    PassengerBLL.Instance.InsertPassenger(txtHoTen.Text, txtSDT.Text, txtEmail.Text);///obj.InsertPassenger(txtHoTen.Text, txtSDT.Text, txtEmail.Text);
-                    passenger = PassengerBLL.Instance.GetOnePassenger(txtSDT.Text, txtEmail.Text);//obj.GetOnePassenger(txtSDT.Text, txtEmail.Text);
-                }
-
-                //Tạo 1 record mới trong bảng OrderTicket (Tạo và lưu giao dịch khi bấm đặt vé)
-                OrderTicketBLL.Instance.InsertOrderTicket(passenger.PassengerID, OrderDate, UserID);
-
-                //Lấy ID của giao dịch vừa tạo
-                int OrderTicketID = OrderTicketBLL.Instance.GetLatestOrderID(OrderDate, passenger.PassengerID);
-
-                //Lấy TripID
-                int TripID = TripBLL.Instance.GetTripID(comboBox_Start.Text, comboBox_End.Text, selectedDate);
-
-                //Lấy ID của Xe đang chứa ghế được chọn
-                int BusID = Convert.ToInt32(dataGridView_TimXe.CurrentRow.Cells[0].Value);
-
-                //Lấy danh sách những ghế được chọn
-                List<string> listsGheDaChon = GetClickedButtonTexts(this.Controls);
-                foreach(var ghe in listsGheDaChon)
-                {
-                    //Lấy ID ghế
-                    string sqlSeatID = "SELECT SEATID FROM SEAT WHERE SeatNumber= @seatnumber AND BusID = @busid";
-                    int SeatID = db.ExecuteScalar(sqlSeatID, new object[] { ghe, BusID });//obj.GetOneID(sqlSeatID);
-
-                    DetailsTicketBLL.Instance.InsertDetailsTicket(OrderTicketID,TripID, SeatID, 1, price);
-
-                }
-                List<string> list = disableButtonList(TripID);
-                DisableButtons(this.Controls, list);
-                txtTamTinh.Text = string.Empty;
-                MessageBox.Show("Đặt vé thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Đặt vé thất bại!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Debug.WriteLine(ex.Message);
             }
         }
 
