@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DoAnCuoiKy.Forms
 {
@@ -107,7 +108,7 @@ namespace DoAnCuoiKy.Forms
             btnXoa.Enabled = false;
             btnLoc.Enabled = false;
             btnThem.Enabled = true;
-            btnTimKiem.Enabled = false;
+            btnTimKiem.Enabled = true;
             LoadDriverTrips(0);
         }
         private void btnThem_Click(object sender, EventArgs e)
@@ -126,9 +127,24 @@ namespace DoAnCuoiKy.Forms
                 return;
             }
 
+            // Kiểm tra định dạng số điện thoại
+            if (!System.Text.RegularExpressions.Regex.IsMatch(phoneNumber, @"^0\d{9}$"))
+            {
+                MessageBox.Show("Số điện thoại phải có 10 số và bắt đầu bằng số 0!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra định dạng giấy phép lái xe
+            if (!System.Text.RegularExpressions.Regex.IsMatch(licenseNumber, @"^\d{12}$"))
+            {
+                MessageBox.Show("Giấy phép lái xe phải có 12 số!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             // Kiểm tra xem số điện thoại và giấy phép lái xe đã tồn tại chưa
-            string sqlCheck =
-                $@"
+            string sqlCheck = $@"
         SELECT COUNT(*) 
         FROM Driver 
         WHERE PhoneNumber = '{phoneNumber}' OR LicenseNumber = '{licenseNumber}'
@@ -141,14 +157,12 @@ namespace DoAnCuoiKy.Forms
                 if (existingCount > 0)
                 {
                     MessageBox.Show("Số điện thoại hoặc giấy phép lái xe đã tồn tại!",
-                                    "Thông báo", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
+                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 // Câu lệnh SQL để thêm tài xế mới
-                string sqlInsert =
-                    $@"
+                string sqlInsert = $@"
             INSERT INTO Driver (FullName, PhoneNumber, LicenseNumber) 
             VALUES (N'{fullName}', '{phoneNumber}', '{licenseNumber}')
         ";
@@ -175,69 +189,91 @@ namespace DoAnCuoiKy.Forms
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             // Lấy giá trị từ TextBox
-            string fullName = txtFullName.Text;
-            string phoneNumber = txtPhoneNumber.Text;
-            string licenseNumber = txtLicenseNumber.Text;
+            string fullName = txtFullName.Text.Trim();
+            string phoneNumber = txtPhoneNumber.Text.Trim();
+            string licenseNumber = txtLicenseNumber.Text.Trim();
+
+            // Kiểm tra dữ liệu rỗng
+            if (string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(licenseNumber))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra định dạng số điện thoại
+            if (!System.Text.RegularExpressions.Regex.IsMatch(phoneNumber, @"^0\d{9}$"))
+            {
+                MessageBox.Show("Số điện thoại phải có 10 số và bắt đầu bằng số 0!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra định dạng giấy phép lái xe
+            if (!System.Text.RegularExpressions.Regex.IsMatch(licenseNumber, @"^\d{12}$"))
+            {
+                MessageBox.Show("Giấy phép lái xe phải có 12 số!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra dòng được chọn trong DataGridView
+            if (dataGridViewQuanLyTX.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn một tài xế để cập nhật!", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+
             // Kiểm tra xem số điện thoại và giấy phép lái xe đã tồn tại chưa
-            string sqlCheck =
-                $@"
-                              SELECT COUNT(*) 
-                              FROM Driver 
-                              WHERE PhoneNumber = '{phoneNumber}' OR LicenseNumber = '{licenseNumber}'
-                          ";
+            string sqlCheck = $@"
+        SELECT COUNT(*) 
+        FROM Driver 
+        WHERE (PhoneNumber = '{phoneNumber}' OR LicenseNumber = '{licenseNumber}')
+          AND DriverID != {_driverID}
+    ";
 
             int existingCount = (int)db.ExecuteScalar(sqlCheck);
-
             if (existingCount > 0)
             {
                 MessageBox.Show("Số điện thoại hoặc giấy phép lái xe đã tồn tại!",
-                                "Thông báo", MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // Lấy dòng được chọn trong DataGridView
-            if (dataGridViewQuanLyTX.SelectedRows.Count > 0)
+
+            // Câu lệnh SQL để cập nhật thông tin
+            string sqlUpdate = $@"
+        UPDATE Driver
+        SET 
+            FullName = '{fullName}', 
+            PhoneNumber = '{phoneNumber}', 
+            LicenseNumber = '{licenseNumber}'
+        WHERE DriverID = {_driverID}
+    ";
+
+            try
             {
-                // Lấy PassengerID của khách hàng từ hàng được chọn
-                string selectedFullName = dataGridViewQuanLyTX.SelectedRows[0]
-                                              .Cells["Họ và tên"]
-                                              .Value.ToString();
+                db.ExecuteNonQuery(sqlUpdate);
 
-                // Câu lệnh SQL để cập nhật thông tin
-                string sqlUpdate =
-                    $@"
-            UPDATE Driver
-            SET 
-                FullName = '{fullName}', 
-                PhoneNumber = '{phoneNumber}', 
-                LicenseNumber = '{licenseNumber}'
-            WHERE FullName = '{selectedFullName}'";
+                // Thông báo cập nhật thành công
+                MessageBox.Show("Cập nhật thành công!", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Gọi phương thức thực thi SQL từ DbContext
-                try
-                {
-                    db.ExecuteNonQuery(sqlUpdate);  // Giả sử bạn có phương thức
-                                                    // ExecuteNonQuery trong DbContext
-                    MessageBox.Show("Cập nhật thành công!", "Thông báo");
-
-                    // Làm mới DataGridView sau khi cập nhật
-                    UC_QuanLyTaiXe_Load(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi khi cập nhật: " + ex.Message, "Thông báo lỗi");
-                }
+                // Làm mới DataGridView sau khi cập nhật
+                UC_QuanLyTaiXe_Load(sender, e);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn một hàng trong danh sách để cập nhật.",
-                                "Thông báo");
+                MessageBox.Show($"Lỗi khi cập nhật: {ex.Message}", "Thông báo lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             // Lấy giá trị từ các TextBox
@@ -246,19 +282,24 @@ namespace DoAnCuoiKy.Forms
             string licenseNumber = txtLicenseNumber.Text.Trim();
 
             // Tạo điều kiện tìm kiếm
+            // Tạo điều kiện tìm kiếm
             string whereClause = "WHERE 1=1";
             if (!string.IsNullOrEmpty(fullName))
             {
-                whereClause += $" AND d.FullName LIKE N'%{fullName}%'";
+                whereClause += $@"
+        AND p.FullName COLLATE SQL_Latin1_General_CP1_CI_AI LIKE N'%{fullName}%'";
             }
             if (!string.IsNullOrEmpty(phoneNumber))
             {
-                whereClause += $" AND d.PhoneNumber LIKE '%{phoneNumber}%'";
+                whereClause += $@"
+        AND p.PhoneNumber COLLATE SQL_Latin1_General_CP1_CI_AI LIKE '%{phoneNumber}%'";
             }
             if (!string.IsNullOrEmpty(licenseNumber))
             {
-                whereClause += $" AND d.LicenseNumber LIKE '%{licenseNumber}%'";
+                whereClause += $@"
+        AND p.Email COLLATE SQL_Latin1_General_CP1_CI_AI LIKE '%{licenseNumber}%'";
             }
+
 
             // Truy vấn SQL
             string sql =
