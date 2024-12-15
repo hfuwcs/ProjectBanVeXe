@@ -224,6 +224,12 @@
     <Compile Include="Forms\UC_QuanLyChuyen.Designer.cs">
       <DependentUpon>UC_QuanLyChuyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UC_TraCuuVe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC_TraCuuVe.Designer.cs">
+      <DependentUpon>UC_TraCuuVe.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CrystalReport\IncomeReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>IncomeReport.cs</LastGenOutput>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UC_QuanLyChuyen.resx">
       <DependentUpon>UC_QuanLyChuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC_TraCuuVe.resx">
+      <DependentUpon>UC_TraCuuVe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Datasets\Report.xsc">
       <DependentUpon>Report.xsd</DependentUpon>

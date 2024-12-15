@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,18 +20,17 @@ namespace DoAnCuoiKy.Forms
         public FormDoanhThuReport()
         {
             InitializeComponent();
-        }
-
-        private void crystalReportViewer1_Load(object sender, EventArgs e)
-        {
             int tripid = 1;
             IncomeReport incomeReport = new IncomeReport();
-            incomeReport.Load("Path to IncomeReport.rpt");
+            incomeReport.SetDatabaseLogon("sa", "123","FUC", "DB_DoAnBanVeXe");
 
-            incomeReport.SetParameterValue("@StartDate", DateTime.Now);
-            incomeReport.SetParameterValue("@EndDate", DateTime.Now);
-            incomeReport.SetParameterValue("@TripID", tripid);
+            string sqls = "EXEC [dbo].[GetRevenueReport] \r\n\t@StartDate = N'2024/10/12',\r\n\t@EndDate = N'2024/12/15',\r\n\t@TripID = 1";
 
+            DataTable dt = db.ExecuteQuery(sqls);
+
+            incomeReport.SetDataSource(dt);
+            crystalReportViewer1.ReportSource = incomeReport;
+            crystalReportViewer1.Refresh();
         }
     }
 }

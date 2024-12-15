@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,16 +23,22 @@ namespace MyLibrary.DAL
             }
             set => instance = value; 
         }
-        public DataTable SearchTrip(string deploc, string arrloc, DateTime selectedday)
+        public DataTable SearchTrip(string deploc, string arrloc, DateTime selectedDay)
         {
-            string sqls = "EXEC TIMCHUYENXE @DEPLOC , @ARRLOC , @SECLECTEDDAY";
-            DataTable data = db.Instance.ExecuteQuery(sqls, new object[] { deploc, arrloc, selectedday });
+            string sqls = "EXEC TIMCHUYENXE @deploc , @arrloc , @selectedDay";
+            object[] parameters = new object[]
+            {
+                deploc,
+                arrloc,
+                selectedDay.Date.ToString("yyyy-MM-dd HH:mm:ss")
+            };
+            DataTable data = db.Instance.ExecuteQuery(sqls, parameters);
             return data;
         }
         public int GetTripID(string deppLoc, string arrLoc, DateTime deppDateA)
         {
             string deppDate = deppDateA.ToString("yyyy-MM-dd HH:mm:ss");
-            string sqlTripID = $"SELECT TripID FROM Trip WHERE DepartureLocation = '{deppLoc}' AND ArrivalLocation = '{arrLoc}' AND DepartureTime = '{deppDate}'";
+            string sqlTripID = $"SELECT TripID FROM Trip WHERE DepartureLocation = '{deppLoc}' AND ArrivalLocation = '{arrLoc}' AND DATEDIFF(DD, DepartureTime , '{deppDate}') = 0";
             int id = db.Instance.ExecuteScalar(sqlTripID);
             return id;
         }

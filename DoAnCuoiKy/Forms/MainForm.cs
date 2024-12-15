@@ -149,12 +149,6 @@ namespace DoAnCuoiKy
             AddUserControl(uC_DoangThu);
         }
 
-        private void btn_TraCuuVe_Click(object sender, EventArgs e)
-        {
-            UC_TraCuuVe uC_TraCuuVe = new UC_TraCuuVe();
-            AddUserControl(uC_TraCuuVe);
-        }
-
         private void btn_QuanLyTaiKhoan_Click(object sender, EventArgs e)
         {
             UC_QLTK uC_QLTK = new UC_QLTK();

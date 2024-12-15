@@ -134,14 +134,14 @@ namespace DoAnCuoiKy.Forms
                                                  .Value.ToString();
                 int passengerID = Convert.ToInt32(selectedPassengerID);
 
-                // Kiểm tra trùng số điện thoại,
+                // Kiểm tra trùng số điện thoại
                 string sqlCheckPhone =
                     $@"
             SELECT COUNT(*) 
             FROM Passenger 
-            WHERE PhoneNumber = '{phoneNumber}'  AND PassengerID != {passengerID}";
+            WHERE PhoneNumber = '{phoneNumber}' AND PassengerID != {passengerID}";
 
-                // Kiểm tra 
+                // Kiểm tra trùng email
                 string sqlCheckEmail =
                     $@"
             SELECT COUNT(*) 
@@ -193,10 +193,10 @@ namespace DoAnCuoiKy.Forms
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một hàng trong danh sách để cập nhật.", "Thông báo");
+                MessageBox.Show("Vui lòng chọn một hàng trong danh sách để cập nhật.",
+                                "Thông báo");
             }
         }
-
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {

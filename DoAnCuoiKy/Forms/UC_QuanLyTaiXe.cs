@@ -157,12 +157,14 @@ namespace DoAnCuoiKy.Forms
                 if (existingCount > 0)
                 {
                     MessageBox.Show("Số điện thoại hoặc giấy phép lái xe đã tồn tại!",
-                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    "Thông báo", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
                     return;
                 }
 
                 // Câu lệnh SQL để thêm tài xế mới
-                string sqlInsert = $@"
+                string sqlInsert =
+                    $@"
             INSERT INTO Driver (FullName, PhoneNumber, LicenseNumber) 
             VALUES (N'{fullName}', '{phoneNumber}', '{licenseNumber}')
         ";
