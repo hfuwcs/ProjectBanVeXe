@@ -121,7 +121,7 @@ namespace DoAnCuoiKy
             string depptime = GetDateTimeString(dtp_StartDate, cbc_hStart);//dtp_StartDate.Value.ToString("yyyy/MM/dd ") + cbc_hStart.SelectedValue;
             string arrtime = GetDateTimeString(dtp_EndDate, cbc_hEnd);//dtp_StartDate.Value.ToString("yyyy/MM/dd ") + cbc_hEnd.SelectedValue;
 
-            string routename =cbc_start.Text + " - " + cbc_end.Text;
+            string routename = cbc_start.Text + " - " + cbc_end.Text;
             //Lấy RouteID
             Route route = RouteBLL.Instance.GetRouteByName(routename);
             if(route.RouteName == null)

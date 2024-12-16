@@ -16,6 +16,7 @@ using MyLibrary.BLL;
 using MyLibrary.DAL;
 using System.Runtime.ConstrainedExecution;
 using System.Diagnostics;
+using DoAnCuoiKy.Forms;
 
 namespace DoAnCuoiKy
 {
@@ -258,37 +259,28 @@ namespace DoAnCuoiKy
 
         private void btnTimChuyenXe_Click(object sender, EventArgs e)
         {
-            txtTamTinh.Text=string.Empty;
+            totalPrice = 0;
+            txtTamTinh.Text = "";
             DateTime selectedday = deppDate();
             string deploc = comboBox_Start.Text;
             string arrloc = comboBox_End.Text;
 
-            //var Alreadytrip =  db.GetTable<Bus>().Join(
-            //                    db.GetTable<Trip>(),
-            //                    bus => bus.BusID,
-            //                    trip => trip._busID,
-            //                    (bus, trip) => new { bus.BusID, bus.BusNumber, bus.TotalSeat, bus.BusType, trip._departureTime, trip._arrivalTime, trip._departureLocation, trip._arrivalLocation })
-            //                    .Where(x => x._departureTime >= selectedday && x._departureLocation == deploc && x._arrivalLocation == arrloc).ToList();
-            //Cách truyền thống
             DataTable Alreadytrip = TripBLL.Instance.SearchTrip(deploc, arrloc, selectedday);
 
-            //if (Alreadytrip.Count <= 0)
-            //{
-            //    MessageBox.Show("Không tìm thấy chuyến xe phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //else
-            //{
-            if(Alreadytrip.Rows.Count <= 0)
+            if (Alreadytrip.Rows.Count <= 0)
             {
-                   MessageBox.Show("Không tìm thấy chuyến xe phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Không tìm thấy chuyến xe phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+            {
                 dataGridView_TimXe.DataSource = Alreadytrip;
                 autosizedgv(dataGridView_TimXe);
-            //}
+            }
         }
         private void dataGridView_TimXe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            totalPrice = 0;
+            txtTamTinh.Text = "";
             EnableAllSeats(this.Controls);
             DateTime selectedday = deppDate();
             TripID = db.GetTable<Trip>().Where(t => t._departureLocation.Equals(comboBox_Start.Text) && t._arrivalLocation.Equals(comboBox_End.Text)).Select(t => t.tripID).FirstOrDefault();
@@ -315,11 +307,11 @@ namespace DoAnCuoiKy
                     Route route = RouteBLL.Instance.GetRoute(comboBox_Start.Text, comboBox_End.Text);
                     int price = route.Distance * MyLibrary.Helpers.PricePerKm;
 
-                    Passenger passenger = PassengerBLL.Instance.GetOnePassenger(txtSDT.Text, txtEmail.Text);///obj.GetOnePassenger(txtSDT.Text,txtEmail.Text);
+                    Passenger passenger = PassengerBLL.Instance.GetOnePassenger(txtSDT.Text, txtEmail.Text);
                     if (passenger.PassengerID == 0)
                     {
-                        PassengerBLL.Instance.InsertPassenger(txtHoTen.Text, txtSDT.Text, txtEmail.Text);///obj.InsertPassenger(txtHoTen.Text, txtSDT.Text, txtEmail.Text);
-                        passenger = PassengerBLL.Instance.GetOnePassenger(txtSDT.Text, txtEmail.Text);//obj.GetOnePassenger(txtSDT.Text, txtEmail.Text);
+                        PassengerBLL.Instance.InsertPassenger(txtHoTen.Text, txtSDT.Text, txtEmail.Text);
+                        passenger = PassengerBLL.Instance.GetOnePassenger(txtSDT.Text, txtEmail.Text);
                     }
 
                     //Tạo 1 record mới trong bảng OrderTicket (Tạo và lưu giao dịch khi bấm đặt vé)
@@ -349,6 +341,8 @@ namespace DoAnCuoiKy
                     DisableButtons(this.Controls, list);
                     txtTamTinh.Text = string.Empty;
                     MessageBox.Show("Đặt vé thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FormVeReport formVeReport = new FormVeReport(OrderTicketID);
+                    formVeReport.ShowDialog();
                 }
             }
             catch (Exception ex)

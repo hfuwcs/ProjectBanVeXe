@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -73,27 +74,35 @@ namespace DoAnCuoiKy
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string deppTime = dataGridView_TatCaChuyenXe.CurrentRow.Cells[5].Value.ToString();
-            deppTime = DateTime.Parse(deppTime).ToString("yyyy/MM/dd HH:mm");
-
-            string arrTime = dataGridView_TatCaChuyenXe.CurrentRow.Cells[5].Value.ToString();
-            arrTime = DateTime.Parse(arrTime).ToString("yyyy/MM/dd HH:mm");
-            if (MessageBox.Show("Bạn có chắc muốn xóa?","Thông báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Question,MessageBoxDefaultButton.Button2) == DialogResult.OK)
+            try
             {
-                string sqls = "Select TripID from Trip where DepartureTime = '" + deppTime + "' and ArrivalTime = '" + arrTime + "'";
-                int tripId = db.ExecuteScalar(sqls);
-                string sqlDelete = "Delete from Trip where TripID = " + tripId;
-                int res = db.ExecuteNonQuery(sqlDelete);
-                if (res > 0)
+                string deppTime = dataGridView_TatCaChuyenXe.CurrentRow.Cells[5].Value.ToString();
+                deppTime = DateTime.Parse(deppTime).ToString("yyyy/MM/dd HH:mm");
+
+                string arrTime = dataGridView_TatCaChuyenXe.CurrentRow.Cells[5].Value.ToString();
+                arrTime = DateTime.Parse(arrTime).ToString("yyyy/MM/dd HH:mm");
+                if (MessageBox.Show("Bạn có chắc muốn xóa?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
                 {
-                    MessageBox.Show("Xóa thành công");
-                    UC_QuanLyChuyen_Load(sender, e);
+                    string sqls = "Select TripID from Trip where DepartureTime = '" + deppTime + "' and ArrivalTime = '" + arrTime + "'";
+                    int tripId = db.ExecuteScalar(sqls);
+                    string sqlDelete = "Delete from Trip where TripID = " + tripId;
+                    int res = db.ExecuteNonQuery(sqlDelete);
+                    if (res > 0)
+                    {
+                        MessageBox.Show("Xóa thành công");
+                        UC_QuanLyChuyen_Load(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại");
+                    }
+
                 }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại");
-                }
-                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Xóa thất bại");
+                Debug.WriteLine(ex.Message);
             }
         }
 

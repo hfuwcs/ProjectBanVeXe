@@ -1,6 +1,7 @@
 ﻿using DoAnCuoiKy.CrystalReport;
 using DoAnCuoiKy.Datasets;
 using MyLibrary;
+using MyLibrary.BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,18 +18,26 @@ namespace DoAnCuoiKy.Forms
     public partial class FormDoanhThuReport : Form
     {
         static DbContext db = new DbContext();
-        public FormDoanhThuReport()
+        public FormDoanhThuReport(string startDate, string endDate, int routeID, string depLoc, string arrLoc)
         {
             InitializeComponent();
-            int tripid = 1;
             IncomeReport incomeReport = new IncomeReport();
             incomeReport.SetDatabaseLogon("sa", "123","FUC", "DB_DoAnBanVeXe");
+            string SP_RevenueReport = "EXEC [GetRevenueReport] @StartDate , @EndDate , @TripID ";
 
-            string sqls = "EXEC [dbo].[GetRevenueReport] \r\n\t@StartDate = N'2024/10/12',\r\n\t@EndDate = N'2024/12/15',\r\n\t@TripID = 1";
+            object[] param = {
+                startDate,
+                endDate,
+                routeID
+            };
 
-            DataTable dt = db.ExecuteQuery(sqls);
+            DataTable dt = db.ExecuteQuery(SP_RevenueReport, param);
 
+            string routeName = RouteBLL.Instance.GetRouteName(depLoc, arrLoc);
             incomeReport.SetDataSource(dt);
+            incomeReport.SetParameterValue("@StartDate", startDate);
+            incomeReport.SetParameterValue("@EndDate", endDate);
+            incomeReport.SetParameterValue("@TripName", routeName);
             crystalReportViewer1.ReportSource = incomeReport;
             crystalReportViewer1.Refresh();
         }

@@ -29,6 +29,14 @@ namespace MyLibrary.BLL
         {
             return RouteDAL.Instance.GetRoute(start, end);
         }
+        public string GetRouteName(string start, string end)
+        {
+            return RouteDAL.Instance.GetRouteName(start, end);
+        }
+        public int GetRouteID(string start, string end)
+        {
+            return RouteDAL.Instance.GetRouteID(start, end);
+        }
         public Route GetRouteByName(string name)
         {
             return RouteDAL.Instance.GetRouteByName(name);

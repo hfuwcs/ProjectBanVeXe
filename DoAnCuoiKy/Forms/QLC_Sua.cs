@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -132,42 +133,50 @@ namespace DoAnCuoiKy
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (cb_Ngay.Checked)
+            try
             {
-                if (cb_Gio.Checked)
+                if (cb_Ngay.Checked)
                 {
-                    string depptime = GetDateTimeString(dtp_StartDate, cbc_hStart);
-                    string arrtime = GetDateTimeString(dtp_EndDate, cbc_hEnd);
-                    Trip trip = TripBLL.Instance.GetTripByID(TripID);
-                    trip._departureTime = DateTime.Parse(depptime);
-                    trip._arrivalTime = DateTime.Parse(arrtime);
-                    if (db.UpdateRow(trip))
+                    if (cb_Gio.Checked)
                     {
-                        MessageBox.Show("Sửa thành công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                        this.Close();
+                        string depptime = GetDateTimeString(dtp_StartDate, cbc_hStart);
+                        string arrtime = GetDateTimeString(dtp_EndDate, cbc_hEnd);
+                        Trip trip = TripBLL.Instance.GetTripByID(TripID);
+                        trip._departureTime = DateTime.Parse(depptime);
+                        trip._arrivalTime = DateTime.Parse(arrtime);
+                        if (db.UpdateRow(trip))
+                        {
+                            MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sửa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Sửa thất bại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        Trip trip = TripBLL.Instance.GetTripByID(TripID);
+                        string depptime = GetDateTimeString(dtp_StartDate, cbc_hStart);
+                        string arrtime = GetDateTimeString(dtp_EndDate, cbc_hEnd);
+                        trip._departureTime = DateTime.Parse(depptime);
+                        trip._arrivalTime = DateTime.Parse(arrtime);
+                        if (db.UpdateRow(trip))
+                        {
+                            MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sửa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
-                else
-                {
-                    Trip trip = TripBLL.Instance.GetTripByID(TripID);
-                    string depptime = GetDateTimeString(dtp_StartDate, cbc_hStart);
-                    string arrtime = GetDateTimeString(dtp_EndDate, cbc_hEnd);
-                    trip._departureTime = DateTime.Parse(depptime);
-                    trip._arrivalTime = DateTime.Parse(arrtime);
-                    if (db.UpdateRow(trip))
-                    {
-                        MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sửa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Sửa thất bại, liên hệ quản trị viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Debug.WriteLine(ex.Message);
             }
         }
 

@@ -455,6 +455,7 @@ namespace DoAnCuoiKy.Forms
             this.btnXuatLaiVe.TabIndex = 85;
             this.btnXuatLaiVe.Text = "Xuất lại vé";
             this.btnXuatLaiVe.UseVisualStyleBackColor = true;
+            this.btnXuatLaiVe.Click += new System.EventHandler(this.btnXuatLaiVe_Click);
             // 
             // btnTraCuu
             // 

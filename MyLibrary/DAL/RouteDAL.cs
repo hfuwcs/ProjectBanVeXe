@@ -38,6 +38,16 @@ namespace MyLibrary.DAL
             }
             return route;
         }
+        public string GetRouteName(string start, string end)
+        {
+            Route route = GetRoute(start, end);
+            return route.RouteName;
+        }
+        public int GetRouteID(string start, string end)
+        {
+            Route route = GetRoute(start, end);
+            return route.RouteID;
+        }
         public Route GetRouteByName(string name)
         {
             Route route = new Route();

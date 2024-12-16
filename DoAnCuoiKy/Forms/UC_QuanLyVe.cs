@@ -1,5 +1,6 @@
 ﻿using MyLibrary;
 using MyLibrary.BLL;
+using MyLibrary.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -176,6 +177,26 @@ namespace DoAnCuoiKy.Forms
                 dataGridView_TraCuuVe.DataSource = DetailsTicketBLL.Instance.TRACUUVE(txtSDT.Text, dpt);//obj.GetDataTable(txtSDT.Text, dpt, "TraCuuVe");
 
                 autosizedgv(dataGridView_TraCuuVe);
+            }
+        }
+
+        private void btnXuatLaiVe_Click(object sender, EventArgs e)
+        {
+            if (dataGridView_TraCuuVe.CurrentRow.Cells.Count == 0)
+            {
+                MessageBox.Show("Bạn chưa chọn vé cần xuất lại!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                int dtid = Convert.ToInt32(dataGridView_TraCuuVe.CurrentRow.Cells[0].Value);
+                string sqls = "SELECT OrderTicketID " +
+                "FROM DetailsTicket " +
+                "WHERE DetailsTicketID = @DTID ";
+
+                int orderTicketID = Convert.ToInt32(db.ExecuteScalar(sqls, new object[] { dtid }));
+
+                FormVeReport formVeReport = new FormVeReport(orderTicketID);
+                formVeReport.ShowDialog();
             }
         }
     }

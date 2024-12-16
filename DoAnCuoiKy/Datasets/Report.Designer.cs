@@ -30,6 +30,8 @@ namespace DoAnCuoiKy.Datasets {
         
         private GetRevenueReportDataTable tableGetRevenueReport;
         
+        private GetTicketReportDataTable tableGetTicketReport;
+        
         private global::System.Data.DataRelation relationFK__DetailsTi__Order__534D60F1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
@@ -68,6 +70,9 @@ namespace DoAnCuoiKy.Datasets {
                 }
                 if ((ds.Tables["GetRevenueReport"] != null)) {
                     base.Tables.Add(new GetRevenueReportDataTable(ds.Tables["GetRevenueReport"]));
+                }
+                if ((ds.Tables["GetTicketReport"] != null)) {
+                    base.Tables.Add(new GetTicketReportDataTable(ds.Tables["GetTicketReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -114,6 +119,16 @@ namespace DoAnCuoiKy.Datasets {
         public GetRevenueReportDataTable GetRevenueReport {
             get {
                 return this.tableGetRevenueReport;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public GetTicketReportDataTable GetTicketReport {
+            get {
+                return this.tableGetTicketReport;
             }
         }
         
@@ -193,6 +208,9 @@ namespace DoAnCuoiKy.Datasets {
                 if ((ds.Tables["GetRevenueReport"] != null)) {
                     base.Tables.Add(new GetRevenueReportDataTable(ds.Tables["GetRevenueReport"]));
                 }
+                if ((ds.Tables["GetTicketReport"] != null)) {
+                    base.Tables.Add(new GetTicketReportDataTable(ds.Tables["GetTicketReport"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -244,6 +262,12 @@ namespace DoAnCuoiKy.Datasets {
                     this.tableGetRevenueReport.InitVars();
                 }
             }
+            this.tableGetTicketReport = ((GetTicketReportDataTable)(base.Tables["GetTicketReport"]));
+            if ((initTable == true)) {
+                if ((this.tableGetTicketReport != null)) {
+                    this.tableGetTicketReport.InitVars();
+                }
+            }
             this.relationFK__DetailsTi__Order__534D60F1 = this.Relations["FK__DetailsTi__Order__534D60F1"];
         }
         
@@ -261,6 +285,8 @@ namespace DoAnCuoiKy.Datasets {
             base.Tables.Add(this.tableOrderTicket);
             this.tableGetRevenueReport = new GetRevenueReportDataTable();
             base.Tables.Add(this.tableGetRevenueReport);
+            this.tableGetTicketReport = new GetTicketReportDataTable();
+            base.Tables.Add(this.tableGetTicketReport);
             this.relationFK__DetailsTi__Order__534D60F1 = new global::System.Data.DataRelation("FK__DetailsTi__Order__534D60F1", new global::System.Data.DataColumn[] {
                         this.tableOrderTicket.OrderTicketIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableDetailsTicket.OrderTicketIDColumn}, false);
@@ -282,6 +308,12 @@ namespace DoAnCuoiKy.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeGetRevenueReport() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeGetTicketReport() {
             return false;
         }
         
@@ -348,6 +380,9 @@ namespace DoAnCuoiKy.Datasets {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void GetRevenueReportRowChangeEventHandler(object sender, GetRevenueReportRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void GetTicketReportRowChangeEventHandler(object sender, GetTicketReportRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1333,6 +1368,606 @@ namespace DoAnCuoiKy.Datasets {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class GetTicketReportDataTable : global::System.Data.TypedTableBase<GetTicketReportRow> {
+            
+            private global::System.Data.DataColumn columnDetailsTicketID;
+            
+            private global::System.Data.DataColumn columnOrderTicketID;
+            
+            private global::System.Data.DataColumn columnTripID;
+            
+            private global::System.Data.DataColumn columnSeatID;
+            
+            private global::System.Data.DataColumn columnIsBooked;
+            
+            private global::System.Data.DataColumn columnPrice;
+            
+            private global::System.Data.DataColumn columnTripID1;
+            
+            private global::System.Data.DataColumn columnRouteID;
+            
+            private global::System.Data.DataColumn columnBusID;
+            
+            private global::System.Data.DataColumn columnDriverID;
+            
+            private global::System.Data.DataColumn columnDepartureLocation;
+            
+            private global::System.Data.DataColumn columnArrivalLocation;
+            
+            private global::System.Data.DataColumn columnDepartureTime;
+            
+            private global::System.Data.DataColumn columnArrivalTime;
+            
+            private global::System.Data.DataColumn columnRouteID1;
+            
+            private global::System.Data.DataColumn columnRouteName;
+            
+            private global::System.Data.DataColumn columnStartLocation;
+            
+            private global::System.Data.DataColumn columnEndLocation;
+            
+            private global::System.Data.DataColumn columnDistance;
+            
+            private global::System.Data.DataColumn columnSeatID1;
+            
+            private global::System.Data.DataColumn columnBusID1;
+            
+            private global::System.Data.DataColumn columnSeatNumber;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public GetTicketReportDataTable() {
+                this.TableName = "GetTicketReport";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal GetTicketReportDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected GetTicketReportDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DetailsTicketIDColumn {
+                get {
+                    return this.columnDetailsTicketID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn OrderTicketIDColumn {
+                get {
+                    return this.columnOrderTicketID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TripIDColumn {
+                get {
+                    return this.columnTripID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SeatIDColumn {
+                get {
+                    return this.columnSeatID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IsBookedColumn {
+                get {
+                    return this.columnIsBooked;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PriceColumn {
+                get {
+                    return this.columnPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TripID1Column {
+                get {
+                    return this.columnTripID1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn RouteIDColumn {
+                get {
+                    return this.columnRouteID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BusIDColumn {
+                get {
+                    return this.columnBusID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DriverIDColumn {
+                get {
+                    return this.columnDriverID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DepartureLocationColumn {
+                get {
+                    return this.columnDepartureLocation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ArrivalLocationColumn {
+                get {
+                    return this.columnArrivalLocation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DepartureTimeColumn {
+                get {
+                    return this.columnDepartureTime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ArrivalTimeColumn {
+                get {
+                    return this.columnArrivalTime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn RouteID1Column {
+                get {
+                    return this.columnRouteID1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn RouteNameColumn {
+                get {
+                    return this.columnRouteName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn StartLocationColumn {
+                get {
+                    return this.columnStartLocation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EndLocationColumn {
+                get {
+                    return this.columnEndLocation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DistanceColumn {
+                get {
+                    return this.columnDistance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SeatID1Column {
+                get {
+                    return this.columnSeatID1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BusID1Column {
+                get {
+                    return this.columnBusID1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SeatNumberColumn {
+                get {
+                    return this.columnSeatNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public GetTicketReportRow this[int index] {
+                get {
+                    return ((GetTicketReportRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event GetTicketReportRowChangeEventHandler GetTicketReportRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event GetTicketReportRowChangeEventHandler GetTicketReportRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event GetTicketReportRowChangeEventHandler GetTicketReportRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event GetTicketReportRowChangeEventHandler GetTicketReportRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddGetTicketReportRow(GetTicketReportRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public GetTicketReportRow AddGetTicketReportRow(
+                        int OrderTicketID, 
+                        int TripID, 
+                        int SeatID, 
+                        bool IsBooked, 
+                        decimal Price, 
+                        int RouteID, 
+                        int BusID, 
+                        int DriverID, 
+                        string DepartureLocation, 
+                        string ArrivalLocation, 
+                        System.DateTime DepartureTime, 
+                        System.DateTime ArrivalTime, 
+                        string RouteName, 
+                        string StartLocation, 
+                        string EndLocation, 
+                        int Distance, 
+                        int BusID1, 
+                        string SeatNumber) {
+                GetTicketReportRow rowGetTicketReportRow = ((GetTicketReportRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        OrderTicketID,
+                        TripID,
+                        SeatID,
+                        IsBooked,
+                        Price,
+                        null,
+                        RouteID,
+                        BusID,
+                        DriverID,
+                        DepartureLocation,
+                        ArrivalLocation,
+                        DepartureTime,
+                        ArrivalTime,
+                        null,
+                        RouteName,
+                        StartLocation,
+                        EndLocation,
+                        Distance,
+                        null,
+                        BusID1,
+                        SeatNumber};
+                rowGetTicketReportRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGetTicketReportRow);
+                return rowGetTicketReportRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public GetTicketReportRow FindByDetailsTicketIDTripID1RouteID1SeatID1(int DetailsTicketID, int TripID1, int RouteID1, int SeatID1) {
+                return ((GetTicketReportRow)(this.Rows.Find(new object[] {
+                            DetailsTicketID,
+                            TripID1,
+                            RouteID1,
+                            SeatID1})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                GetTicketReportDataTable cln = ((GetTicketReportDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new GetTicketReportDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnDetailsTicketID = base.Columns["DetailsTicketID"];
+                this.columnOrderTicketID = base.Columns["OrderTicketID"];
+                this.columnTripID = base.Columns["TripID"];
+                this.columnSeatID = base.Columns["SeatID"];
+                this.columnIsBooked = base.Columns["IsBooked"];
+                this.columnPrice = base.Columns["Price"];
+                this.columnTripID1 = base.Columns["TripID1"];
+                this.columnRouteID = base.Columns["RouteID"];
+                this.columnBusID = base.Columns["BusID"];
+                this.columnDriverID = base.Columns["DriverID"];
+                this.columnDepartureLocation = base.Columns["DepartureLocation"];
+                this.columnArrivalLocation = base.Columns["ArrivalLocation"];
+                this.columnDepartureTime = base.Columns["DepartureTime"];
+                this.columnArrivalTime = base.Columns["ArrivalTime"];
+                this.columnRouteID1 = base.Columns["RouteID1"];
+                this.columnRouteName = base.Columns["RouteName"];
+                this.columnStartLocation = base.Columns["StartLocation"];
+                this.columnEndLocation = base.Columns["EndLocation"];
+                this.columnDistance = base.Columns["Distance"];
+                this.columnSeatID1 = base.Columns["SeatID1"];
+                this.columnBusID1 = base.Columns["BusID1"];
+                this.columnSeatNumber = base.Columns["SeatNumber"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnDetailsTicketID = new global::System.Data.DataColumn("DetailsTicketID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDetailsTicketID);
+                this.columnOrderTicketID = new global::System.Data.DataColumn("OrderTicketID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrderTicketID);
+                this.columnTripID = new global::System.Data.DataColumn("TripID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTripID);
+                this.columnSeatID = new global::System.Data.DataColumn("SeatID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSeatID);
+                this.columnIsBooked = new global::System.Data.DataColumn("IsBooked", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIsBooked);
+                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrice);
+                this.columnTripID1 = new global::System.Data.DataColumn("TripID1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTripID1);
+                this.columnRouteID = new global::System.Data.DataColumn("RouteID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRouteID);
+                this.columnBusID = new global::System.Data.DataColumn("BusID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBusID);
+                this.columnDriverID = new global::System.Data.DataColumn("DriverID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDriverID);
+                this.columnDepartureLocation = new global::System.Data.DataColumn("DepartureLocation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepartureLocation);
+                this.columnArrivalLocation = new global::System.Data.DataColumn("ArrivalLocation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArrivalLocation);
+                this.columnDepartureTime = new global::System.Data.DataColumn("DepartureTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepartureTime);
+                this.columnArrivalTime = new global::System.Data.DataColumn("ArrivalTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArrivalTime);
+                this.columnRouteID1 = new global::System.Data.DataColumn("RouteID1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRouteID1);
+                this.columnRouteName = new global::System.Data.DataColumn("RouteName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRouteName);
+                this.columnStartLocation = new global::System.Data.DataColumn("StartLocation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStartLocation);
+                this.columnEndLocation = new global::System.Data.DataColumn("EndLocation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEndLocation);
+                this.columnDistance = new global::System.Data.DataColumn("Distance", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDistance);
+                this.columnSeatID1 = new global::System.Data.DataColumn("SeatID1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSeatID1);
+                this.columnBusID1 = new global::System.Data.DataColumn("BusID1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBusID1);
+                this.columnSeatNumber = new global::System.Data.DataColumn("SeatNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSeatNumber);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnDetailsTicketID,
+                                this.columnTripID1,
+                                this.columnRouteID1,
+                                this.columnSeatID1}, true));
+                this.columnDetailsTicketID.AutoIncrement = true;
+                this.columnDetailsTicketID.AutoIncrementSeed = -1;
+                this.columnDetailsTicketID.AutoIncrementStep = -1;
+                this.columnDetailsTicketID.AllowDBNull = false;
+                this.columnDetailsTicketID.ReadOnly = true;
+                this.columnTripID1.AutoIncrement = true;
+                this.columnTripID1.AutoIncrementSeed = -1;
+                this.columnTripID1.AutoIncrementStep = -1;
+                this.columnTripID1.AllowDBNull = false;
+                this.columnTripID1.ReadOnly = true;
+                this.columnDepartureLocation.MaxLength = 255;
+                this.columnArrivalLocation.MaxLength = 255;
+                this.columnRouteID1.AutoIncrement = true;
+                this.columnRouteID1.AutoIncrementSeed = -1;
+                this.columnRouteID1.AutoIncrementStep = -1;
+                this.columnRouteID1.AllowDBNull = false;
+                this.columnRouteID1.ReadOnly = true;
+                this.columnRouteName.MaxLength = 255;
+                this.columnStartLocation.MaxLength = 255;
+                this.columnEndLocation.MaxLength = 255;
+                this.columnSeatID1.AutoIncrement = true;
+                this.columnSeatID1.AutoIncrementSeed = -1;
+                this.columnSeatID1.AutoIncrementStep = -1;
+                this.columnSeatID1.AllowDBNull = false;
+                this.columnSeatID1.ReadOnly = true;
+                this.columnSeatNumber.MaxLength = 10;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public GetTicketReportRow NewGetTicketReportRow() {
+                return ((GetTicketReportRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new GetTicketReportRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(GetTicketReportRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.GetTicketReportRowChanged != null)) {
+                    this.GetTicketReportRowChanged(this, new GetTicketReportRowChangeEvent(((GetTicketReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.GetTicketReportRowChanging != null)) {
+                    this.GetTicketReportRowChanging(this, new GetTicketReportRowChangeEvent(((GetTicketReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.GetTicketReportRowDeleted != null)) {
+                    this.GetTicketReportRowDeleted(this, new GetTicketReportRowChangeEvent(((GetTicketReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.GetTicketReportRowDeleting != null)) {
+                    this.GetTicketReportRowDeleting(this, new GetTicketReportRowChangeEvent(((GetTicketReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveGetTicketReportRow(GetTicketReportRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Report ds = new Report();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "GetTicketReportDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class DetailsTicketRow : global::System.Data.DataRow {
@@ -1825,6 +2460,569 @@ namespace DoAnCuoiKy.Datasets {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class GetTicketReportRow : global::System.Data.DataRow {
+            
+            private GetTicketReportDataTable tableGetTicketReport;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal GetTicketReportRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableGetTicketReport = ((GetTicketReportDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int DetailsTicketID {
+                get {
+                    return ((int)(this[this.tableGetTicketReport.DetailsTicketIDColumn]));
+                }
+                set {
+                    this[this.tableGetTicketReport.DetailsTicketIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int OrderTicketID {
+                get {
+                    try {
+                        return ((int)(this[this.tableGetTicketReport.OrderTicketIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OrderTicketID\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.OrderTicketIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int TripID {
+                get {
+                    try {
+                        return ((int)(this[this.tableGetTicketReport.TripIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TripID\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.TripIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int SeatID {
+                get {
+                    try {
+                        return ((int)(this[this.tableGetTicketReport.SeatIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SeatID\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.SeatIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBooked {
+                get {
+                    try {
+                        return ((bool)(this[this.tableGetTicketReport.IsBookedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IsBooked\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.IsBookedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Price {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableGetTicketReport.PriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Price\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.PriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int TripID1 {
+                get {
+                    return ((int)(this[this.tableGetTicketReport.TripID1Column]));
+                }
+                set {
+                    this[this.tableGetTicketReport.TripID1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int RouteID {
+                get {
+                    try {
+                        return ((int)(this[this.tableGetTicketReport.RouteIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RouteID\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.RouteIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int BusID {
+                get {
+                    try {
+                        return ((int)(this[this.tableGetTicketReport.BusIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BusID\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.BusIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int DriverID {
+                get {
+                    try {
+                        return ((int)(this[this.tableGetTicketReport.DriverIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DriverID\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.DriverIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DepartureLocation {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetTicketReport.DepartureLocationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DepartureLocation\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.DepartureLocationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ArrivalLocation {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetTicketReport.ArrivalLocationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ArrivalLocation\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.ArrivalLocationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime DepartureTime {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableGetTicketReport.DepartureTimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DepartureTime\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.DepartureTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime ArrivalTime {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableGetTicketReport.ArrivalTimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ArrivalTime\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.ArrivalTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int RouteID1 {
+                get {
+                    return ((int)(this[this.tableGetTicketReport.RouteID1Column]));
+                }
+                set {
+                    this[this.tableGetTicketReport.RouteID1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string RouteName {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetTicketReport.RouteNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RouteName\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.RouteNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string StartLocation {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetTicketReport.StartLocationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StartLocation\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.StartLocationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string EndLocation {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetTicketReport.EndLocationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EndLocation\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.EndLocationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Distance {
+                get {
+                    try {
+                        return ((int)(this[this.tableGetTicketReport.DistanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Distance\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.DistanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int SeatID1 {
+                get {
+                    return ((int)(this[this.tableGetTicketReport.SeatID1Column]));
+                }
+                set {
+                    this[this.tableGetTicketReport.SeatID1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int BusID1 {
+                get {
+                    try {
+                        return ((int)(this[this.tableGetTicketReport.BusID1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BusID1\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.BusID1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SeatNumber {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetTicketReport.SeatNumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SeatNumber\' in table \'GetTicketReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTicketReport.SeatNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsOrderTicketIDNull() {
+                return this.IsNull(this.tableGetTicketReport.OrderTicketIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetOrderTicketIDNull() {
+                this[this.tableGetTicketReport.OrderTicketIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTripIDNull() {
+                return this.IsNull(this.tableGetTicketReport.TripIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTripIDNull() {
+                this[this.tableGetTicketReport.TripIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSeatIDNull() {
+                return this.IsNull(this.tableGetTicketReport.SeatIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSeatIDNull() {
+                this[this.tableGetTicketReport.SeatIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIsBookedNull() {
+                return this.IsNull(this.tableGetTicketReport.IsBookedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIsBookedNull() {
+                this[this.tableGetTicketReport.IsBookedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPriceNull() {
+                return this.IsNull(this.tableGetTicketReport.PriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPriceNull() {
+                this[this.tableGetTicketReport.PriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRouteIDNull() {
+                return this.IsNull(this.tableGetTicketReport.RouteIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRouteIDNull() {
+                this[this.tableGetTicketReport.RouteIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBusIDNull() {
+                return this.IsNull(this.tableGetTicketReport.BusIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBusIDNull() {
+                this[this.tableGetTicketReport.BusIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDriverIDNull() {
+                return this.IsNull(this.tableGetTicketReport.DriverIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDriverIDNull() {
+                this[this.tableGetTicketReport.DriverIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDepartureLocationNull() {
+                return this.IsNull(this.tableGetTicketReport.DepartureLocationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDepartureLocationNull() {
+                this[this.tableGetTicketReport.DepartureLocationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsArrivalLocationNull() {
+                return this.IsNull(this.tableGetTicketReport.ArrivalLocationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetArrivalLocationNull() {
+                this[this.tableGetTicketReport.ArrivalLocationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDepartureTimeNull() {
+                return this.IsNull(this.tableGetTicketReport.DepartureTimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDepartureTimeNull() {
+                this[this.tableGetTicketReport.DepartureTimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsArrivalTimeNull() {
+                return this.IsNull(this.tableGetTicketReport.ArrivalTimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetArrivalTimeNull() {
+                this[this.tableGetTicketReport.ArrivalTimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRouteNameNull() {
+                return this.IsNull(this.tableGetTicketReport.RouteNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRouteNameNull() {
+                this[this.tableGetTicketReport.RouteNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsStartLocationNull() {
+                return this.IsNull(this.tableGetTicketReport.StartLocationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetStartLocationNull() {
+                this[this.tableGetTicketReport.StartLocationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsEndLocationNull() {
+                return this.IsNull(this.tableGetTicketReport.EndLocationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetEndLocationNull() {
+                this[this.tableGetTicketReport.EndLocationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDistanceNull() {
+                return this.IsNull(this.tableGetTicketReport.DistanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDistanceNull() {
+                this[this.tableGetTicketReport.DistanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBusID1Null() {
+                return this.IsNull(this.tableGetTicketReport.BusID1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBusID1Null() {
+                this[this.tableGetTicketReport.BusID1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSeatNumberNull() {
+                return this.IsNull(this.tableGetTicketReport.SeatNumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSeatNumberNull() {
+                this[this.tableGetTicketReport.SeatNumberColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1912,6 +3110,40 @@ namespace DoAnCuoiKy.Datasets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public GetRevenueReportRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class GetTicketReportRowChangeEvent : global::System.EventArgs {
+            
+            private GetTicketReportRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public GetTicketReportRowChangeEvent(GetTicketReportRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public GetTicketReportRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3029,6 +4261,208 @@ SELECT OrderTicketID, PassengerID, Total, OrderDate, UserID FROM OrderTicket WHE
                 this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             Report.GetRevenueReportDataTable dataTable = new Report.GetRevenueReportDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class GetTicketReportTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public GetTicketReportTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "GetTicketReport";
+            tableMapping.ColumnMappings.Add("DetailsTicketID", "DetailsTicketID");
+            tableMapping.ColumnMappings.Add("OrderTicketID", "OrderTicketID");
+            tableMapping.ColumnMappings.Add("TripID", "TripID");
+            tableMapping.ColumnMappings.Add("SeatID", "SeatID");
+            tableMapping.ColumnMappings.Add("IsBooked", "IsBooked");
+            tableMapping.ColumnMappings.Add("Price", "Price");
+            tableMapping.ColumnMappings.Add("TripID1", "TripID1");
+            tableMapping.ColumnMappings.Add("RouteID", "RouteID");
+            tableMapping.ColumnMappings.Add("BusID", "BusID");
+            tableMapping.ColumnMappings.Add("DriverID", "DriverID");
+            tableMapping.ColumnMappings.Add("DepartureLocation", "DepartureLocation");
+            tableMapping.ColumnMappings.Add("ArrivalLocation", "ArrivalLocation");
+            tableMapping.ColumnMappings.Add("DepartureTime", "DepartureTime");
+            tableMapping.ColumnMappings.Add("ArrivalTime", "ArrivalTime");
+            tableMapping.ColumnMappings.Add("RouteID1", "RouteID1");
+            tableMapping.ColumnMappings.Add("RouteName", "RouteName");
+            tableMapping.ColumnMappings.Add("StartLocation", "StartLocation");
+            tableMapping.ColumnMappings.Add("EndLocation", "EndLocation");
+            tableMapping.ColumnMappings.Add("Distance", "Distance");
+            tableMapping.ColumnMappings.Add("SeatID1", "SeatID1");
+            tableMapping.ColumnMappings.Add("BusID1", "BusID1");
+            tableMapping.ColumnMappings.Add("SeatNumber", "SeatNumber");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::DoAnCuoiKy.Properties.Settings.Default.DB_DoAnBanVeXeConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.GetTicketReport";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OTID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Report.GetTicketReportDataTable dataTable, global::System.Nullable<int> OTID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((OTID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(OTID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Report.GetTicketReportDataTable GetData(global::System.Nullable<int> OTID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((OTID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(OTID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            Report.GetTicketReportDataTable dataTable = new Report.GetTicketReportDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

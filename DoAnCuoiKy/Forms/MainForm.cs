@@ -24,7 +24,7 @@ namespace DoAnCuoiKy
         public Button button_Thoat;
         public Button button_QuanLyChuyen;
         public Label lbl_Name;
-        private Form activeForm;
+        private UserControl activeForm;
         private Button currentButton;
 
         //Biến trạng thái cho phép thoát khỏi form
@@ -45,25 +45,6 @@ namespace DoAnCuoiKy
             AddUserControl(uC_TrangChu);
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
-        private void OpenChildForm(Form childForm, object btnSender)
-        {
-            if (activeForm != null)
-            {
-
-                activeForm.Close();
-            }
-            //ActivateButton(btnSender);
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            //this.panelMain.Controls.Add(childForm);
-            //this.panelMain.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            //btn_CloseChildForm.Visible = true;
-            //btn_CloseChildForm.Image = ((System.Drawing.Image)(Properties.Resources.exit));
-        }
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
@@ -71,22 +52,41 @@ namespace DoAnCuoiKy
                 if (currentButton != (Button)btnSender)
                 {
                     {
-                        //DisableButton();
+                        DisableButton();
                         Color color = Color.Tomato;
                         currentButton = (Button)btnSender;
                         currentButton.BackColor = color;
                         currentButton.ForeColor = Color.White;
                         currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                        //panel_TitleBar.BackColor = color;
-                        //panel_Logo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     }
+                }
+            }
+        }
+        private void DisableButton()
+        {
+            foreach (Control previousBtn in tableLayoutPanel1.Controls)
+            {
+                if (previousBtn is Button)
+                {
+                    previousBtn.BackColor = Color.Transparent;
+                    previousBtn.ForeColor = Color.Black;
+                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
 
         private void AddUserControl(UserControl userControl)
         {
+
             userControl.Dock=DockStyle.Fill;
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(userControl);
+            userControl.BringToFront();
+        }
+        private void AddUserControl(UserControl userControl, object btnSender)
+        {
+            ActivateButton(btnSender);
+            userControl.Dock = DockStyle.Fill;
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
@@ -117,7 +117,8 @@ namespace DoAnCuoiKy
         {
             UC_DatVe ucDatVe = new UC_DatVe();
             ucDatVe.UserID = this.userID;
-            AddUserControl(ucDatVe);
+            activeForm = ucDatVe;
+            AddUserControl(ucDatVe, sender);
         }
 
         private void btn_TrangChu_Click(object sender, EventArgs e)
@@ -125,8 +126,7 @@ namespace DoAnCuoiKy
             panelContainer.Controls.Clear();
             UC_TrangChu uC_TrangChu = new UC_TrangChu();
             uC_TrangChu.UserID = this.userID;
-            AddUserControl(uC_TrangChu);
-            //OpenChildForm(new TrangChu(), sender);
+            AddUserControl(uC_TrangChu, sender);
             
         }
 
@@ -146,14 +146,14 @@ namespace DoAnCuoiKy
         private void btn_DoanhThu_Click(object sender, EventArgs e)
         {
             UC_DoangThu uC_DoangThu = new UC_DoangThu();
-            AddUserControl(uC_DoangThu);
+            AddUserControl(uC_DoangThu, sender);
         }
 
         private void btn_QuanLyTaiKhoan_Click(object sender, EventArgs e)
         {
             UC_QLTK uC_QLTK = new UC_QLTK();
             uC_QLTK.UserID = this.userID;
-            AddUserControl(uC_QLTK);
+            AddUserControl(uC_QLTK, sender);
         }
 
         private void btn_QuanLyChuyen_Click(object sender, EventArgs e)
@@ -161,17 +161,12 @@ namespace DoAnCuoiKy
             Account account = AccountBLL.Instance.GetAccount(this.userID);
             if (account != null && AccountBLL.Instance.IsAdmin(account)){
                 UC_QuanLyChuyen uC_QuanLyChuyen = new UC_QuanLyChuyen();
-                AddUserControl(uC_QuanLyChuyen);
+                AddUserControl(uC_QuanLyChuyen, sender);
             }
             else
             {
                 MessageBox.Show("Bạn không đủ quyền hạn để thực hiện việc này.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            dgr_test.DataSource = db.GetTable<OrderTicket>().ToList();
         }
 
    
@@ -181,7 +176,7 @@ namespace DoAnCuoiKy
             if (account != null && AccountBLL.Instance.IsAdmin(account))
             {
                 UC_QuanLyKhachHang uC_QuanLyKhachHang = new UC_QuanLyKhachHang();
-                AddUserControl(uC_QuanLyKhachHang);
+                AddUserControl(uC_QuanLyKhachHang, sender);
             }
             else
             {
@@ -195,7 +190,7 @@ namespace DoAnCuoiKy
             if (account != null && AccountBLL.Instance.IsAdmin(account))
             {
                 UC_QuanLyVe uC_QuanLyVe = new UC_QuanLyVe();
-                AddUserControl(uC_QuanLyVe);
+                AddUserControl(uC_QuanLyVe, sender);
             }
             else
             {
@@ -209,7 +204,7 @@ namespace DoAnCuoiKy
             if (account != null && AccountBLL.Instance.IsAdmin(account))
             {
                 UC_QuanLyTaiXe uC_QuanLyTaiXe = new UC_QuanLyTaiXe();
-                AddUserControl(uC_QuanLyTaiXe);
+                AddUserControl(uC_QuanLyTaiXe, sender);
             }
             else
             {
@@ -223,7 +218,7 @@ namespace DoAnCuoiKy
             if (account != null && AccountBLL.Instance.IsAdmin(account))
             {
                 UC_QuanLyTuyenXe uC_QuanLyTuyenXe = new UC_QuanLyTuyenXe();
-                AddUserControl(uC_QuanLyTuyenXe);
+                AddUserControl(uC_QuanLyTuyenXe, sender);
             }
             else
             {
