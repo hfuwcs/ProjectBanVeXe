@@ -35,6 +35,18 @@ namespace DoAnCuoiKy
                 _userID = value;
             }
         }
+        private void TimeChange(object sender, EventArgs e)
+        {
+            DateTime startDate = dateTimePicker_StarDate.Value;
+            DateTime today = DateTime.Today;
+
+            if (startDate < today)
+            {
+                MessageBox.Show("Ngày đi phải lớn hơn hoặc bằng ngày hiện tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dateTimePicker_StarDate.Value = today;
+            }
+        }
+
         public UC_DatVe()
         {
             InitializeComponent();
@@ -43,6 +55,7 @@ namespace DoAnCuoiKy
             totalPrice  = 0;
             //Lấy 2 chữ số thập phân
             db.nfi.CurrencyDecimalDigits = 2;
+            dateTimePicker_StarDate.ValueChanged += TimeChange;
         }
 
 
