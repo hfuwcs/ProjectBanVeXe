@@ -27,6 +27,7 @@ namespace DoAnCuoiKy
         public DangNhap dangNhap;
         private int _userID;
         private int TripID;
+        private int PriceOnRoute;
         public int UserID
         {
             get { return _userID; }
@@ -199,14 +200,14 @@ namespace DoAnCuoiKy
             // Kiểm tra trạng thái màu của button
             if (clickedButton.BackColor == Color.Orange)
             {
-                if (totalPrice > 0) totalPrice -= 210000;
+                if (totalPrice > 0) totalPrice -= PriceOnRoute;
                 txtTamTinh.Text = totalPrice.ToString("C", db.nfi);
                 // Nếu button đã có màu cam (đã chọn), đổi lại thành màu mặc định
                 clickedButton.BackColor = Color.LightCyan;
             }
             else
             {
-                totalPrice += 210000;
+                totalPrice += PriceOnRoute;
                 txtTamTinh.Text = totalPrice.ToString("C", db.nfi);
                 // Nếu button chưa có màu cam, đổi sang màu cam
                 clickedButton.BackColor = Color.Orange;
@@ -291,6 +292,10 @@ namespace DoAnCuoiKy
         {
             totalPrice = 0;
             txtTamTinh.Text = "";
+
+            Route route = RouteBLL.Instance.GetRoute(comboBox_Start.Text, comboBox_End.Text);
+            PriceOnRoute = route.Distance * MyLibrary.Helpers.PricePerKm;
+
             EnableAllSeats(this.Controls);
             DateTime selectedday = deppDate();
             TripID = db.GetTable<Trip>().Where(t => t._departureLocation.Equals(comboBox_Start.Text) && t._arrivalLocation.Equals(comboBox_End.Text)).Select(t => t.tripID).FirstOrDefault();

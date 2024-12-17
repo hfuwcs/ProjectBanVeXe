@@ -199,5 +199,30 @@ namespace DoAnCuoiKy.Forms
                 formVeReport.ShowDialog();
             }
         }
+
+        private void dataGridViewQuanLyVe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var result = MessageBox.Show("Bạn có muốn hủy vé này?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result == DialogResult.Yes)
+                {
+                    int dtid = Convert.ToInt32(dataGridViewQuanLyVe.CurrentRow.Cells[0].Value);
+                    int res = DetailsTicketBLL.Instance.HUYVE(dtid);
+                    if (res > 0)
+                    {
+                        MessageBox.Show("Hủy vé thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hủy vé không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

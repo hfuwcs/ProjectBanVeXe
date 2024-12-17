@@ -26,7 +26,7 @@ namespace MyLibrary.DAL
         public List<string> GetListBookedSeat(int tripID)
         {
             List<string> list = new List<string>();
-            string sqls = "select SeatNumber from Seat S, DetailsTicket DT Where S.SeatID=DT.SeatID and TRIPID = @tripid";
+            string sqls = "select SeatNumber from Seat S, DetailsTicket DT Where S.SeatID=DT.SeatID and TRIPID = @tripid and IsBooked = 1";
             DataTable data = db.ExecuteQuery(sqls, new object[] {tripID});
             foreach (DataRow row in data.Rows)
             {

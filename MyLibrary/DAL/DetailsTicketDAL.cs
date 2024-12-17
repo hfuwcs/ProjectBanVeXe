@@ -21,6 +21,14 @@ namespace MyLibrary.DAL
             } 
             private set => instance = value; 
         }
+        public int HUYVE(int OrderTicketID)
+        {
+            string sqls = "UPDATE DetailsTicket " +
+                "SET IsBooked = 0 " +
+                "WHERE OrderTicketID = @OrderTicketID ";
+            int res = db.ExecuteNonQuery(sqls, new object[] { OrderTicketID });
+            return res;
+        }
         public void InsertDetailsTicket(int OrderTicketID, int TripID, int SeatID, int IsBooked, int Price)
         {
             string sqls = "EXEC InsertDetailsTicket @OrderTicketID , @TripID , @SeatID , @IsBooked , @PRICE ";

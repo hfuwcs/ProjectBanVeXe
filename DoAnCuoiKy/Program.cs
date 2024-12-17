@@ -17,8 +17,8 @@ namespace DoAnCuoiKy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new DangNhap());
-            Application.Run(new MainForm(4));
+            Application.Run(new DangNhap());
+            //Application.Run(new MainForm(4));
 
         }
     }

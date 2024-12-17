@@ -21,6 +21,10 @@ namespace MyLibrary.BLL
             }
             private set => instance = value;
         }
+        public int HUYVE(int OrderTicketID)
+        {
+            return DetailsTicketDAL.Instance.HUYVE(OrderTicketID);
+        }
         public void InsertDetailsTicket(int OrderTicketID, int TripID, int SeatID, int IsBooked, int Price)
         {
             DetailsTicketDAL.Instance.InsertDetailsTicket(OrderTicketID, TripID, SeatID, IsBooked, Price);

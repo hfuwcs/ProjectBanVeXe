@@ -427,6 +427,7 @@ namespace DoAnCuoiKy.Forms
             this.dataGridViewQuanLyVe.RowHeadersWidth = 51;
             this.dataGridViewQuanLyVe.Size = new System.Drawing.Size(1366, 377);
             this.dataGridViewQuanLyVe.TabIndex = 109;
+            this.dataGridViewQuanLyVe.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewQuanLyVe_CellDoubleClick);
             // 
             // tabPage2
             // 

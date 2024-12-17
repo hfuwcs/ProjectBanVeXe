@@ -71,7 +71,6 @@ namespace DoAnCuoiKy
                 MainForm mainForm = new MainForm(account.UserID);
                 mainForm.Show();//Mở form chính
                 this.Hide();//Đóng form đăng nhập
-                mainForm.lbl_Name.Text += account.Name.ToString();
                 mainForm.DangXuat += MainForm_DangXuat;
             }
             else

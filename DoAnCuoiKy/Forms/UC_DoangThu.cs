@@ -23,8 +23,25 @@ namespace DoAnCuoiKy
             InitializeComponent();
             //Lấy 2 chữ số thập phân
             db.nfi.CurrencyDecimalDigits = 2;
+            dateTimePicker_StartDate.ValueChanged += TimeChange;
+            dateTimePicker_Endday.ValueChanged += TimeChange;
         }
+        private void TimeChange(object sender, EventArgs e)
+        {
+            string startDate = dateTimePicker_StartDate.Value.ToString("yyyy-MM-dd");
+            string endDate = dateTimePicker_Endday.Value.ToString("yyyy-MM-dd");
 
+            if (DateTime.TryParse(startDate, out DateTime depTime) && DateTime.TryParse(endDate, out DateTime arrTime))
+            {
+                if (arrTime < depTime)
+                {
+                    MessageBox.Show("Ngày bắt đầu phải lớn hơn ngày kết thúc!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    dateTimePicker_StartDate.Value = DateTime.Today;
+                    dateTimePicker_Endday.Value = DateTime.Today.AddDays(1);
+                    return;
+                }
+            }
+        }
         private void UC_DoangThu_Load(object sender, EventArgs e)
         {
             //START: LOAD database cho Tuyen
