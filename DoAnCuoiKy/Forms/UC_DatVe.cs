@@ -242,8 +242,6 @@ namespace DoAnCuoiKy
         private void UC_DatVe_Load(object sender, EventArgs e)
         {
             DisableAllSeats(this.Controls);
-            //Load giờ
-            cbc_hours.DataSource = MyLibrary.Helpers.Hours;
 
             //LOAD database cho các Tuyến
             string sqlstart = "select StartLocation from Route group by StartLocation";
@@ -264,7 +262,6 @@ namespace DoAnCuoiKy
 
         private DateTime deppDate()
         {
-            string start_hours = cbc_hours.Text;
             DateTime selectedday = dateTimePicker_StarDate.Value;
             selectedday = selectedday.Date;// + TimeSpan.Parse(start_hours);
             return selectedday;
