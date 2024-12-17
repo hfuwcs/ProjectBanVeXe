@@ -120,6 +120,12 @@
     <Compile Include="Forms\FormDoanhThuReport.Designer.cs">
       <DependentUpon>FormDoanhThuReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormDoiVeTongQuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDoiVeTongQuat.Designer.cs">
+      <DependentUpon>FormDoiVeTongQuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormVeReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDoanhThuReport.resx">
       <DependentUpon>FormDoanhThuReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDoiVeTongQuat.resx">
+      <DependentUpon>FormDoiVeTongQuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVeReport.resx">
       <DependentUpon>FormVeReport.cs</DependentUpon>
@@ -387,6 +396,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exchange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross_12503588 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

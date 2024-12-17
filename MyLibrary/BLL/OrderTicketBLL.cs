@@ -21,6 +21,10 @@ namespace MyLibrary.BLL
             }
             private set => instance = value;
         }
+        public int GetOrderTicketID(int DT)
+        {
+            return OrderTicketDAL.Instance.GetOrderTicketID(DT);
+        }
         public int GetLatestOrderID(string orderDate, int passengerID)
         {
             return OrderTicketDAL.Instance.GetLatestOrderID(orderDate, passengerID);

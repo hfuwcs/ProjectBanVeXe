@@ -25,6 +25,7 @@ namespace DoAnCuoiKy.Forms
 
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -59,6 +60,9 @@ namespace DoAnCuoiKy.Forms
             this.btnTim = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewQuanLyVe = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.hủyVéToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đổiVéToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnXuatLaiVe = new System.Windows.Forms.Button();
             this.btnTraCuu = new System.Windows.Forms.Button();
@@ -81,6 +85,7 @@ namespace DoAnCuoiKy.Forms
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuanLyVe)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TraCuuVe)).BeginInit();
@@ -422,12 +427,43 @@ namespace DoAnCuoiKy.Forms
             // dataGridViewQuanLyVe
             // 
             this.dataGridViewQuanLyVe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewQuanLyVe.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridViewQuanLyVe.Location = new System.Drawing.Point(15, 52);
             this.dataGridViewQuanLyVe.Name = "dataGridViewQuanLyVe";
+            this.dataGridViewQuanLyVe.ReadOnly = true;
             this.dataGridViewQuanLyVe.RowHeadersWidth = 51;
             this.dataGridViewQuanLyVe.Size = new System.Drawing.Size(1366, 377);
             this.dataGridViewQuanLyVe.TabIndex = 109;
-            this.dataGridViewQuanLyVe.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewQuanLyVe_CellDoubleClick);
+            this.dataGridViewQuanLyVe.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGridViewQuanLyVe_MouseDown);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hủyVéToolStripMenuItem,
+            this.đổiVéToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(140, 60);
+            // 
+            // hủyVéToolStripMenuItem
+            // 
+            this.hủyVéToolStripMenuItem.BackColor = System.Drawing.Color.SeaShell;
+            this.hủyVéToolStripMenuItem.Image = global::DoAnCuoiKy.Properties.Resources.cross_12503588__1_;
+            this.hủyVéToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.hủyVéToolStripMenuItem.Name = "hủyVéToolStripMenuItem";
+            this.hủyVéToolStripMenuItem.Size = new System.Drawing.Size(139, 28);
+            this.hủyVéToolStripMenuItem.Text = "Hủy vé";
+            this.hủyVéToolStripMenuItem.Click += new System.EventHandler(this.hủyVéToolStripMenuItem_Click);
+            // 
+            // đổiVéToolStripMenuItem
+            // 
+            this.đổiVéToolStripMenuItem.BackColor = System.Drawing.Color.Gold;
+            this.đổiVéToolStripMenuItem.Image = global::DoAnCuoiKy.Properties.Resources.exchange;
+            this.đổiVéToolStripMenuItem.Name = "đổiVéToolStripMenuItem";
+            this.đổiVéToolStripMenuItem.Size = new System.Drawing.Size(139, 28);
+            this.đổiVéToolStripMenuItem.Text = "Đổi vé";
+            this.đổiVéToolStripMenuItem.Click += new System.EventHandler(this.đổiVéToolStripMenuItem_Click);
             // 
             // tabPage2
             // 
@@ -630,6 +666,7 @@ namespace DoAnCuoiKy.Forms
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuanLyVe)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -690,5 +727,8 @@ namespace DoAnCuoiKy.Forms
         private DataGridViewTextBoxColumn DepartureTime;
         private DataGridViewTextBoxColumn SeatID;
         private DataGridViewTextBoxColumn Price;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem hủyVéToolStripMenuItem;
+        private ToolStripMenuItem đổiVéToolStripMenuItem;
     }
 }

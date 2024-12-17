@@ -45,7 +45,8 @@ namespace DoAnCuoiKy.Forms
             string sqls = $"SELECT dt.DetailsTicketID AS \"Mã Vé\", p.FullName AS \"Tên Khách Hàng\", p.PhoneNumber AS \"Số Điện Thoại\", " +
                           $"r.RouteName AS \"Tên Tuyến Đường\", t.DepartureLocation AS \"Nơi Đi\", t.ArrivalLocation AS \"Nơi Đến\", " +
                           $"t.DepartureTime AS \"Giờ Khởi Hành\", t.ArrivalTime AS \"Giờ Đến\", b.BusNumber AS \"Số Xe\", " +
-                          $"s.SeatNumber AS \"Số Ghế\", dt.Price AS \"Giá Vé\", ua.FullName AS \"Tên Nhân Viên\", ot.OrderDate AS \"Ngày bán\" " +
+                          $"s.SeatNumber AS \"Số Ghế\", dt.Price AS \"Giá Vé\", ua.FullName AS \"Tên Nhân Viên\", ot.OrderDate AS \"Ngày bán\", " +
+                          $"dt.IsBooked as  \"Trạng thái\" " +
                           "FROM DetailsTicket dt " +
                           "JOIN OrderTicket ot ON dt.OrderTicketID = ot.OrderTicketID " +
                           "JOIN Passenger p ON ot.PassengerID = p.PassengerID " +
@@ -99,7 +100,8 @@ namespace DoAnCuoiKy.Forms
             string sqls = $"SELECT dt.DetailsTicketID AS \"Mã Vé\", p.FullName AS \"Tên Khách Hàng\", p.PhoneNumber AS \"Số Điện Thoại\", " +
                           $"r.RouteName AS \"Tên Tuyến Đường\", t.DepartureLocation AS \"Nơi Đi\", t.ArrivalLocation AS \"Nơi Đến\", " +
                           $"t.DepartureTime AS \"Giờ Khởi Hành\", t.ArrivalTime AS \"Giờ Đến\", b.BusNumber AS \"Số Xe\", " +
-                          $"s.SeatNumber AS \"Số Ghế\", dt.Price AS \"Giá Vé\", ua.FullName AS \"Tên Nhân Viên\", ot.OrderDate AS \"Ngày bán\" " +
+                          $"s.SeatNumber AS \"Số Ghế\", dt.Price AS \"Giá Vé\", ua.FullName AS \"Tên Nhân Viên\", ot.OrderDate AS \"Ngày bán\", " +
+                          $"dt.IsBooked as  \"Trạng thái\" " +
                           "FROM DetailsTicket dt " +
                           "JOIN OrderTicket ot ON dt.OrderTicketID = ot.OrderTicketID " +
                           "JOIN Passenger p ON ot.PassengerID = p.PassengerID " +
@@ -139,7 +141,8 @@ namespace DoAnCuoiKy.Forms
             string sqls = $"SELECT dt.DetailsTicketID AS \"Mã Vé\", p.FullName AS \"Tên Khách Hàng\", p.PhoneNumber AS \"Số Điện Thoại\", " +
                           $"r.RouteName AS \"Tên Tuyến Đường\", t.DepartureLocation AS \"Nơi Đi\", t.ArrivalLocation AS \"Nơi Đến\", " +
                           $"t.DepartureTime AS \"Giờ Khởi Hành\", t.ArrivalTime AS \"Giờ Đến\", b.BusNumber AS \"Số Xe\", " +
-                          $"s.SeatNumber AS \"Số Ghế\", dt.Price AS \"Giá Vé\", ua.FullName AS \"Tên Nhân Viên\", ot.OrderDate AS \"Ngày bán\" " +
+                          $"s.SeatNumber AS \"Số Ghế\", dt.Price AS \"Giá Vé\", ua.FullName AS \"Tên Nhân Viên\", ot.OrderDate AS \"Ngày bán\", " +
+                          $"dt.IsBooked as  \"Trạng thái\" "+
                           "FROM DetailsTicket dt " +
                           "JOIN OrderTicket ot ON dt.OrderTicketID = ot.OrderTicketID " +
                           "JOIN Passenger p ON ot.PassengerID = p.PassengerID " +
@@ -200,18 +203,40 @@ namespace DoAnCuoiKy.Forms
             }
         }
 
-        private void dataGridViewQuanLyVe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewQuanLyVe_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                // Lấy vị trí của con trỏ chuột
+                var hitTestInfo = dataGridViewQuanLyVe.HitTest(e.X, e.Y);
+
+                // Chỉ mở menu nếu chuột nằm trên một ô (cell) hợp lệ
+                if (hitTestInfo.RowIndex >= 0)
+                {
+                    dataGridViewQuanLyVe.ClearSelection();
+                    dataGridViewQuanLyVe.Rows[hitTestInfo.RowIndex].Selected = true;
+
+                    // Hiển thị ContextMenuStrip
+                    contextMenuStrip1.Show(dataGridViewQuanLyVe, e.Location);
+
+                }
+            }
+        }
+
+        private void hủyVéToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
                 var result = MessageBox.Show("Bạn có muốn hủy vé này?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (result == DialogResult.Yes)
                 {
-                    int dtid = Convert.ToInt32(dataGridViewQuanLyVe.CurrentRow.Cells[0].Value);
+                    int otid = Convert.ToInt32(dataGridViewQuanLyVe.CurrentRow.Cells[0].Value);
+                    int dtid = OrderTicketBLL.Instance.GetOrderTicketID(otid);
                     int res = DetailsTicketBLL.Instance.HUYVE(dtid);
                     if (res > 0)
                     {
                         MessageBox.Show("Hủy vé thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        UC_QuanLyVe_Load(sender, e);
                     }
                     else
                     {
@@ -223,6 +248,27 @@ namespace DoAnCuoiKy.Forms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void đổiGiờDiChuyểnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void đổiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void đổiVéToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int otid = Convert.ToInt32(dataGridViewQuanLyVe.CurrentRow.Cells[0].Value);
+            string depLoc = dataGridViewQuanLyVe.CurrentRow.Cells[4].Value.ToString();
+            string arrLoc = dataGridViewQuanLyVe.CurrentRow.Cells[5].Value.ToString();
+            string depTime = dataGridViewQuanLyVe.CurrentRow.Cells[6].Value.ToString();
+
+            FormDoiVeTongQuat frm = new FormDoiVeTongQuat(otid, depLoc, arrLoc, depTime);
+            frm.ShowDialog();
         }
     }
 }

@@ -21,6 +21,12 @@ namespace MyLibrary.DAL
             }
             set => instance = value; 
         }
+        public int GetOrderTicketID(int DT)
+        {
+            string sqls = "SELECT OrderTicketID FROM DetailsTicket WHERE DetailsTicketID = @DT ";
+            int res = Convert.ToInt32(db.ExecuteScalar(sqls, new object[] { DT }));
+            return res;
+        }
         public int GetLatestOrderID(string orderDate, int passengerID)
         {
             string sqls = "EXEC GetLatestOrderID @ORDERDATE , @PASSENGERID";
